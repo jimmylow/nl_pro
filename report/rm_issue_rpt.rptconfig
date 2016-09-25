@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <list-property name="configVars">
+        <structure>
+            <property name="name">__isdisplay__userid_787_0</property>
+            <property name="value">admin</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__fd_321_1</property>
+            <property name="value">2012-01-01</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__td_322_2</property>
+            <property name="value">2012-12-31</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__dbsel_160_3</property>
+            <property name="value">jdbc:mysql://10.10.1.28:9909/nl_db</property>
+        </structure>
+        <structure>
+            <property name="name">dbsel_160_4</property>
+            <property name="value">jdbc:mysql://10.10.1.28:9909/nl_db</property>
+        </structure>
+        <structure>
+            <property name="name">dbsel_160_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">userid_787_5</property>
+            <property name="value">admin</property>
+        </structure>
+        <structure>
+            <property name="name">userid_787_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">td_322_6</property>
+            <property name="value">2012-12-31</property>
+        </structure>
+        <structure>
+            <property name="name">td_322_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">fd_321_7</property>
+            <property name="value">2012-01-01</property>
+        </structure>
+        <structure>
+            <property name="name">fd_321_type_</property>
+            <property name="value">string</property>
+        </structure>
+    </list-property>
+</report>

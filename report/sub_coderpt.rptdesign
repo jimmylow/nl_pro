@@ -1,0 +1,3618 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 3.7.2.v20120213 Build &lt;3.7.2.v20120214-1408></property>
+    <list-property name="propertyBindings">
+        <structure>
+            <property name="name">odaURL</property>
+            <property name="id">7</property>
+            <expression name="value" type="javascript">params["dbsel"].value;</expression>
+        </structure>
+    </list-property>
+    <property name="units">in</property>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <property name="imageDPI">96</property>
+    <parameters>
+        <scalar-parameter name="dbsel" id="174">
+            <property name="hidden">true</property>
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="rmcd" id="176">
+            <property name="hidden">true</property>
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+    </parameters>
+    <data-sources>
+        <oda-data-source extensionID="org.eclipse.birt.report.data.oda.jdbc" name="nlDataSource" id="7">
+            <list-property name="privateDriverProperties">
+                <ex-property>
+                    <name>metadataBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledMetadataBidiFormatStr</name>
+                </ex-property>
+                <ex-property>
+                    <name>contentBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledContentBidiFormatStr</name>
+                </ex-property>
+            </list-property>
+            <property name="odaDriverClass">com.mysql.jdbc.Driver</property>
+            <property name="odaURL">jdbc:mysql://127.0.0.1:9909/nl_testing</property>
+            <property name="odaUser">root</property>
+            <encrypted-property name="odaPassword" encryptionID="base64">YWRtaW45MDAy</encrypted-property>
+            <property name="OdaConnProfileName">nlDataSource</property>
+            <property name="OdaConnProfileStorePath">nl_datasour</property>
+        </oda-data-source>
+    </data-sources>
+    <data-sets>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="Data Set" id="175">
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">param_1</property>
+                    <property name="paramName">rmcd</property>
+                    <property name="dataType">string</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">rm_code</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">main_code</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">density</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">moq</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">mcq</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">lead_time</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">colour</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">8</property>
+                        <property name="name">size</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">9</property>
+                        <property name="name">description</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">10</property>
+                        <property name="name">location</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">11</property>
+                        <property name="name">cost_price</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">12</property>
+                        <property name="name">create_by</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">13</property>
+                        <property name="name">creation_time</property>
+                        <property name="dataType">date-time</property>
+                    </structure>
+                    <structure>
+                        <property name="position">14</property>
+                        <property name="name">modified_by</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">15</property>
+                        <property name="name">modified_on</property>
+                        <property name="dataType">date-time</property>
+                    </structure>
+                    <structure>
+                        <property name="position">16</property>
+                        <property name="name">active_flag</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">nlDataSource</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">rm_code</property>
+                    <property name="nativeName">rm_code</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">main_code</property>
+                    <property name="nativeName">main_code</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">density</property>
+                    <property name="nativeName">density</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">moq</property>
+                    <property name="nativeName">moq</property>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">mcq</property>
+                    <property name="nativeName">mcq</property>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">lead_time</property>
+                    <property name="nativeName">lead_time</property>
+                    <property name="dataType">integer</property>
+                </structure>
+                <structure>
+                    <property name="position">7</property>
+                    <property name="name">colour</property>
+                    <property name="nativeName">colour</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">8</property>
+                    <property name="name">size</property>
+                    <property name="nativeName">size</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">9</property>
+                    <property name="name">description</property>
+                    <property name="nativeName">description</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">10</property>
+                    <property name="name">location</property>
+                    <property name="nativeName">location</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">11</property>
+                    <property name="name">cost_price</property>
+                    <property name="nativeName">cost_price</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="position">12</property>
+                    <property name="name">create_by</property>
+                    <property name="nativeName">create_by</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">13</property>
+                    <property name="name">creation_time</property>
+                    <property name="nativeName">creation_time</property>
+                    <property name="dataType">date-time</property>
+                </structure>
+                <structure>
+                    <property name="position">14</property>
+                    <property name="name">modified_by</property>
+                    <property name="nativeName">modified_by</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">15</property>
+                    <property name="name">modified_on</property>
+                    <property name="nativeName">modified_on</property>
+                    <property name="dataType">date-time</property>
+                </structure>
+                <structure>
+                    <property name="position">16</property>
+                    <property name="name">active_flag</property>
+                    <property name="nativeName">active_flag</property>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select *
+from rawmat_subcode
+where rm_code = ?]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[]]></xml-property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="Data Set1" id="204">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">colour_code</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">colour_code</text-property>
+                    <text-property name="heading">colour_code</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">colour_desc</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">colour_desc</text-property>
+                    <text-property name="heading">colour_desc</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">create_by</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">create_by</text-property>
+                    <text-property name="heading">create_by</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">creation_time</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">creation_time</text-property>
+                    <text-property name="heading">creation_time</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">modified_by</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">modified_by</text-property>
+                    <text-property name="heading">modified_by</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">modified_on</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">modified_on</text-property>
+                    <text-property name="heading">modified_on</text-property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">colour_code</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">colour_desc</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">create_by</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">creation_time</property>
+                        <property name="dataType">date-time</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">modified_by</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">modified_on</property>
+                        <property name="dataType">date-time</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">nlDataSource</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">colour_code</property>
+                    <property name="nativeName">colour_code</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">colour_desc</property>
+                    <property name="nativeName">colour_desc</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">create_by</property>
+                    <property name="nativeName">create_by</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">creation_time</property>
+                    <property name="nativeName">creation_time</property>
+                    <property name="dataType">date-time</property>
+                    <property name="nativeDataType">93</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">modified_by</property>
+                    <property name="nativeName">modified_by</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">modified_on</property>
+                    <property name="nativeName">modified_on</property>
+                    <property name="dataType">date-time</property>
+                    <property name="nativeDataType">93</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select *
+from colour_master]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>colour_code</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>20</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>colour_code</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>colour_code</design:label>
+            <design:formattingHints>
+              <design:displaySize>20</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>colour_desc</design:name>
+              <design:position>2</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>50</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>colour_desc</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>colour_desc</design:label>
+            <design:formattingHints>
+              <design:displaySize>50</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>create_by</design:name>
+              <design:position>3</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>20</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>create_by</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>create_by</design:label>
+            <design:formattingHints>
+              <design:displaySize>20</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>creation_time</design:name>
+              <design:position>4</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>93</design:nativeDataTypeCode>
+            <design:precision>19</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>creation_time</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>creation_time</design:label>
+            <design:formattingHints>
+              <design:displaySize>19</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>modified_by</design:name>
+              <design:position>5</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>20</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>modified_by</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>modified_by</design:label>
+            <design:formattingHints>
+              <design:displaySize>20</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>modified_on</design:name>
+              <design:position>6</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>93</design:nativeDataTypeCode>
+            <design:precision>19</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>modified_on</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>modified_on</design:label>
+            <design:formattingHints>
+              <design:displaySize>19</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+        <joint-data-set name="Data Set2" id="205">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">Data Set::density</property>
+                    <property name="alias">density</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">Data Set::density</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">Data Set::location</property>
+                    <property name="alias">location</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">Data Set::location</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">Data Set::creation_time</property>
+                    <property name="alias">Data Set::creation_time</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">Data Set::creation_time</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">Data Set1::modified_by</property>
+                    <property name="alias">Data Set1::modified_by</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">Data Set1::modified_by</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">Data Set::colour</property>
+                    <property name="alias">colour</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">Data Set::colour</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">Data Set::mcq</property>
+                    <property name="alias">mcq</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">Data Set::mcq</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">Data Set1::creation_time</property>
+                    <property name="alias">Data Set1::creation_time</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">Data Set1::creation_time</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">Data Set::description</property>
+                    <property name="alias">description</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">Data Set::description</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">Data Set::main_code</property>
+                    <property name="alias">main_code</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">Data Set::main_code</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">Data Set::active_flag</property>
+                    <property name="alias">active_flag</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">Data Set::active_flag</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">Data Set1::create_by</property>
+                    <property name="alias">Data Set1::create_by</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">Data Set1::create_by</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">Data Set::cost_price</property>
+                    <property name="alias">cost_price</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">Data Set::cost_price</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">Data Set1::modified_on</property>
+                    <property name="alias">Data Set1::modified_on</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">Data Set1::modified_on</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">Data Set1::colour_code</property>
+                    <property name="alias">colour_code</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">Data Set1::colour_code</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">Data Set::moq</property>
+                    <property name="alias">moq</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">Data Set::moq</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">Data Set::modified_by</property>
+                    <property name="alias">Data Set::modified_by</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">Data Set::modified_by</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">Data Set::size</property>
+                    <property name="alias">size</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">Data Set::size</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">Data Set::create_by</property>
+                    <property name="alias">Data Set::create_by</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">Data Set::create_by</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">Data Set::modified_on</property>
+                    <property name="alias">Data Set::modified_on</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">Data Set::modified_on</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">Data Set1::colour_desc</property>
+                    <property name="alias">colour_desc</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">Data Set1::colour_desc</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">Data Set::lead_time</property>
+                    <property name="alias">lead_time</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">Data Set::lead_time</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">Data Set::rm_code</property>
+                    <property name="alias">rm_code</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">Data Set::rm_code</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">Data Set::param_1</property>
+                    <property name="dataType">string</property>
+                    <property name="position">1</property>
+                    <property name="isOptional">false</property>
+                    <property name="allowNull">false</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">Data Set::rm_code</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">Data Set::main_code</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">Data Set::density</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">Data Set::moq</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">Data Set::mcq</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">Data Set::lead_time</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">Data Set::colour</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">8</property>
+                        <property name="name">Data Set::size</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">9</property>
+                        <property name="name">Data Set::description</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">10</property>
+                        <property name="name">Data Set::location</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">11</property>
+                        <property name="name">Data Set::cost_price</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">12</property>
+                        <property name="name">Data Set::create_by</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">13</property>
+                        <property name="name">Data Set::creation_time</property>
+                        <property name="dataType">date-time</property>
+                    </structure>
+                    <structure>
+                        <property name="position">14</property>
+                        <property name="name">Data Set::modified_by</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">15</property>
+                        <property name="name">Data Set::modified_on</property>
+                        <property name="dataType">date-time</property>
+                    </structure>
+                    <structure>
+                        <property name="position">16</property>
+                        <property name="name">Data Set::active_flag</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">17</property>
+                        <property name="name">Data Set1::colour_code</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">18</property>
+                        <property name="name">Data Set1::colour_desc</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">19</property>
+                        <property name="name">Data Set1::create_by</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">20</property>
+                        <property name="name">Data Set1::creation_time</property>
+                        <property name="dataType">date-time</property>
+                    </structure>
+                    <structure>
+                        <property name="position">21</property>
+                        <property name="name">Data Set1::modified_by</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">22</property>
+                        <property name="name">Data Set1::modified_on</property>
+                        <property name="dataType">date-time</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <simple-property-list name="dataSets">
+                <value>Data Set</value>
+                <value>Data Set1</value>
+            </simple-property-list>
+            <list-property name="joinConditions">
+                <structure>
+                    <property name="joinType">inner</property>
+                    <property name="joinOperator">eq</property>
+                    <property name="leftDataSet">Data Set</property>
+                    <property name="rightDataSet">Data Set1</property>
+                    <expression name="leftExpression">dataSetRow["colour"]</expression>
+                    <expression name="rightExpression">dataSetRow["colour_code"]</expression>
+                </structure>
+            </list-property>
+        </joint-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="maincode" id="241">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">rm_code</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">rm_code</text-property>
+                    <text-property name="heading">rm_code</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">category</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">category</text-property>
+                    <text-property name="heading">category</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">rm_number</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">rm_number</text-property>
+                    <text-property name="heading">rm_number</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">uom</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">uom</text-property>
+                    <text-property name="heading">uom</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">currency_code</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">currency_code</text-property>
+                    <text-property name="heading">currency_code</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">remark</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">remark</text-property>
+                    <text-property name="heading">remark</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">description</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">description</text-property>
+                    <text-property name="heading">description</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">content</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">content</text-property>
+                    <text-property name="heading">content</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">itm_grp_cd</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">itm_grp_cd</text-property>
+                    <text-property name="heading">itm_grp_cd</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">create_by</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">create_by</text-property>
+                    <text-property name="heading">create_by</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">creation_time</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">creation_time</text-property>
+                    <text-property name="heading">creation_time</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">modified_by</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">modified_by</text-property>
+                    <text-property name="heading">modified_by</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">modified_on</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">modified_on</text-property>
+                    <text-property name="heading">modified_on</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">active_flag</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">active_flag</text-property>
+                    <text-property name="heading">active_flag</text-property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">rm_code</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">category</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">rm_number</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">uom</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">currency_code</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">remark</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">description</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">8</property>
+                        <property name="name">content</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">9</property>
+                        <property name="name">itm_grp_cd</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">10</property>
+                        <property name="name">create_by</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">11</property>
+                        <property name="name">creation_time</property>
+                        <property name="dataType">date-time</property>
+                    </structure>
+                    <structure>
+                        <property name="position">12</property>
+                        <property name="name">modified_by</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">13</property>
+                        <property name="name">modified_on</property>
+                        <property name="dataType">date-time</property>
+                    </structure>
+                    <structure>
+                        <property name="position">14</property>
+                        <property name="name">active_flag</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">nlDataSource</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">rm_code</property>
+                    <property name="nativeName">rm_code</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">category</property>
+                    <property name="nativeName">category</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">rm_number</property>
+                    <property name="nativeName">rm_number</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">uom</property>
+                    <property name="nativeName">uom</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">currency_code</property>
+                    <property name="nativeName">currency_code</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">remark</property>
+                    <property name="nativeName">remark</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">7</property>
+                    <property name="name">description</property>
+                    <property name="nativeName">description</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">8</property>
+                    <property name="name">content</property>
+                    <property name="nativeName">content</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">9</property>
+                    <property name="name">itm_grp_cd</property>
+                    <property name="nativeName">itm_grp_cd</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">10</property>
+                    <property name="name">create_by</property>
+                    <property name="nativeName">create_by</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">11</property>
+                    <property name="name">creation_time</property>
+                    <property name="nativeName">creation_time</property>
+                    <property name="dataType">date-time</property>
+                    <property name="nativeDataType">93</property>
+                </structure>
+                <structure>
+                    <property name="position">12</property>
+                    <property name="name">modified_by</property>
+                    <property name="nativeName">modified_by</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">13</property>
+                    <property name="name">modified_on</property>
+                    <property name="nativeName">modified_on</property>
+                    <property name="dataType">date-time</property>
+                    <property name="nativeDataType">93</property>
+                </structure>
+                <structure>
+                    <property name="position">14</property>
+                    <property name="name">active_flag</property>
+                    <property name="nativeName">active_flag</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select *
+from rawmat_master]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>rm_code</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>50</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>rm_code</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>rm_code</design:label>
+            <design:formattingHints>
+              <design:displaySize>50</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>category</design:name>
+              <design:position>2</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>10</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>category</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>category</design:label>
+            <design:formattingHints>
+              <design:displaySize>10</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>rm_number</design:name>
+              <design:position>3</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>10</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>rm_number</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>rm_number</design:label>
+            <design:formattingHints>
+              <design:displaySize>10</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>uom</design:name>
+              <design:position>4</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>10</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>uom</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>uom</design:label>
+            <design:formattingHints>
+              <design:displaySize>10</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>currency_code</design:name>
+              <design:position>5</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>10</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>currency_code</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>currency_code</design:label>
+            <design:formattingHints>
+              <design:displaySize>10</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>remark</design:name>
+              <design:position>6</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>65535</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>remark</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>remark</design:label>
+            <design:formattingHints>
+              <design:displaySize>65535</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>description</design:name>
+              <design:position>7</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>200</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>description</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>description</design:label>
+            <design:formattingHints>
+              <design:displaySize>200</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>content</design:name>
+              <design:position>8</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>100</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>content</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>content</design:label>
+            <design:formattingHints>
+              <design:displaySize>100</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>itm_grp_cd</design:name>
+              <design:position>9</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>50</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>itm_grp_cd</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>itm_grp_cd</design:label>
+            <design:formattingHints>
+              <design:displaySize>50</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>create_by</design:name>
+              <design:position>10</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>20</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>create_by</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>create_by</design:label>
+            <design:formattingHints>
+              <design:displaySize>20</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>creation_time</design:name>
+              <design:position>11</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>93</design:nativeDataTypeCode>
+            <design:precision>19</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>creation_time</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>creation_time</design:label>
+            <design:formattingHints>
+              <design:displaySize>19</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>modified_by</design:name>
+              <design:position>12</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>20</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>modified_by</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>modified_by</design:label>
+            <design:formattingHints>
+              <design:displaySize>20</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>modified_on</design:name>
+              <design:position>13</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>93</design:nativeDataTypeCode>
+            <design:precision>19</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>modified_on</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>modified_on</design:label>
+            <design:formattingHints>
+              <design:displaySize>19</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>active_flag</design:name>
+              <design:position>14</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>65535</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>active_flag</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>active_flag</design:label>
+            <design:formattingHints>
+              <design:displaySize>65535</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+        <joint-data-set name="subjoinmain" id="242">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">Data Set::rm_code</property>
+                    <property name="alias">Data Set::rm_code</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">Data Set::rm_code</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">maincode::modified_by</property>
+                    <property name="alias">maincode::modified_by</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">maincode::modified_by</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">maincode::rm_code</property>
+                    <property name="alias">maincode::rm_code</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">maincode::rm_code</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">maincode::itm_grp_cd</property>
+                    <property name="alias">itm_grp_cd</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">maincode::itm_grp_cd</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">Data Set::density</property>
+                    <property name="alias">density</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">Data Set::density</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">Data Set::location</property>
+                    <property name="alias">location</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">Data Set::location</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">maincode::remark</property>
+                    <property name="alias">remark</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">maincode::remark</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">maincode::creation_time</property>
+                    <property name="alias">maincode::creation_time</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">maincode::creation_time</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">Data Set::creation_time</property>
+                    <property name="alias">Data Set::creation_time</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">Data Set::creation_time</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">Data Set::active_flag</property>
+                    <property name="alias">Data Set::active_flag</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">Data Set::active_flag</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">maincode::active_flag</property>
+                    <property name="alias">maincode::active_flag</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">maincode::active_flag</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">Data Set::colour</property>
+                    <property name="alias">colour</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">Data Set::colour</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">maincode::rm_number</property>
+                    <property name="alias">rm_number</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">maincode::rm_number</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">Data Set::mcq</property>
+                    <property name="alias">mcq</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">Data Set::mcq</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">maincode::description</property>
+                    <property name="alias">maincode::description</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">maincode::description</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">maincode::uom</property>
+                    <property name="alias">uom</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">maincode::uom</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">Data Set::description</property>
+                    <property name="alias">Data Set::description</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">Data Set::description</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">maincode::create_by</property>
+                    <property name="alias">maincode::create_by</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">maincode::create_by</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">Data Set::main_code</property>
+                    <property name="alias">main_code</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">Data Set::main_code</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">maincode::currency_code</property>
+                    <property name="alias">currency_code</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">maincode::currency_code</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">maincode::modified_on</property>
+                    <property name="alias">maincode::modified_on</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">maincode::modified_on</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">Data Set::cost_price</property>
+                    <property name="alias">cost_price</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">Data Set::cost_price</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">Data Set::modified_by</property>
+                    <property name="alias">Data Set::modified_by</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">Data Set::modified_by</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">Data Set::moq</property>
+                    <property name="alias">moq</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">Data Set::moq</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">Data Set::create_by</property>
+                    <property name="alias">Data Set::create_by</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">Data Set::create_by</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">Data Set::size</property>
+                    <property name="alias">size</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">Data Set::size</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">maincode::content</property>
+                    <property name="alias">content</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">maincode::content</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">maincode::category</property>
+                    <property name="alias">category</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">maincode::category</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">Data Set::modified_on</property>
+                    <property name="alias">Data Set::modified_on</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">Data Set::modified_on</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">Data Set::lead_time</property>
+                    <property name="alias">lead_time</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">Data Set::lead_time</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">Data Set::param_1</property>
+                    <property name="dataType">string</property>
+                    <property name="position">1</property>
+                    <property name="isOptional">false</property>
+                    <property name="allowNull">false</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">Data Set::rm_code</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">Data Set::main_code</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">Data Set::density</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">Data Set::moq</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">Data Set::mcq</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">Data Set::lead_time</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">Data Set::colour</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">8</property>
+                        <property name="name">Data Set::size</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">9</property>
+                        <property name="name">Data Set::description</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">10</property>
+                        <property name="name">Data Set::location</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">11</property>
+                        <property name="name">Data Set::cost_price</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">12</property>
+                        <property name="name">Data Set::create_by</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">13</property>
+                        <property name="name">Data Set::creation_time</property>
+                        <property name="dataType">date-time</property>
+                    </structure>
+                    <structure>
+                        <property name="position">14</property>
+                        <property name="name">Data Set::modified_by</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">15</property>
+                        <property name="name">Data Set::modified_on</property>
+                        <property name="dataType">date-time</property>
+                    </structure>
+                    <structure>
+                        <property name="position">16</property>
+                        <property name="name">Data Set::active_flag</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">17</property>
+                        <property name="name">maincode::rm_code</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">18</property>
+                        <property name="name">maincode::category</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">19</property>
+                        <property name="name">maincode::rm_number</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">20</property>
+                        <property name="name">maincode::uom</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">21</property>
+                        <property name="name">maincode::currency_code</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">22</property>
+                        <property name="name">maincode::remark</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">23</property>
+                        <property name="name">maincode::description</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">24</property>
+                        <property name="name">maincode::content</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">25</property>
+                        <property name="name">maincode::itm_grp_cd</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">26</property>
+                        <property name="name">maincode::create_by</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">27</property>
+                        <property name="name">maincode::creation_time</property>
+                        <property name="dataType">date-time</property>
+                    </structure>
+                    <structure>
+                        <property name="position">28</property>
+                        <property name="name">maincode::modified_by</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">29</property>
+                        <property name="name">maincode::modified_on</property>
+                        <property name="dataType">date-time</property>
+                    </structure>
+                    <structure>
+                        <property name="position">30</property>
+                        <property name="name">maincode::active_flag</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <simple-property-list name="dataSets">
+                <value>Data Set</value>
+                <value>maincode</value>
+            </simple-property-list>
+            <list-property name="joinConditions">
+                <structure>
+                    <property name="joinType">inner</property>
+                    <property name="joinOperator">eq</property>
+                    <property name="leftDataSet">Data Set</property>
+                    <property name="rightDataSet">maincode</property>
+                    <expression name="leftExpression">dataSetRow["main_code"]</expression>
+                    <expression name="rightExpression">dataSetRow["rm_code"]</expression>
+                </structure>
+            </list-property>
+        </joint-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="catmaster" id="244">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">cat_code</property>
+                    <text-property name="displayName">cat_code</text-property>
+                    <text-property name="heading">cat_code</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">cat_desc</property>
+                    <text-property name="displayName">cat_desc</text-property>
+                    <text-property name="heading">cat_desc</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">mark</property>
+                    <text-property name="displayName">mark</text-property>
+                    <text-property name="heading">mark</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">cut</property>
+                    <text-property name="displayName">cut</text-property>
+                    <text-property name="heading">cut</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">spread</property>
+                    <text-property name="displayName">spread</text-property>
+                    <text-property name="heading">spread</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">bundle</property>
+                    <text-property name="displayName">bundle</text-property>
+                    <text-property name="heading">bundle</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">create_by</property>
+                    <text-property name="displayName">create_by</text-property>
+                    <text-property name="heading">create_by</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">create_on</property>
+                    <text-property name="displayName">create_on</text-property>
+                    <text-property name="heading">create_on</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">upd_by</property>
+                    <text-property name="displayName">upd_by</text-property>
+                    <text-property name="heading">upd_by</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">upd_on</property>
+                    <text-property name="displayName">upd_on</text-property>
+                    <text-property name="heading">upd_on</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">itm_grd_cd</property>
+                    <text-property name="displayName">itm_grd_cd</text-property>
+                    <text-property name="heading">itm_grd_cd</text-property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">cat_code</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">cat_desc</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">mark</property>
+                        <property name="dataType">float</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">cut</property>
+                        <property name="dataType">float</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">spread</property>
+                        <property name="dataType">float</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">bundle</property>
+                        <property name="dataType">float</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">create_by</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">8</property>
+                        <property name="name">create_on</property>
+                        <property name="dataType">date-time</property>
+                    </structure>
+                    <structure>
+                        <property name="position">9</property>
+                        <property name="name">upd_by</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">10</property>
+                        <property name="name">upd_on</property>
+                        <property name="dataType">date-time</property>
+                    </structure>
+                    <structure>
+                        <property name="position">11</property>
+                        <property name="name">itm_grd_cd</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">nlDataSource</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">cat_code</property>
+                    <property name="nativeName">cat_code</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">cat_desc</property>
+                    <property name="nativeName">cat_desc</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">mark</property>
+                    <property name="nativeName">mark</property>
+                    <property name="dataType">float</property>
+                    <property name="nativeDataType">8</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">cut</property>
+                    <property name="nativeName">cut</property>
+                    <property name="dataType">float</property>
+                    <property name="nativeDataType">8</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">spread</property>
+                    <property name="nativeName">spread</property>
+                    <property name="dataType">float</property>
+                    <property name="nativeDataType">8</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">bundle</property>
+                    <property name="nativeName">bundle</property>
+                    <property name="dataType">float</property>
+                    <property name="nativeDataType">8</property>
+                </structure>
+                <structure>
+                    <property name="position">7</property>
+                    <property name="name">create_by</property>
+                    <property name="nativeName">create_by</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">8</property>
+                    <property name="name">create_on</property>
+                    <property name="nativeName">create_on</property>
+                    <property name="dataType">date-time</property>
+                    <property name="nativeDataType">93</property>
+                </structure>
+                <structure>
+                    <property name="position">9</property>
+                    <property name="name">upd_by</property>
+                    <property name="nativeName">upd_by</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">10</property>
+                    <property name="name">upd_on</property>
+                    <property name="nativeName">upd_on</property>
+                    <property name="dataType">date-time</property>
+                    <property name="nativeDataType">93</property>
+                </structure>
+                <structure>
+                    <property name="position">11</property>
+                    <property name="name">itm_grd_cd</property>
+                    <property name="nativeName">itm_grd_cd</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select *
+from cat_master]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>cat_code</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>10</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>cat_code</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>cat_code</design:label>
+            <design:formattingHints>
+              <design:displaySize>10</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>cat_desc</design:name>
+              <design:position>2</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>100</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>cat_desc</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>cat_desc</design:label>
+            <design:formattingHints>
+              <design:displaySize>100</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>mark</design:name>
+              <design:position>3</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>8</design:nativeDataTypeCode>
+            <design:precision>12</design:precision>
+            <design:scale>2</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>mark</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>mark</design:label>
+            <design:formattingHints>
+              <design:displaySize>14</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>cut</design:name>
+              <design:position>4</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>8</design:nativeDataTypeCode>
+            <design:precision>12</design:precision>
+            <design:scale>2</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>cut</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>cut</design:label>
+            <design:formattingHints>
+              <design:displaySize>14</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>spread</design:name>
+              <design:position>5</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>8</design:nativeDataTypeCode>
+            <design:precision>12</design:precision>
+            <design:scale>2</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>spread</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>spread</design:label>
+            <design:formattingHints>
+              <design:displaySize>14</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>bundle</design:name>
+              <design:position>6</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>8</design:nativeDataTypeCode>
+            <design:precision>12</design:precision>
+            <design:scale>2</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>bundle</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>bundle</design:label>
+            <design:formattingHints>
+              <design:displaySize>14</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>create_by</design:name>
+              <design:position>7</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>45</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>create_by</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>create_by</design:label>
+            <design:formattingHints>
+              <design:displaySize>45</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>create_on</design:name>
+              <design:position>8</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>93</design:nativeDataTypeCode>
+            <design:precision>19</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>create_on</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>create_on</design:label>
+            <design:formattingHints>
+              <design:displaySize>19</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>upd_by</design:name>
+              <design:position>9</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>45</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>upd_by</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>upd_by</design:label>
+            <design:formattingHints>
+              <design:displaySize>45</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>upd_on</design:name>
+              <design:position>10</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>93</design:nativeDataTypeCode>
+            <design:precision>19</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>upd_on</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>upd_on</design:label>
+            <design:formattingHints>
+              <design:displaySize>19</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>itm_grd_cd</design:name>
+              <design:position>11</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>10</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>itm_grd_cd</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>itm_grd_cd</design:label>
+            <design:formattingHints>
+              <design:displaySize>10</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+        <joint-data-set name="catjoinmaster" id="245">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">subjoinmain::Data Set::rm_code</property>
+                    <property name="alias">Data Set::rm_code</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">subjoinmain::Data Set::rm_code</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">subjoinmain::maincode::modified_by</property>
+                    <property name="alias">maincode::modified_by</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">subjoinmain::maincode::modified_by</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">subjoinmain::maincode::rm_code</property>
+                    <property name="alias">maincode::rm_code</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">subjoinmain::maincode::rm_code</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">subjoinmain::maincode::uom</property>
+                    <property name="alias">maincode::uom</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">subjoinmain::maincode::uom</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">subjoinmain::Data Set::size</property>
+                    <property name="alias">Data Set::size</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">subjoinmain::Data Set::size</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">catmaster::create_by</property>
+                    <property name="alias">create_by</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">catmaster::create_by</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">subjoinmain::maincode::creation_time</property>
+                    <property name="alias">maincode::creation_time</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">subjoinmain::maincode::creation_time</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">subjoinmain::Data Set::creation_time</property>
+                    <property name="alias">Data Set::creation_time</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">subjoinmain::Data Set::creation_time</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">subjoinmain::Data Set::density</property>
+                    <property name="alias">Data Set::density</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">subjoinmain::Data Set::density</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">catmaster::itm_grd_cd</property>
+                    <property name="alias">itm_grd_cd</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">catmaster::itm_grd_cd</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">subjoinmain::Data Set::active_flag</property>
+                    <property name="alias">Data Set::active_flag</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">subjoinmain::Data Set::active_flag</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">subjoinmain::maincode::active_flag</property>
+                    <property name="alias">maincode::active_flag</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">subjoinmain::maincode::active_flag</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">catmaster::cat_desc</property>
+                    <property name="alias">cat_desc</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">catmaster::cat_desc</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">catmaster::cat_code</property>
+                    <property name="alias">cat_code</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">catmaster::cat_code</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">subjoinmain::maincode::description</property>
+                    <property name="alias">maincode::description</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">subjoinmain::maincode::description</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">subjoinmain::Data Set::description</property>
+                    <property name="alias">Data Set::description</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">subjoinmain::Data Set::description</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">subjoinmain::maincode::remark</property>
+                    <property name="alias">maincode::remark</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">subjoinmain::maincode::remark</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">subjoinmain::Data Set::moq</property>
+                    <property name="alias">Data Set::moq</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">subjoinmain::Data Set::moq</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">subjoinmain::maincode::create_by</property>
+                    <property name="alias">maincode::create_by</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">subjoinmain::maincode::create_by</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">catmaster::bundle</property>
+                    <property name="alias">bundle</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">catmaster::bundle</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">subjoinmain::Data Set::location</property>
+                    <property name="alias">Data Set::location</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">subjoinmain::Data Set::location</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">subjoinmain::Data Set::cost_price</property>
+                    <property name="alias">Data Set::cost_price</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">subjoinmain::Data Set::cost_price</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">subjoinmain::Data Set::colour</property>
+                    <property name="alias">Data Set::colour</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">subjoinmain::Data Set::colour</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">subjoinmain::maincode::content</property>
+                    <property name="alias">maincode::content</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">subjoinmain::maincode::content</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">subjoinmain::maincode::currency_code</property>
+                    <property name="alias">maincode::currency_code</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">subjoinmain::maincode::currency_code</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">subjoinmain::maincode::modified_on</property>
+                    <property name="alias">maincode::modified_on</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">subjoinmain::maincode::modified_on</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">subjoinmain::maincode::rm_number</property>
+                    <property name="alias">maincode::rm_number</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">subjoinmain::maincode::rm_number</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">catmaster::create_on</property>
+                    <property name="alias">create_on</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">catmaster::create_on</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">subjoinmain::maincode::category</property>
+                    <property name="alias">maincode::category</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">subjoinmain::maincode::category</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">subjoinmain::Data Set::main_code</property>
+                    <property name="alias">Data Set::main_code</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">subjoinmain::Data Set::main_code</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">catmaster::mark</property>
+                    <property name="alias">mark</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">catmaster::mark</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">subjoinmain::Data Set::modified_by</property>
+                    <property name="alias">Data Set::modified_by</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">subjoinmain::Data Set::modified_by</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">catmaster::upd_on</property>
+                    <property name="alias">upd_on</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">catmaster::upd_on</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">subjoinmain::Data Set::create_by</property>
+                    <property name="alias">Data Set::create_by</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">subjoinmain::Data Set::create_by</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">subjoinmain::Data Set::mcq</property>
+                    <property name="alias">Data Set::mcq</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">subjoinmain::Data Set::mcq</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">subjoinmain::Data Set::modified_on</property>
+                    <property name="alias">Data Set::modified_on</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">subjoinmain::Data Set::modified_on</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">catmaster::upd_by</property>
+                    <property name="alias">upd_by</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">catmaster::upd_by</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">subjoinmain::Data Set::lead_time</property>
+                    <property name="alias">Data Set::lead_time</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">subjoinmain::Data Set::lead_time</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">subjoinmain::maincode::itm_grp_cd</property>
+                    <property name="alias">maincode::itm_grp_cd</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">subjoinmain::maincode::itm_grp_cd</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">catmaster::cut</property>
+                    <property name="alias">cut</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">catmaster::cut</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">catmaster::spread</property>
+                    <property name="alias">spread</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">catmaster::spread</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">subjoinmain::Data Set::param_1</property>
+                    <property name="dataType">string</property>
+                    <property name="position">1</property>
+                    <property name="isOptional">false</property>
+                    <property name="allowNull">false</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">catmaster::cat_code</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">catmaster::cat_desc</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">catmaster::mark</property>
+                        <property name="dataType">float</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">catmaster::cut</property>
+                        <property name="dataType">float</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">catmaster::spread</property>
+                        <property name="dataType">float</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">catmaster::bundle</property>
+                        <property name="dataType">float</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">catmaster::create_by</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">8</property>
+                        <property name="name">catmaster::create_on</property>
+                        <property name="dataType">date-time</property>
+                    </structure>
+                    <structure>
+                        <property name="position">9</property>
+                        <property name="name">catmaster::upd_by</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">10</property>
+                        <property name="name">catmaster::upd_on</property>
+                        <property name="dataType">date-time</property>
+                    </structure>
+                    <structure>
+                        <property name="position">11</property>
+                        <property name="name">catmaster::itm_grd_cd</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">12</property>
+                        <property name="name">subjoinmain::Data Set::rm_code</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">13</property>
+                        <property name="name">subjoinmain::Data Set::main_code</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">14</property>
+                        <property name="name">subjoinmain::Data Set::density</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">15</property>
+                        <property name="name">subjoinmain::Data Set::moq</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                    <structure>
+                        <property name="position">16</property>
+                        <property name="name">subjoinmain::Data Set::mcq</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                    <structure>
+                        <property name="position">17</property>
+                        <property name="name">subjoinmain::Data Set::lead_time</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                    <structure>
+                        <property name="position">18</property>
+                        <property name="name">subjoinmain::Data Set::colour</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">19</property>
+                        <property name="name">subjoinmain::Data Set::size</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">20</property>
+                        <property name="name">subjoinmain::Data Set::description</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">21</property>
+                        <property name="name">subjoinmain::Data Set::location</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">22</property>
+                        <property name="name">subjoinmain::Data Set::cost_price</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">23</property>
+                        <property name="name">subjoinmain::Data Set::create_by</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">24</property>
+                        <property name="name">subjoinmain::Data Set::creation_time</property>
+                        <property name="dataType">date-time</property>
+                    </structure>
+                    <structure>
+                        <property name="position">25</property>
+                        <property name="name">subjoinmain::Data Set::modified_by</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">26</property>
+                        <property name="name">subjoinmain::Data Set::modified_on</property>
+                        <property name="dataType">date-time</property>
+                    </structure>
+                    <structure>
+                        <property name="position">27</property>
+                        <property name="name">subjoinmain::Data Set::active_flag</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">28</property>
+                        <property name="name">subjoinmain::maincode::rm_code</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">29</property>
+                        <property name="name">subjoinmain::maincode::category</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">30</property>
+                        <property name="name">subjoinmain::maincode::rm_number</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">31</property>
+                        <property name="name">subjoinmain::maincode::uom</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">32</property>
+                        <property name="name">subjoinmain::maincode::currency_code</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">33</property>
+                        <property name="name">subjoinmain::maincode::remark</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">34</property>
+                        <property name="name">subjoinmain::maincode::description</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">35</property>
+                        <property name="name">subjoinmain::maincode::content</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">36</property>
+                        <property name="name">subjoinmain::maincode::itm_grp_cd</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">37</property>
+                        <property name="name">subjoinmain::maincode::create_by</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">38</property>
+                        <property name="name">subjoinmain::maincode::creation_time</property>
+                        <property name="dataType">date-time</property>
+                    </structure>
+                    <structure>
+                        <property name="position">39</property>
+                        <property name="name">subjoinmain::maincode::modified_by</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">40</property>
+                        <property name="name">subjoinmain::maincode::modified_on</property>
+                        <property name="dataType">date-time</property>
+                    </structure>
+                    <structure>
+                        <property name="position">41</property>
+                        <property name="name">subjoinmain::maincode::active_flag</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <simple-property-list name="dataSets">
+                <value>catmaster</value>
+                <value>subjoinmain</value>
+            </simple-property-list>
+            <list-property name="joinConditions">
+                <structure>
+                    <property name="joinType">inner</property>
+                    <property name="joinOperator">eq</property>
+                    <property name="leftDataSet">catmaster</property>
+                    <property name="rightDataSet">subjoinmain</property>
+                    <expression name="leftExpression">dataSetRow["cat_code"]</expression>
+                    <expression name="rightExpression">dataSetRow["maincode::category"]</expression>
+                </structure>
+            </list-property>
+        </joint-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="onhand" id="270">
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">param_1</property>
+                    <property name="paramName">rmcd</property>
+                    <property name="dataType">string</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">sum(totalqty)</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">nlDataSource</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">sum(totalqty)</property>
+                    <property name="nativeName">sum(totalqty)</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select sum(totalqty) from rawmat_tran
+where item_code = ?
+and tran_type in ('REC', 'ADJ', 'RTN', 'ISS', 'OPB', 'REJ')
+]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[]]></xml-property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="histcd" id="272">
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">param_1</property>
+                    <property name="paramName">rmcd</property>
+                    <property name="dataType">string</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">tran_type</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">rm_receive_id</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">refno</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">grndate</property>
+                        <property name="dataType">date-time</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">totalqty</property>
+                        <property name="dataType">float</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">create_by</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">create_on</property>
+                        <property name="dataType">date-time</property>
+                    </structure>
+                    <structure>
+                        <property name="position">8</property>
+                        <property name="name">unit_cost</property>
+                        <property name="dataType">float</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">nlDataSource</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">tran_type</property>
+                    <property name="nativeName">tran_type</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">rm_receive_id</property>
+                    <property name="nativeName">rm_receive_id</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">refno</property>
+                    <property name="nativeName">refno</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">grndate</property>
+                    <property name="nativeName">grndate</property>
+                    <property name="dataType">date-time</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">totalqty</property>
+                    <property name="nativeName">totalqty</property>
+                    <property name="dataType">float</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">create_by</property>
+                    <property name="nativeName">create_by</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">7</property>
+                    <property name="name">create_on</property>
+                    <property name="nativeName">create_on</property>
+                    <property name="dataType">date-time</property>
+                </structure>
+                <structure>
+                    <property name="position">8</property>
+                    <property name="name">unit_cost</property>
+                    <property name="nativeName">unit_cost</property>
+                    <property name="dataType">float</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[SELECT tran_type, rm_receive_id, refno, grndate, 
+	   totalqty, create_by, create_on, unit_cost
+FROM rawmat_tran 
+where item_code = ?
+ORDER BY create_on   
+]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[]]></xml-property>
+        </oda-data-set>
+    </data-sets>
+    <styles>
+        <style name="report" id="4">
+            <property name="fontFamily">sans-serif</property>
+            <property name="fontSize">10pt</property>
+        </style>
+        <style name="crosstab-cell" id="5">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+        <style name="crosstab" id="6">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+        <style name="table-header" id="335">
+            <property name="backgroundColor">#C0C0C0</property>
+        </style>
+    </styles>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <property name="headerHeight">0.1in</property>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <grid id="25">
+            <property name="height">0.7395833333333334in</property>
+            <property name="width">7.947916666666667in</property>
+            <column id="26">
+                <property name="width">1.8645833333333333in</property>
+            </column>
+            <column id="27">
+                <property name="width">4.03125in</property>
+            </column>
+            <column id="28">
+                <property name="width">2.0520833333333335in</property>
+            </column>
+            <row id="29">
+                <cell id="30">
+                    <text id="112"/>
+                </cell>
+                <cell id="31">
+                    <text id="33">
+                        <property name="fontSize">14pt</property>
+                        <property name="fontWeight">bold</property>
+                        <property name="textAlign">center</property>
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[RAW MAT SUB CODE
+]]></text-property>
+                    </text>
+                </cell>
+                <cell id="32">
+                    <grid id="88">
+                        <property name="height">0.4895833333333333in</property>
+                        <property name="width">2.5625in</property>
+                        <column id="105">
+                            <property name="width">0.75in</property>
+                        </column>
+                        <column id="89">
+                            <property name="width">1.8125in</property>
+                        </column>
+                        <row id="90">
+                            <property name="height">0.23958333333333334in</property>
+                            <cell id="103">
+                                <label id="106">
+                                    <text-property name="text">Print On :</text-property>
+                                </label>
+                            </cell>
+                            <cell id="91">
+                                <text id="95">
+                                    <property name="textAlign">center</property>
+                                    <property name="display">inline</property>
+                                    <property name="contentType">html</property>
+                                    <text-property name="content"><![CDATA[<value-of format="dd-MM-yyyy">new Date()</value-of>]]></text-property>
+                                </text>
+                            </cell>
+                        </row>
+                        <row id="92">
+                            <property name="height">0.25in</property>
+                            <cell id="104">
+                                <label id="107">
+                                    <text-property name="text">Page     :</text-property>
+                                </label>
+                            </cell>
+                            <cell id="93">
+                                <auto-text id="102">
+                                    <property name="fontWeight">normal</property>
+                                    <property name="textAlign">left</property>
+                                    <property name="type">page-number</property>
+                                </auto-text>
+                            </cell>
+                        </row>
+                    </grid>
+                </cell>
+            </row>
+            <row id="74">
+                <property name="height">0.16666666666666666in</property>
+                <cell id="75">
+                    <property name="colSpan">3</property>
+                    <property name="rowSpan">1</property>
+                </cell>
+            </row>
+        </grid>
+        <grid id="177">
+            <property name="height">2.375in</property>
+            <property name="width">7.916666666666667in</property>
+            <column id="178">
+                <property name="width">1.8333333333333333in</property>
+            </column>
+            <column id="358">
+                <property name="width">0.17708333333333334in</property>
+            </column>
+            <column id="179">
+                <property name="width">1.875in</property>
+            </column>
+            <column id="180">
+                <property name="width">1.46875in</property>
+            </column>
+            <column id="367">
+                <property name="width">0.1875in</property>
+            </column>
+            <column id="181">
+                <property name="width">2.375in</property>
+            </column>
+            <row id="182">
+                <cell id="183">
+                    <text id="197">
+                        <property name="textAlign">left</property>
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[Sub Code Number ]]></text-property>
+                    </text>
+                </cell>
+                <cell id="350">
+                    <text id="368">
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[:]]></text-property>
+                    </text>
+                </cell>
+                <cell id="184">
+                    <data id="198">
+                        <property name="fontWeight">bold</property>
+                        <property name="textAlign">left</property>
+                        <property name="dataSet">Data Set</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">rm_code</property>
+                                <text-property name="displayName">rm_code</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["rm_code"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">rm_code</property>
+                    </data>
+                </cell>
+                <cell id="185">
+                    <text id="201">
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[Status ]]></text-property>
+                    </text>
+                </cell>
+                <cell id="359">
+                    <text id="376">
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[:]]></text-property>
+                    </text>
+                </cell>
+                <cell id="186">
+                    <data id="202">
+                        <property name="fontWeight">bold</property>
+                        <property name="dataSet">Data Set</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">active_flag</property>
+                                <text-property name="displayName">active_flag</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["active_flag"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">active_flag</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="187">
+                <cell id="188">
+                    <text id="203">
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[Colour ]]></text-property>
+                    </text>
+                </cell>
+                <cell id="351">
+                    <text id="369">
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[:]]></text-property>
+                    </text>
+                </cell>
+                <cell id="189">
+                    <data id="206">
+                        <property name="fontWeight">bold</property>
+                        <property name="dataSet">Data Set2</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">Data Set1::colour_desc</property>
+                                <text-property name="displayName">Data Set1::colour_desc</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["Data Set1::colour_desc"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">Data Set1::colour_desc</property>
+                    </data>
+                </cell>
+                <cell id="190">
+                    <text id="207">
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[Width ]]></text-property>
+                    </text>
+                </cell>
+                <cell id="360">
+                    <text id="377">
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[:]]></text-property>
+                    </text>
+                </cell>
+                <cell id="191">
+                    <data id="208">
+                        <property name="fontWeight">bold</property>
+                        <property name="dataSet">Data Set</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">size</property>
+                                <text-property name="displayName">size</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["size"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">size</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="192">
+                <cell id="193">
+                    <text id="209">
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[Density ]]></text-property>
+                    </text>
+                </cell>
+                <cell id="352">
+                    <text id="370">
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[:]]></text-property>
+                    </text>
+                </cell>
+                <cell id="194">
+                    <data id="210">
+                        <property name="fontWeight">bold</property>
+                        <property name="dataSet">Data Set</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">density</property>
+                                <text-property name="displayName">density</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["density"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">density</property>
+                    </data>
+                </cell>
+                <cell id="195">
+                    <text id="211">
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[MOQ ]]></text-property>
+                    </text>
+                </cell>
+                <cell id="361">
+                    <text id="378">
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[:]]></text-property>
+                    </text>
+                </cell>
+                <cell id="196">
+                    <data id="212">
+                        <property name="fontWeight">bold</property>
+                        <property name="dataSet">Data Set</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">moq</property>
+                                <text-property name="displayName">moq</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["moq"]</expression>
+                                <property name="dataType">integer</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">moq</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="213">
+                <property name="height">0.3125in</property>
+                <cell id="214">
+                    <text id="218">
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[Supplier Lead Time (Days) ]]></text-property>
+                    </text>
+                </cell>
+                <cell id="353">
+                    <text id="371">
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[:]]></text-property>
+                    </text>
+                </cell>
+                <cell id="215">
+                    <data id="219">
+                        <property name="fontWeight">bold</property>
+                        <property name="dataSet">Data Set</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">lead_time</property>
+                                <text-property name="displayName">lead_time</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["lead_time"]</expression>
+                                <property name="dataType">integer</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">lead_time</property>
+                    </data>
+                </cell>
+                <cell id="216">
+                    <text id="220">
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[MCQ ]]></text-property>
+                    </text>
+                </cell>
+                <cell id="362">
+                    <text id="379">
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[:]]></text-property>
+                    </text>
+                </cell>
+                <cell id="217">
+                    <data id="221">
+                        <property name="fontWeight">bold</property>
+                        <property name="dataSet">Data Set</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">mcq</property>
+                                <text-property name="displayName">mcq</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["mcq"]</expression>
+                                <property name="dataType">integer</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">mcq</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="222">
+                <property name="height">0.3020833333333333in</property>
+                <cell id="223">
+                    <text id="232">
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[Category ]]></text-property>
+                    </text>
+                </cell>
+                <cell id="354">
+                    <text id="372">
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[:]]></text-property>
+                    </text>
+                </cell>
+                <cell id="224">
+                    <data id="248">
+                        <property name="fontWeight">bold</property>
+                        <property name="dataSet">catjoinmaster</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">catmaster::cat_desc</property>
+                                <text-property name="displayName">catmaster::cat_desc</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["catmaster::cat_desc"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">catmaster::cat_desc</property>
+                    </data>
+                </cell>
+                <cell id="225">
+                    <text id="239">
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[Currency Code ]]></text-property>
+                    </text>
+                </cell>
+                <cell id="363">
+                    <text id="380">
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[:]]></text-property>
+                    </text>
+                </cell>
+                <cell id="226">
+                    <data id="247">
+                        <property name="fontWeight">bold</property>
+                        <property name="dataSet">subjoinmain</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">maincode::currency_code</property>
+                                <text-property name="displayName">maincode::currency_code</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["maincode::currency_code"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">maincode::currency_code</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="227">
+                <property name="height">0.2708333333333333in</property>
+                <cell id="228">
+                    <text id="249">
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[Unit of Measurement	]]></text-property>
+                    </text>
+                </cell>
+                <cell id="355">
+                    <text id="373">
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[:]]></text-property>
+                    </text>
+                </cell>
+                <cell id="229">
+                    <data id="250">
+                        <property name="fontWeight">bold</property>
+                        <property name="dataSet">subjoinmain</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">maincode::uom</property>
+                                <text-property name="displayName">maincode::uom</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["maincode::uom"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">maincode::uom</property>
+                    </data>
+                </cell>
+                <cell id="230">
+                    <text id="251">
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[Location ]]></text-property>
+                    </text>
+                </cell>
+                <cell id="364">
+                    <text id="381">
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[:]]></text-property>
+                    </text>
+                </cell>
+                <cell id="231">
+                    <data id="252">
+                        <property name="fontWeight">bold</property>
+                        <property name="dataSet">Data Set</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">location</property>
+                                <text-property name="displayName">location</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["location"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">location</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="253">
+                <property name="height">0.2708333333333333in</property>
+                <cell id="254">
+                    <text id="263">
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[Remark ]]></text-property>
+                    </text>
+                </cell>
+                <cell id="356">
+                    <text id="374">
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[:]]></text-property>
+                    </text>
+                </cell>
+                <cell id="255">
+                    <data id="264">
+                        <property name="fontWeight">bold</property>
+                        <property name="dataSet">subjoinmain</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">maincode::remark</property>
+                                <text-property name="displayName">maincode::remark</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["maincode::remark"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">maincode::remark</property>
+                    </data>
+                </cell>
+                <cell id="256">
+                    <text id="265">
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[Cost Price ]]></text-property>
+                    </text>
+                </cell>
+                <cell id="365">
+                    <text id="382">
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[:]]></text-property>
+                    </text>
+                </cell>
+                <cell id="257">
+                    <data id="266">
+                        <property name="fontWeight">bold</property>
+                        <structure name="numberFormat">
+                            <property name="category">Fixed</property>
+                            <property name="pattern">###0.000{RoundingMode=HALF_UP}</property>
+                        </structure>
+                        <property name="dataSet">Data Set</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">cost_price</property>
+                                <text-property name="displayName">cost_price</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["cost_price"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">cost_price</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="258">
+                <property name="height">0.3958333333333333in</property>
+                <cell id="259">
+                    <text id="267">
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[Description ]]></text-property>
+                    </text>
+                </cell>
+                <cell id="357">
+                    <text id="375">
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[:]]></text-property>
+                    </text>
+                </cell>
+                <cell id="260">
+                    <data id="268">
+                        <property name="fontWeight">bold</property>
+                        <property name="dataSet">Data Set</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">description</property>
+                                <text-property name="displayName">description</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["description"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">description</property>
+                    </data>
+                </cell>
+                <cell id="261">
+                    <text id="269">
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[Onhand Balance ]]></text-property>
+                    </text>
+                </cell>
+                <cell id="366">
+                    <text id="383">
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[:]]></text-property>
+                    </text>
+                </cell>
+                <cell id="262">
+                    <data id="271">
+                        <property name="fontWeight">bold</property>
+                        <structure name="numberFormat">
+                            <property name="category">Fixed</property>
+                            <property name="pattern">###0.00{RoundingMode=HALF_UP}</property>
+                        </structure>
+                        <property name="dataSet">onhand</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">sum(totalqty)</property>
+                                <text-property name="displayName">sum(totalqty)</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["sum(totalqty)"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">sum(totalqty)</property>
+                    </data>
+                </cell>
+            </row>
+        </grid>
+        <table id="273">
+            <property name="width">7.979166666666667in</property>
+            <property name="dataSet">histcd</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">tran_type</property>
+                    <text-property name="displayName">tran_type</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["tran_type"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">rm_receive_id</property>
+                    <text-property name="displayName">rm_receive_id</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["rm_receive_id"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">refno</property>
+                    <text-property name="displayName">refno</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["refno"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">grndate</property>
+                    <text-property name="displayName">grndate</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["grndate"]</expression>
+                    <property name="dataType">date-time</property>
+                </structure>
+                <structure>
+                    <property name="name">totalqty</property>
+                    <text-property name="displayName">totalqty</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["totalqty"]</expression>
+                    <property name="dataType">float</property>
+                </structure>
+                <structure>
+                    <property name="name">create_by</property>
+                    <text-property name="displayName">create_by</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["create_by"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">create_on</property>
+                    <text-property name="displayName">create_on</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["create_on"]</expression>
+                    <property name="dataType">date-time</property>
+                </structure>
+                <structure>
+                    <property name="name">unit_cost</property>
+                    <text-property name="displayName">unit_cost</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["unit_cost"]</expression>
+                    <property name="dataType">float</property>
+                </structure>
+                <structure>
+                    <property name="name">Aggregation</property>
+                    <text-property name="displayName">no</text-property>
+                    <property name="dataType">integer</property>
+                    <property name="aggregateFunction">RUNNINGCOUNT</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                        </structure>
+                    </list-property>
+                    <property name="allowExport">true</property>
+                </structure>
+            </list-property>
+            <column id="332">
+                <property name="width">0.6458333333333334in</property>
+            </column>
+            <column id="317">
+                <property name="width">0.9583333333333334in</property>
+            </column>
+            <column id="318">
+                <property name="width">1.5729166666666667in</property>
+            </column>
+            <column id="347">
+                <property name="width">1.4583333333333333in</property>
+            </column>
+            <column id="320">
+                <property name="width">1.0729166666666667in</property>
+            </column>
+            <column id="321">
+                <property name="width">1.2291666666666667in</property>
+            </column>
+            <column id="324">
+                <property name="width">1.0416666666666667in</property>
+            </column>
+            <header>
+                <row id="274">
+                    <property name="fontWeight">bold</property>
+                    <property name="borderBottomColor">#000000</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderTopColor">#000000</property>
+                    <property name="borderTopStyle">solid</property>
+                    <cell id="329">
+                        <text id="333">
+                            <property name="contentType">auto</property>
+                            <text-property name="content"><![CDATA[No]]></text-property>
+                        </text>
+                    </cell>
+                    <cell id="275">
+                        <label id="276">
+                            <text-property name="text">Tran Type</text-property>
+                        </label>
+                    </cell>
+                    <cell id="277">
+                        <label id="278">
+                            <text-property name="text">Trx No</text-property>
+                        </label>
+                    </cell>
+                    <cell id="344">
+                        <text id="348">
+                            <property name="contentType">auto</property>
+                            <text-property name="content"><![CDATA[Ref No]]></text-property>
+                        </text>
+                    </cell>
+                    <cell id="281">
+                        <label id="282">
+                            <text-property name="text">Trx Date</text-property>
+                        </label>
+                    </cell>
+                    <cell id="283">
+                        <label id="284">
+                            <text-property name="text">Trx Qty</text-property>
+                        </label>
+                    </cell>
+                    <cell id="289">
+                        <label id="290">
+                            <text-property name="text">Cost</text-property>
+                        </label>
+                    </cell>
+                </row>
+            </header>
+            <detail>
+                <row id="291">
+                    <cell id="330">
+                        <data id="334">
+                            <property name="textAlign">center</property>
+                            <property name="resultSetColumn">Aggregation</property>
+                        </data>
+                    </cell>
+                    <cell id="292">
+                        <data id="293">
+                            <property name="textAlign">center</property>
+                            <property name="resultSetColumn">tran_type</property>
+                        </data>
+                    </cell>
+                    <cell id="294">
+                        <data id="295">
+                            <property name="textAlign">center</property>
+                            <property name="resultSetColumn">rm_receive_id</property>
+                        </data>
+                    </cell>
+                    <cell id="345">
+                        <data id="349">
+                            <property name="textAlign">center</property>
+                            <property name="resultSetColumn">refno</property>
+                        </data>
+                    </cell>
+                    <cell id="298">
+                        <data id="299">
+                            <structure name="dateTimeFormat">
+                                <property name="category">Custom</property>
+                                <property name="pattern">dd-MM-yyyy</property>
+                            </structure>
+                            <property name="textAlign">center</property>
+                            <property name="resultSetColumn">grndate</property>
+                        </data>
+                    </cell>
+                    <cell id="300">
+                        <data id="301">
+                            <structure name="numberFormat">
+                                <property name="category">Fixed</property>
+                                <property name="pattern">###0.00{RoundingMode=HALF_UP}</property>
+                            </structure>
+                            <property name="textAlign">right</property>
+                            <property name="resultSetColumn">totalqty</property>
+                        </data>
+                    </cell>
+                    <cell id="306">
+                        <data id="307">
+                            <structure name="numberFormat">
+                                <property name="category">Fixed</property>
+                                <property name="pattern">###0.000{RoundingMode=HALF_UP}</property>
+                            </structure>
+                            <property name="textAlign">right</property>
+                            <property name="resultSetColumn">unit_cost</property>
+                        </data>
+                    </cell>
+                </row>
+            </detail>
+            <footer>
+                <row id="308">
+                    <cell id="331"/>
+                    <cell id="309"/>
+                    <cell id="310"/>
+                    <cell id="346"/>
+                    <cell id="312"/>
+                    <cell id="313"/>
+                    <cell id="316"/>
+                </row>
+            </footer>
+        </table>
+    </body>
+</report>

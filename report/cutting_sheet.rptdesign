@@ -1,0 +1,2298 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 3.7.2.v20120213 Build &lt;3.7.2.v20120214-1408></property>
+    <list-property name="propertyBindings">
+        <structure>
+            <property name="name">odaURL</property>
+            <property name="id">7</property>
+            <expression name="value" type="javascript">params["dbsel"].value;</expression>
+        </structure>
+    </list-property>
+    <property name="units">in</property>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <property name="imageDPI">96</property>
+    <parameters>
+        <scalar-parameter name="dbsel" id="160">
+            <property name="hidden">true</property>
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="usernm" id="826">
+            <property name="hidden">true</property>
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="cu" id="827">
+            <property name="hidden">true</property>
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+    </parameters>
+    <data-sources>
+        <oda-data-source extensionID="org.eclipse.birt.report.data.oda.jdbc" name="nlDataSource" id="7">
+            <list-property name="privateDriverProperties">
+                <ex-property>
+                    <name>metadataBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledMetadataBidiFormatStr</name>
+                </ex-property>
+                <ex-property>
+                    <name>contentBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledContentBidiFormatStr</name>
+                </ex-property>
+            </list-property>
+            <property name="odaDriverClass">com.mysql.jdbc.Driver</property>
+            <property name="odaURL">jdbc:mysql://127.0.0.1:9909/nl_testing</property>
+            <property name="odaUser">root</property>
+            <encrypted-property name="odaPassword" encryptionID="base64">YWRtaW45MDAy</encrypted-property>
+            <property name="OdaConnProfileName">nlDataSource</property>
+            <property name="OdaConnProfileStorePath">nl_datasour</property>
+        </oda-data-source>
+    </data-sources>
+    <data-sets>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="cutmas" id="1130">
+            <list-property name="computedColumns">
+                <structure>
+                    <property name="name">sizeqty</property>
+                    <expression name="expression">row["sizeno"]+"/"+row["ordqty"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">param_1</property>
+                    <property name="paramName">cu</property>
+                    <property name="dataType">string</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">cutno</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">cutdte</property>
+                        <property name="dataType">date-time</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">ordno</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">buyno</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">orddte</property>
+                        <property name="dataType">date-time</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">deldte</property>
+                        <property name="dataType">date-time</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">grpno</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">8</property>
+                        <property name="name">prodcat</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">9</property>
+                        <property name="name">prodcnum</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">10</property>
+                        <property name="name">colno</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">11</property>
+                        <property name="name">sizeno</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">12</property>
+                        <property name="name">ordqty</property>
+                        <property name="dataType">float</property>
+                    </structure>
+                    <structure>
+                        <property name="position">13</property>
+                        <property name="name">prodnouom</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">14</property>
+                        <property name="name">create_by</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">15</property>
+                        <property name="name">create_on</property>
+                        <property name="dataType">date-time</property>
+                    </structure>
+                    <structure>
+                        <property name="position">16</property>
+                        <property name="name">modified_by</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">17</property>
+                        <property name="name">modified_on</property>
+                        <property name="dataType">date-time</property>
+                    </structure>
+                    <structure>
+                        <property name="position">18</property>
+                        <property name="name">status</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">19</property>
+                        <property name="name">sizeqty</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">nlDataSource</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">cutno</property>
+                    <property name="nativeName">cutno</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">cutdte</property>
+                    <property name="nativeName">cutdte</property>
+                    <property name="dataType">date-time</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">ordno</property>
+                    <property name="nativeName">ordno</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">buyno</property>
+                    <property name="nativeName">buyno</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">orddte</property>
+                    <property name="nativeName">orddte</property>
+                    <property name="dataType">date-time</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">deldte</property>
+                    <property name="nativeName">deldte</property>
+                    <property name="dataType">date-time</property>
+                </structure>
+                <structure>
+                    <property name="position">7</property>
+                    <property name="name">grpno</property>
+                    <property name="nativeName">grpno</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">8</property>
+                    <property name="name">prodcat</property>
+                    <property name="nativeName">prodcat</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">9</property>
+                    <property name="name">prodcnum</property>
+                    <property name="nativeName">prodcnum</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">10</property>
+                    <property name="name">colno</property>
+                    <property name="nativeName">colno</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">11</property>
+                    <property name="name">sizeno</property>
+                    <property name="nativeName">sizeno</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">12</property>
+                    <property name="name">ordqty</property>
+                    <property name="nativeName">ordqty</property>
+                    <property name="dataType">float</property>
+                </structure>
+                <structure>
+                    <property name="position">13</property>
+                    <property name="name">prodnouom</property>
+                    <property name="nativeName">prodnouom</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">14</property>
+                    <property name="name">create_by</property>
+                    <property name="nativeName">create_by</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">15</property>
+                    <property name="name">create_on</property>
+                    <property name="nativeName">create_on</property>
+                    <property name="dataType">date-time</property>
+                </structure>
+                <structure>
+                    <property name="position">16</property>
+                    <property name="name">modified_by</property>
+                    <property name="nativeName">modified_by</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">17</property>
+                    <property name="name">modified_on</property>
+                    <property name="nativeName">modified_on</property>
+                    <property name="dataType">date-time</property>
+                </structure>
+                <structure>
+                    <property name="position">18</property>
+                    <property name="name">status</property>
+                    <property name="nativeName">status</property>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select *
+from prodcutmas
+where cutno = ?
+order by sizeno]]></xml-property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="grpno" id="1199">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">grpcd</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">grpcd</text-property>
+                    <text-property name="heading">grpcd</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">grpde</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">grpde</text-property>
+                    <text-property name="heading">grpde</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">create_by</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">create_by</text-property>
+                    <text-property name="heading">create_by</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">create_on</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">create_on</text-property>
+                    <text-property name="heading">create_on</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">modified_by</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">modified_by</text-property>
+                    <text-property name="heading">modified_by</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">modified_on</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">modified_on</text-property>
+                    <text-property name="heading">modified_on</text-property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">grpcd</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">grpde</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">create_by</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">create_on</property>
+                        <property name="dataType">date-time</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">modified_by</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">modified_on</property>
+                        <property name="dataType">date-time</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">nlDataSource</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">grpcd</property>
+                    <property name="nativeName">grpcd</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">grpde</property>
+                    <property name="nativeName">grpde</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">create_by</property>
+                    <property name="nativeName">create_by</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">create_on</property>
+                    <property name="nativeName">create_on</property>
+                    <property name="dataType">date-time</property>
+                    <property name="nativeDataType">93</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">modified_by</property>
+                    <property name="nativeName">modified_by</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">modified_on</property>
+                    <property name="nativeName">modified_on</property>
+                    <property name="dataType">date-time</property>
+                    <property name="nativeDataType">93</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select *	
+from wor_grpmas]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>grpcd</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>10</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>grpcd</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>grpcd</design:label>
+            <design:formattingHints>
+              <design:displaySize>10</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>grpde</design:name>
+              <design:position>2</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>100</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>grpde</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>grpde</design:label>
+            <design:formattingHints>
+              <design:displaySize>100</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>create_by</design:name>
+              <design:position>3</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>45</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>create_by</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>create_by</design:label>
+            <design:formattingHints>
+              <design:displaySize>45</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>create_on</design:name>
+              <design:position>4</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>93</design:nativeDataTypeCode>
+            <design:precision>19</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>create_on</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>create_on</design:label>
+            <design:formattingHints>
+              <design:displaySize>19</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>modified_by</design:name>
+              <design:position>5</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>45</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>modified_by</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>modified_by</design:label>
+            <design:formattingHints>
+              <design:displaySize>45</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>modified_on</design:name>
+              <design:position>6</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>93</design:nativeDataTypeCode>
+            <design:precision>19</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>modified_on</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>modified_on</design:label>
+            <design:formattingHints>
+              <design:displaySize>19</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+        <joint-data-set name="Data Set" id="1200">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">cutmas::prodcnum</property>
+                    <property name="alias">prodcnum</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">cutmas::prodcnum</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">grpno::modified_on</property>
+                    <property name="alias">grpno::modified_on</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">grpno::modified_on</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">cutmas::grpno</property>
+                    <property name="alias">grpno</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">cutmas::grpno</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">cutmas::prodcat</property>
+                    <property name="alias">prodcat</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">cutmas::prodcat</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">cutmas::ordno</property>
+                    <property name="alias">ordno</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">cutmas::ordno</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">cutmas::cutno</property>
+                    <property name="alias">cutno</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">cutmas::cutno</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">cutmas::colno</property>
+                    <property name="alias">colno</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">cutmas::colno</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">cutmas::deldte</property>
+                    <property name="alias">deldte</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">cutmas::deldte</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">cutmas::cutdte</property>
+                    <property name="alias">cutdte</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">cutmas::cutdte</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">cutmas::modified_by</property>
+                    <property name="alias">cutmas::modified_by</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">cutmas::modified_by</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">grpno::grpde</property>
+                    <property name="alias">grpde</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">grpno::grpde</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">cutmas::create_on</property>
+                    <property name="alias">cutmas::create_on</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">cutmas::create_on</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">cutmas::buyno</property>
+                    <property name="alias">buyno</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">cutmas::buyno</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">grpno::create_by</property>
+                    <property name="alias">grpno::create_by</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">grpno::create_by</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">grpno::modified_by</property>
+                    <property name="alias">grpno::modified_by</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">grpno::modified_by</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">cutmas::status</property>
+                    <property name="alias">status</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">cutmas::status</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">cutmas::prodnouom</property>
+                    <property name="alias">prodnouom</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">cutmas::prodnouom</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">cutmas::orddte</property>
+                    <property name="alias">orddte</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">cutmas::orddte</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">cutmas::create_by</property>
+                    <property name="alias">cutmas::create_by</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">cutmas::create_by</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">cutmas::sizeno</property>
+                    <property name="alias">sizeno</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">cutmas::sizeno</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">cutmas::ordqty</property>
+                    <property name="alias">ordqty</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">cutmas::ordqty</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">grpno::create_on</property>
+                    <property name="alias">grpno::create_on</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">grpno::create_on</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">cutmas::modified_on</property>
+                    <property name="alias">cutmas::modified_on</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">cutmas::modified_on</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">grpno::grpcd</property>
+                    <property name="alias">grpcd</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">grpno::grpcd</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">cutmas::param_1</property>
+                    <property name="dataType">string</property>
+                    <property name="position">1</property>
+                    <property name="isOptional">false</property>
+                    <property name="allowNull">false</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">cutmas::cutno</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">cutmas::cutdte</property>
+                        <property name="dataType">date-time</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">cutmas::ordno</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">cutmas::buyno</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">cutmas::orddte</property>
+                        <property name="dataType">date-time</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">cutmas::deldte</property>
+                        <property name="dataType">date-time</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">cutmas::grpno</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">8</property>
+                        <property name="name">cutmas::prodcat</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">9</property>
+                        <property name="name">cutmas::prodcnum</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">10</property>
+                        <property name="name">cutmas::colno</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">11</property>
+                        <property name="name">cutmas::sizeno</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">12</property>
+                        <property name="name">cutmas::ordqty</property>
+                        <property name="dataType">float</property>
+                    </structure>
+                    <structure>
+                        <property name="position">13</property>
+                        <property name="name">cutmas::prodnouom</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">14</property>
+                        <property name="name">cutmas::create_by</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">15</property>
+                        <property name="name">cutmas::create_on</property>
+                        <property name="dataType">date-time</property>
+                    </structure>
+                    <structure>
+                        <property name="position">16</property>
+                        <property name="name">cutmas::modified_by</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">17</property>
+                        <property name="name">cutmas::modified_on</property>
+                        <property name="dataType">date-time</property>
+                    </structure>
+                    <structure>
+                        <property name="position">18</property>
+                        <property name="name">cutmas::status</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">19</property>
+                        <property name="name">grpno::grpcd</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">20</property>
+                        <property name="name">grpno::grpde</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">21</property>
+                        <property name="name">grpno::create_by</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">22</property>
+                        <property name="name">grpno::create_on</property>
+                        <property name="dataType">date-time</property>
+                    </structure>
+                    <structure>
+                        <property name="position">23</property>
+                        <property name="name">grpno::modified_by</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">24</property>
+                        <property name="name">grpno::modified_on</property>
+                        <property name="dataType">date-time</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <simple-property-list name="dataSets">
+                <value>cutmas</value>
+                <value>grpno</value>
+            </simple-property-list>
+            <list-property name="joinConditions">
+                <structure>
+                    <property name="joinType">left-out</property>
+                    <property name="joinOperator">eq</property>
+                    <property name="leftDataSet">cutmas</property>
+                    <property name="rightDataSet">grpno</property>
+                    <expression name="leftExpression">dataSetRow["grpno"]</expression>
+                    <expression name="rightExpression">dataSetRow["grpcd"]</expression>
+                </structure>
+            </list-property>
+        </joint-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="cutdet" id="1339">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">cutno</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">cutno</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">rmcode</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">rmcode</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">rmuom</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">rmuom</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">rmdesc</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">rmdesc</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">ucomps</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">ucomps</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">mark</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">mark</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">spread</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">spread</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">cut</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">cut</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">bundle</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">bundle</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">length</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">length</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">ply</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">ply</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">param_1</property>
+                    <property name="paramName">cu</property>
+                    <property name="dataType">string</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">cutno</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">rmcode</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">rmuom</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">rmdesc</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">ucomps</property>
+                        <property name="dataType">float</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">mark</property>
+                        <property name="dataType">float</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">spread</property>
+                        <property name="dataType">float</property>
+                    </structure>
+                    <structure>
+                        <property name="position">8</property>
+                        <property name="name">cut</property>
+                        <property name="dataType">float</property>
+                    </structure>
+                    <structure>
+                        <property name="position">9</property>
+                        <property name="name">bundle</property>
+                        <property name="dataType">float</property>
+                    </structure>
+                    <structure>
+                        <property name="position">10</property>
+                        <property name="name">length</property>
+                        <property name="dataType">float</property>
+                    </structure>
+                    <structure>
+                        <property name="position">11</property>
+                        <property name="name">ply</property>
+                        <property name="dataType">float</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">nlDataSource</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">cutno</property>
+                    <property name="nativeName">cutno</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">rmcode</property>
+                    <property name="nativeName">rmcode</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">rmuom</property>
+                    <property name="nativeName">rmuom</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">rmdesc</property>
+                    <property name="nativeName">rmdesc</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">ucomps</property>
+                    <property name="nativeName">ucomps</property>
+                    <property name="dataType">float</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">mark</property>
+                    <property name="nativeName">mark</property>
+                    <property name="dataType">float</property>
+                </structure>
+                <structure>
+                    <property name="position">7</property>
+                    <property name="name">spread</property>
+                    <property name="nativeName">spread</property>
+                    <property name="dataType">float</property>
+                </structure>
+                <structure>
+                    <property name="position">8</property>
+                    <property name="name">cut</property>
+                    <property name="nativeName">cut</property>
+                    <property name="dataType">float</property>
+                </structure>
+                <structure>
+                    <property name="position">9</property>
+                    <property name="name">bundle</property>
+                    <property name="nativeName">bundle</property>
+                    <property name="dataType">float</property>
+                </structure>
+                <structure>
+                    <property name="position">10</property>
+                    <property name="name">length</property>
+                    <property name="nativeName">length</property>
+                    <property name="dataType">float</property>
+                </structure>
+                <structure>
+                    <property name="position">11</property>
+                    <property name="name">ply</property>
+                    <property name="nativeName">ply</property>
+                    <property name="dataType">float</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select *
+from prodcutdet
+where cutno = ?]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>cutno</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>10</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>cutno</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>cutno</design:label>
+            <design:formattingHints>
+              <design:displaySize>10</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>rmcode</design:name>
+              <design:position>2</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>45</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>rmcode</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>rmcode</design:label>
+            <design:formattingHints>
+              <design:displaySize>45</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>rmuom</design:name>
+              <design:position>3</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>10</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>rmuom</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>rmuom</design:label>
+            <design:formattingHints>
+              <design:displaySize>10</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>rmdesc</design:name>
+              <design:position>4</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>100</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>rmdesc</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>rmdesc</design:label>
+            <design:formattingHints>
+              <design:displaySize>100</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>ucomps</design:name>
+              <design:position>5</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>8</design:nativeDataTypeCode>
+            <design:precision>12</design:precision>
+            <design:scale>3</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>ucomps</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>ucomps</design:label>
+            <design:formattingHints>
+              <design:displaySize>14</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>mark</design:name>
+              <design:position>6</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>8</design:nativeDataTypeCode>
+            <design:precision>12</design:precision>
+            <design:scale>3</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>mark</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>mark</design:label>
+            <design:formattingHints>
+              <design:displaySize>14</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>spread</design:name>
+              <design:position>7</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>8</design:nativeDataTypeCode>
+            <design:precision>12</design:precision>
+            <design:scale>3</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>spread</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>spread</design:label>
+            <design:formattingHints>
+              <design:displaySize>14</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>cut</design:name>
+              <design:position>8</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>8</design:nativeDataTypeCode>
+            <design:precision>12</design:precision>
+            <design:scale>3</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>cut</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>cut</design:label>
+            <design:formattingHints>
+              <design:displaySize>14</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>bundle</design:name>
+              <design:position>9</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>8</design:nativeDataTypeCode>
+            <design:precision>12</design:precision>
+            <design:scale>3</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>bundle</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>bundle</design:label>
+            <design:formattingHints>
+              <design:displaySize>14</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>length</design:name>
+              <design:position>10</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>8</design:nativeDataTypeCode>
+            <design:precision>12</design:precision>
+            <design:scale>3</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>length</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>length</design:label>
+            <design:formattingHints>
+              <design:displaySize>14</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>ply</design:name>
+              <design:position>11</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>8</design:nativeDataTypeCode>
+            <design:precision>12</design:precision>
+            <design:scale>3</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>ply</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>ply</design:label>
+            <design:formattingHints>
+              <design:displaySize>14</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+    </data-sets>
+    <styles>
+        <style name="report" id="4">
+            <property name="fontFamily">sans-serif</property>
+            <property name="fontSize">10pt</property>
+        </style>
+        <style name="crosstab-cell" id="5">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+        <style name="crosstab" id="6">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+        <style name="table-header" id="1420">
+            <property name="backgroundColor">#C0C0C0</property>
+        </style>
+    </styles>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <property name="headerHeight">0.9in</property>
+            <property name="footerHeight">0.2in</property>
+            <page-header>
+                <grid id="25">
+                    <property name="width">7.947916666666667in</property>
+                    <column id="26">
+                        <property name="width">1.8645833333333333in</property>
+                    </column>
+                    <column id="27">
+                        <property name="width">4.03125in</property>
+                    </column>
+                    <column id="28">
+                        <property name="width">2.0520833333333335in</property>
+                    </column>
+                    <row id="29">
+                        <cell id="30">
+                            <grid id="1122">
+                                <column id="1123"/>
+                                <column id="1124"/>
+                                <row id="1125">
+                                    <cell id="1126">
+                                        <text id="1128">
+                                            <property name="contentType">auto</property>
+                                            <text-property name="content"><![CDATA[Print By :]]></text-property>
+                                        </text>
+                                    </cell>
+                                    <cell id="1127">
+                                        <data id="1129">
+                                            <structure name="stringFormat">
+                                                <property name="category">></property>
+                                                <property name="pattern">></property>
+                                            </structure>
+                                            <list-property name="boundDataColumns">
+                                                <structure>
+                                                    <property name="name">usernm</property>
+                                                    <expression name="expression" type="javascript">params["usernm"]</expression>
+                                                    <property name="dataType">string</property>
+                                                </structure>
+                                            </list-property>
+                                            <property name="resultSetColumn">usernm</property>
+                                        </data>
+                                    </cell>
+                                </row>
+                            </grid>
+                        </cell>
+                        <cell id="31">
+                            <text id="1121">
+                                <property name="fontSize">12pt</property>
+                                <property name="fontWeight">bold</property>
+                                <property name="textAlign">center</property>
+                                <property name="contentType">auto</property>
+                                <text-property name="content"><![CDATA[NYOKLAN GARMENT SDN BHD ( 202814-K) ]]></text-property>
+                            </text>
+                            <text id="33">
+                                <property name="fontSize">12pt</property>
+                                <property name="fontWeight">bold</property>
+                                <property name="textAlign">center</property>
+                                <property name="contentType">auto</property>
+                                <text-property name="content"><![CDATA[CUTTING SHEETS
+]]></text-property>
+                            </text>
+                            <text-data id="730">
+                                <property name="textAlign">center</property>
+                                <expression name="valueExpr">dArr1 = params["td"].value.split("-");  &#13;
+&#13;
+var f = dArr1[2]+ "-" +dArr1[1]+ "-" +dArr1[0];&#13;
+&#13;
+"As At Date "+f+"  "+&#13;
+"Category Code:"+params["cat"].value;</expression>
+                                <property name="contentType">html</property>
+                            </text-data>
+                        </cell>
+                        <cell id="32">
+                            <grid id="88">
+                                <property name="height">0.4895833333333333in</property>
+                                <property name="width">1.6770833333333333in</property>
+                                <column id="105">
+                                    <property name="width">0.75in</property>
+                                </column>
+                                <column id="89">
+                                    <property name="width">0.9270833333333334in</property>
+                                </column>
+                                <row id="90">
+                                    <property name="height">0.23958333333333334in</property>
+                                    <cell id="103">
+                                        <label id="106">
+                                            <text-property name="text">Print On :</text-property>
+                                        </label>
+                                    </cell>
+                                    <cell id="91">
+                                        <text id="95">
+                                            <property name="textAlign">left</property>
+                                            <property name="display">inline</property>
+                                            <property name="contentType">html</property>
+                                            <text-property name="content"><![CDATA[<value-of format="dd-MM-yyyy">new Date()</value-of>]]></text-property>
+                                        </text>
+                                    </cell>
+                                </row>
+                                <row id="92">
+                                    <property name="height">0.25in</property>
+                                    <cell id="104">
+                                        <label id="107">
+                                            <text-property name="text">Page     :</text-property>
+                                        </label>
+                                    </cell>
+                                    <cell id="93">
+                                        <auto-text id="102">
+                                            <property name="fontWeight">normal</property>
+                                            <property name="textAlign">left</property>
+                                            <property name="type">page-number</property>
+                                        </auto-text>
+                                    </cell>
+                                </row>
+                            </grid>
+                        </cell>
+                    </row>
+                    <row id="74">
+                        <cell id="75">
+                            <property name="colSpan">3</property>
+                            <property name="rowSpan">1</property>
+                        </cell>
+                    </row>
+                </grid>
+            </page-header>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <grid id="1131">
+            <property name="height">1.6354166666666667in</property>
+            <property name="width">7.979166666666667in</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">Aggregation</property>
+                    <text-property name="displayName">ordsize</text-property>
+                    <property name="dataType">string</property>
+                    <property name="aggregateFunction">CONCATENATE</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value" type="javascript">dataSetRow["sizeqty"]</expression>
+                        </structure>
+                        <structure>
+                            <property name="name">Separat&amp;or</property>
+                            <expression name="value" type="javascript">,</expression>
+                        </structure>
+                        <structure>
+                            <property name="name">Ma&amp;x length</property>
+                        </structure>
+                        <structure>
+                            <property name="name">Sho&amp;w all values</property>
+                        </structure>
+                    </list-property>
+                    <property name="allowExport">true</property>
+                </structure>
+            </list-property>
+            <column id="1132">
+                <property name="width">0.3229166666666667in</property>
+            </column>
+            <column id="1133">
+                <property name="width">1.6145833333333333in</property>
+            </column>
+            <column id="1134">
+                <property name="width">0.23958333333333334in</property>
+            </column>
+            <column id="1135">
+                <property name="width">1.6354166666666667in</property>
+            </column>
+            <column id="1136">
+                <property name="width">0.19791666666666666in</property>
+            </column>
+            <column id="1184">
+                <property name="width">1.7916666666666667in</property>
+            </column>
+            <column id="1178">
+                <property name="width">0.22916666666666666in</property>
+            </column>
+            <column id="1137">
+                <property name="width">1.9479166666666667in</property>
+            </column>
+            <row id="1138">
+                <cell id="1139"/>
+                <cell id="1140">
+                    <text id="1186">
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[Cutting Sheet No]]></text-property>
+                    </text>
+                </cell>
+                <cell id="1141">
+                    <text id="1185">
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[:]]></text-property>
+                    </text>
+                </cell>
+                <cell id="1142">
+                    <data id="1187">
+                        <property name="dataSet">cutmas</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">cutno</property>
+                                <text-property name="displayName">cutno</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["cutno"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">cutno</property>
+                    </data>
+                </cell>
+                <cell id="1143"/>
+                <cell id="1179">
+                    <text id="1188">
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[Order No]]></text-property>
+                    </text>
+                </cell>
+                <cell id="1173">
+                    <text id="1189">
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[:]]></text-property>
+                    </text>
+                </cell>
+                <cell id="1144">
+                    <data id="1190">
+                        <property name="dataSet">cutmas</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">ordno</property>
+                                <text-property name="displayName">ordno</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["ordno"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">ordno</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="1145">
+                <cell id="1146"/>
+                <cell id="1147">
+                    <text id="1191">
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[Buyer]]></text-property>
+                    </text>
+                </cell>
+                <cell id="1148">
+                    <text id="1192">
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[:]]></text-property>
+                    </text>
+                </cell>
+                <cell id="1149">
+                    <data id="1193">
+                        <property name="dataSet">cutmas</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">buyno</property>
+                                <text-property name="displayName">buyno</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["buyno"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">buyno</property>
+                    </data>
+                </cell>
+                <cell id="1150"/>
+                <cell id="1180">
+                    <text id="1194">
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[Order Date]]></text-property>
+                    </text>
+                </cell>
+                <cell id="1174">
+                    <text id="1195">
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[:]]></text-property>
+                    </text>
+                </cell>
+                <cell id="1151">
+                    <data id="1196">
+                        <structure name="dateTimeFormat">
+                            <property name="category">Custom</property>
+                            <property name="pattern">d-M-y</property>
+                        </structure>
+                        <property name="dataSet">cutmas</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">orddte</property>
+                                <text-property name="displayName">orddte</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["orddte"]</expression>
+                                <property name="dataType">date-time</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">orddte</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="1152">
+                <cell id="1153"/>
+                <cell id="1154">
+                    <text id="1201">
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[Group]]></text-property>
+                    </text>
+                </cell>
+                <cell id="1155">
+                    <text id="1198">
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[:]]></text-property>
+                    </text>
+                </cell>
+                <cell id="1156">
+                    <data id="1202">
+                        <property name="dataSet">Data Set</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">grpno::grpcd</property>
+                                <text-property name="displayName">grpno::grpcd</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["grpno::grpcd"]</expression>
+                                <property name="dataType">string</property>
+                                <property name="allowExport">true</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">grpno::grpcd</property>
+                    </data>
+                </cell>
+                <cell id="1157"/>
+                <cell id="1181">
+                    <text id="1203">
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[Cutting Date]]></text-property>
+                    </text>
+                </cell>
+                <cell id="1175">
+                    <text id="1204">
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[:]]></text-property>
+                    </text>
+                </cell>
+                <cell id="1158">
+                    <data id="1205">
+                        <structure name="dateTimeFormat">
+                            <property name="category">Custom</property>
+                            <property name="pattern">d-M-y</property>
+                        </structure>
+                        <property name="dataSet">cutmas</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">cutdte</property>
+                                <text-property name="displayName">cutdte</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["cutdte"]</expression>
+                                <property name="dataType">date-time</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">cutdte</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="1159">
+                <cell id="1160"/>
+                <cell id="1161"/>
+                <cell id="1162"/>
+                <cell id="1163"/>
+                <cell id="1164"/>
+                <cell id="1182">
+                    <text id="1206">
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[Delivery Date]]></text-property>
+                    </text>
+                </cell>
+                <cell id="1176">
+                    <text id="1207">
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[:]]></text-property>
+                    </text>
+                </cell>
+                <cell id="1165">
+                    <data id="1208">
+                        <structure name="dateTimeFormat">
+                            <property name="category">Custom</property>
+                            <property name="pattern">d-M-y</property>
+                        </structure>
+                        <property name="dataSet">cutmas</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">deldte</property>
+                                <text-property name="displayName">deldte</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["deldte"]</expression>
+                                <property name="dataType">date-time</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">deldte</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="1166">
+                <cell id="1167"/>
+                <cell id="1168">
+                    <text id="1209">
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[Product Code]]></text-property>
+                    </text>
+                </cell>
+                <cell id="1169">
+                    <text id="1210">
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[:]]></text-property>
+                    </text>
+                </cell>
+                <cell id="1170">
+                    <data id="1211">
+                        <property name="dataSet">cutmas</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">prodcat</property>
+                                <text-property name="displayName">prodcat</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["prodcat"]+dataSetRow["prodcnum"]</expression>
+                                <property name="dataType">string</property>
+                                <property name="allowExport">true</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">prodcat</property>
+                    </data>
+                </cell>
+                <cell id="1171"/>
+                <cell id="1183">
+                    <text id="1212">
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[Color]]></text-property>
+                    </text>
+                </cell>
+                <cell id="1177">
+                    <text id="1213">
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[:]]></text-property>
+                    </text>
+                </cell>
+                <cell id="1172">
+                    <data id="1214">
+                        <property name="dataSet">cutmas</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">colno</property>
+                                <text-property name="displayName">colno</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["colno"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">colno</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="1215">
+                <property name="height">0.2708333333333333in</property>
+                <cell id="1216"/>
+                <cell id="1217">
+                    <text id="1421">
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[Size/Order Qty ]]></text-property>
+                    </text>
+                </cell>
+                <cell id="1218">
+                    <text id="1422">
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[:]]></text-property>
+                    </text>
+                </cell>
+                <cell id="1219">
+                    <property name="colSpan">5</property>
+                    <property name="rowSpan">1</property>
+                    <table id="1681">
+                        <property name="dataSet">cutmas</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">cutno</property>
+                                <text-property name="displayName">cutno</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["cutno"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">cutdte</property>
+                                <text-property name="displayName">cutdte</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["cutdte"]</expression>
+                                <property name="dataType">date-time</property>
+                            </structure>
+                            <structure>
+                                <property name="name">ordno</property>
+                                <text-property name="displayName">ordno</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["ordno"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">buyno</property>
+                                <text-property name="displayName">buyno</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["buyno"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">orddte</property>
+                                <text-property name="displayName">orddte</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["orddte"]</expression>
+                                <property name="dataType">date-time</property>
+                            </structure>
+                            <structure>
+                                <property name="name">deldte</property>
+                                <text-property name="displayName">deldte</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["deldte"]</expression>
+                                <property name="dataType">date-time</property>
+                            </structure>
+                            <structure>
+                                <property name="name">grpno</property>
+                                <text-property name="displayName">grpno</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["grpno"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">prodcat</property>
+                                <text-property name="displayName">prodcat</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["prodcat"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">prodcnum</property>
+                                <text-property name="displayName">prodcnum</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["prodcnum"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">colno</property>
+                                <text-property name="displayName">colno</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["colno"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">sizeno</property>
+                                <text-property name="displayName">sizeno</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["sizeno"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">ordqty</property>
+                                <text-property name="displayName">ordqty</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["ordqty"]</expression>
+                                <property name="dataType">float</property>
+                            </structure>
+                            <structure>
+                                <property name="name">prodnouom</property>
+                                <text-property name="displayName">prodnouom</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["prodnouom"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">create_by</property>
+                                <text-property name="displayName">create_by</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["create_by"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">create_on</property>
+                                <text-property name="displayName">create_on</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["create_on"]</expression>
+                                <property name="dataType">date-time</property>
+                            </structure>
+                            <structure>
+                                <property name="name">modified_by</property>
+                                <text-property name="displayName">modified_by</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["modified_by"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">modified_on</property>
+                                <text-property name="displayName">modified_on</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["modified_on"]</expression>
+                                <property name="dataType">date-time</property>
+                            </structure>
+                            <structure>
+                                <property name="name">status</property>
+                                <text-property name="displayName">status</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["status"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">sizeqty</property>
+                                <text-property name="displayName">sizeqty</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["sizeqty"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">Aggregation</property>
+                                <property name="dataType">string</property>
+                                <property name="aggregateFunction">CONCATENATE</property>
+                                <list-property name="arguments">
+                                    <structure>
+                                        <property name="name">Expression</property>
+                                        <expression name="value" type="javascript">dataSetRow["sizeqty"]</expression>
+                                    </structure>
+                                    <structure>
+                                        <property name="name">Separat&amp;or</property>
+                                        <expression name="value" type="javascript">","</expression>
+                                    </structure>
+                                    <structure>
+                                        <property name="name">Ma&amp;x length</property>
+                                    </structure>
+                                    <structure>
+                                        <property name="name">Sho&amp;w all values</property>
+                                    </structure>
+                                </list-property>
+                                <property name="allowExport">true</property>
+                            </structure>
+                        </list-property>
+                        <column id="1780"/>
+                        <footer>
+                            <row id="1760">
+                                <cell id="1761">
+                                    <data id="1799">
+                                        <property name="resultSetColumn">Aggregation</property>
+                                    </data>
+                                </cell>
+                            </row>
+                        </footer>
+                    </table>
+                </cell>
+            </row>
+        </grid>
+        <table id="1340">
+            <property name="width">7.947916666666667in</property>
+            <property name="dataSet">cutdet</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">cutno</property>
+                    <text-property name="displayName">cutno</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["cutno"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">rmcode</property>
+                    <text-property name="displayName">rmcode</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["rmcode"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">rmuom</property>
+                    <text-property name="displayName">rmuom</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["rmuom"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">rmdesc</property>
+                    <text-property name="displayName">rmdesc</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["rmdesc"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">ucomps</property>
+                    <text-property name="displayName">ucomps</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["ucomps"]</expression>
+                    <property name="dataType">float</property>
+                </structure>
+                <structure>
+                    <property name="name">mark</property>
+                    <text-property name="displayName">mark</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["mark"]</expression>
+                    <property name="dataType">float</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">spread</property>
+                    <text-property name="displayName">spread</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["spread"]</expression>
+                    <property name="dataType">float</property>
+                </structure>
+                <structure>
+                    <property name="name">cut</property>
+                    <text-property name="displayName">cut</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["cut"]</expression>
+                    <property name="dataType">float</property>
+                </structure>
+                <structure>
+                    <property name="name">bundle</property>
+                    <text-property name="displayName">bundle</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["bundle"]</expression>
+                    <property name="dataType">float</property>
+                </structure>
+                <structure>
+                    <property name="name">length</property>
+                    <text-property name="displayName">length</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["length"]</expression>
+                    <property name="dataType">float</property>
+                </structure>
+                <structure>
+                    <property name="name">ply</property>
+                    <text-property name="displayName">ply</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["ply"]</expression>
+                    <property name="dataType">float</property>
+                </structure>
+                <structure>
+                    <property name="name">no</property>
+                    <text-property name="displayName">no</text-property>
+                    <property name="dataType">integer</property>
+                    <property name="aggregateFunction">RUNNINGCOUNT</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                        </structure>
+                    </list-property>
+                    <property name="allowExport">true</property>
+                </structure>
+            </list-property>
+            <column id="1417">
+                <property name="width">0.4166666666666667in</property>
+            </column>
+            <column id="1400">
+                <property name="width">1.09375in</property>
+            </column>
+            <column id="1401">
+                <property name="width">1.6458333333333333in</property>
+            </column>
+            <column id="1402">
+                <property name="width">0.4895833333333333in</property>
+            </column>
+            <column id="1404">
+                <property name="width">0.7916666666666666in</property>
+            </column>
+            <column id="1405">
+                <property name="width">0.75in</property>
+            </column>
+            <column id="1406">
+                <property name="width">0.7604166666666666in</property>
+            </column>
+            <column id="1407">
+                <property name="width">0.7604166666666666in</property>
+            </column>
+            <column id="1408">
+                <property name="width">0.5625in</property>
+            </column>
+            <column id="1409">
+                <property name="width">0.6770833333333334in</property>
+            </column>
+            <header>
+                <row id="1341">
+                    <property name="fontWeight">normal</property>
+                    <property name="borderBottomColor">#000000</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderTopColor">#000000</property>
+                    <property name="borderTopStyle">solid</property>
+                    <cell id="1414">
+                        <text id="1418">
+                            <property name="contentType">auto</property>
+                            <text-property name="content"><![CDATA[No]]></text-property>
+                        </text>
+                    </cell>
+                    <cell id="1344">
+                        <label id="1345">
+                            <text-property name="text">RM Item</text-property>
+                        </label>
+                    </cell>
+                    <cell id="1346">
+                        <label id="1349">
+                            <text-property name="text">Description</text-property>
+                        </label>
+                    </cell>
+                    <cell id="1348">
+                        <label id="1347">
+                            <text-property name="text">UOM</text-property>
+                        </label>
+                    </cell>
+                    <cell id="1352">
+                        <label id="1353">
+                            <text-property name="text">Mark</text-property>
+                        </label>
+                    </cell>
+                    <cell id="1354">
+                        <label id="1355">
+                            <text-property name="text">Spread</text-property>
+                        </label>
+                    </cell>
+                    <cell id="1356">
+                        <label id="1357">
+                            <text-property name="text">Cut</text-property>
+                        </label>
+                    </cell>
+                    <cell id="1358">
+                        <label id="1359">
+                            <text-property name="text">Bundle</text-property>
+                        </label>
+                    </cell>
+                    <cell id="1360">
+                        <label id="1361">
+                            <text-property name="text">Length</text-property>
+                        </label>
+                    </cell>
+                    <cell id="1362">
+                        <label id="1363">
+                            <text-property name="text">Ply</text-property>
+                        </label>
+                    </cell>
+                </row>
+            </header>
+            <detail>
+                <row id="1364">
+                    <cell id="1415">
+                        <data id="1419">
+                            <property name="resultSetColumn">no</property>
+                        </data>
+                    </cell>
+                    <cell id="1367">
+                        <data id="1368">
+                            <property name="resultSetColumn">rmcode</property>
+                        </data>
+                    </cell>
+                    <cell id="1369">
+                        <data id="1372">
+                            <property name="resultSetColumn">rmdesc</property>
+                        </data>
+                    </cell>
+                    <cell id="1371">
+                        <data id="1370">
+                            <property name="resultSetColumn">rmuom</property>
+                        </data>
+                    </cell>
+                    <cell id="1375">
+                        <data id="1376">
+                            <property name="numberAlign">center</property>
+                            <structure name="numberFormat">
+                                <property name="category">Fixed</property>
+                                <property name="pattern">###0.000{RoundingMode=HALF_UP}</property>
+                            </structure>
+                            <property name="textAlign">right</property>
+                            <list-property name="mapRules">
+                                <structure>
+                                    <expression name="testExpr" type="javascript">row["mark"]</expression>
+                                    <property name="operator">eq</property>
+                                    <simple-property-list name="value1">
+                                        <value type="javascript">0</value>
+                                    </simple-property-list>
+                                </structure>
+                            </list-property>
+                            <property name="resultSetColumn">mark</property>
+                        </data>
+                    </cell>
+                    <cell id="1377">
+                        <data id="1378">
+                            <property name="numberAlign">center</property>
+                            <structure name="numberFormat">
+                                <property name="category">Fixed</property>
+                                <property name="pattern">###0.000{RoundingMode=HALF_UP}</property>
+                            </structure>
+                            <property name="textAlign">right</property>
+                            <list-property name="mapRules">
+                                <structure>
+                                    <expression name="testExpr" type="javascript">row["spread"]</expression>
+                                    <property name="operator">eq</property>
+                                    <simple-property-list name="value1">
+                                        <value type="javascript">0</value>
+                                    </simple-property-list>
+                                </structure>
+                            </list-property>
+                            <property name="resultSetColumn">spread</property>
+                        </data>
+                    </cell>
+                    <cell id="1379">
+                        <data id="1380">
+                            <property name="numberAlign">center</property>
+                            <structure name="numberFormat">
+                                <property name="category">Fixed</property>
+                                <property name="pattern">###0.000{RoundingMode=HALF_UP}</property>
+                            </structure>
+                            <property name="textAlign">right</property>
+                            <list-property name="mapRules">
+                                <structure>
+                                    <expression name="testExpr" type="javascript">row["cut"]</expression>
+                                    <property name="operator">eq</property>
+                                    <simple-property-list name="value1">
+                                        <value type="javascript">0</value>
+                                    </simple-property-list>
+                                </structure>
+                            </list-property>
+                            <property name="resultSetColumn">cut</property>
+                        </data>
+                    </cell>
+                    <cell id="1381">
+                        <data id="1382">
+                            <property name="numberAlign">center</property>
+                            <structure name="numberFormat">
+                                <property name="category">Fixed</property>
+                                <property name="pattern">###0.000{RoundingMode=HALF_UP}</property>
+                            </structure>
+                            <property name="textAlign">right</property>
+                            <list-property name="mapRules">
+                                <structure>
+                                    <expression name="testExpr" type="javascript">row["bundle"]</expression>
+                                    <property name="operator">eq</property>
+                                    <simple-property-list name="value1">
+                                        <value type="javascript">0</value>
+                                    </simple-property-list>
+                                </structure>
+                            </list-property>
+                            <property name="resultSetColumn">bundle</property>
+                        </data>
+                    </cell>
+                    <cell id="1383">
+                        <data id="1384">
+                            <property name="numberAlign">center</property>
+                            <structure name="numberFormat">
+                                <property name="category">Fixed</property>
+                                <property name="pattern">###0.000{RoundingMode=HALF_UP}</property>
+                            </structure>
+                            <property name="textAlign">right</property>
+                            <property name="resultSetColumn">length</property>
+                        </data>
+                    </cell>
+                    <cell id="1385">
+                        <data id="1386">
+                            <property name="numberAlign">center</property>
+                            <structure name="numberFormat">
+                                <property name="category">Fixed</property>
+                                <property name="pattern">###0.000{RoundingMode=HALF_UP}</property>
+                            </structure>
+                            <property name="textAlign">right</property>
+                            <property name="resultSetColumn">ply</property>
+                        </data>
+                    </cell>
+                </row>
+                <row id="1800">
+                    <property name="height">0.5in</property>
+                    <cell id="1801">
+                        <property name="colSpan">10</property>
+                        <property name="rowSpan">1</property>
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                    </cell>
+                </row>
+            </detail>
+            <footer>
+                <row id="1387">
+                    <cell id="1416"/>
+                    <cell id="1389"/>
+                    <cell id="1390"/>
+                    <cell id="1391"/>
+                    <cell id="1393"/>
+                    <cell id="1394"/>
+                    <cell id="1395"/>
+                    <cell id="1396"/>
+                    <cell id="1397"/>
+                    <cell id="1398"/>
+                </row>
+            </footer>
+        </table>
+    </body>
+</report>

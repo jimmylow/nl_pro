@@ -1,0 +1,371 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<!--
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+-->
+<style type="text/css">
+.title {
+	font-family:"Tw Cen MT";
+	font-size:16px;
+	font-weight:bold;
+	color:#3366FF;
+	
+}
+
+.a1 {
+	font-family:"Tw Cen MT";
+	font-size:14px;
+	width:160px;
+	padding-left:30px
+	
+}
+
+.a2 {
+	font-family:"Tw Cen MT";
+	font-size:14px;
+	
+}
+
+.table1
+    {
+	border-top: thin #C0C0C0 solid;
+	padding-top:6px;
+	width:100%
+}
+
+.table2 {
+	border-bottom:thin #cococo solid;
+	width:100%
+}
+
+.button {
+		font-family:"Tw Cen MT";
+	font-size:15px;
+	width:70px	
+}
+
+.master {
+	font-family:"Tw Cen MT";
+	font-size:14px;
+	width:160px;
+	padding-left:30px;
+	color:#FF0000;
+	font-weight:bold
+	
+}
+
+.master2 {
+	font-family:"Tw Cen MT";
+	font-size:14px;
+	color:#FF0000;
+	font-weight:bold
+
+}
+
+.master3 {
+	font-family:"Tw Cen MT";
+	font-size:14px;
+	color:#333333;
+	text-align:center
+	
+
+}
+
+.master31 {
+	font-family:"Tw Cen MT";
+	font-size:14px;
+	color:#CC0000;
+	text-align:center;
+	font-weight:bold
+	
+
+}
+
+
+.green {
+	font-family:"Tw Cen MT";
+	font-size:14px;
+	width:160px;
+	padding-left:30px;
+	color:#009933;
+	font-weight:bold
+
+}
+
+.green2 {
+	font-family:"Tw Cen MT";
+	font-size:14px;
+	color:#009933;
+	font-weight:bold
+
+}
+
+</style>
+<title>raw material Item master(colour & width)</title>
+</head>
+
+<body>
+<table>
+
+	<tr><td class="title" style="padding-bottom:30px">raw material Item master(colour & width)</td></tr>
+	
+	</table>
+	<table class="table1"></table>
+
+	<table>
+			<tr>
+				<td class="a2"><input name="Submit1" type="submit" value="Add" class="button" /></td>
+				<td class="a2" style="padding-left:20px"><input name="Submit1" type="submit" value="Delete" class="button" /></td>
+				<td class="a2" style="padding-left:20px"><input name="Submit1" type="submit" value="Search" class="button" /></td>
+				<td class="a2" style="padding-left:20px"><input name="Submit1" type="submit" value="Print" class="button" /></td>
+
+
+	</tr></table>
+	
+<table class="table1"></table>
+	
+	
+	<table>
+			<tr>
+	<td class="a1" style="color:#CC0000">Item Category</td>	<td>: <select name="Select1" class="master3" style="width:80px">
+				<option>-select-</option>
+				<option>LC</option>
+				<option>SP</option>
+				<option>EB</option>
+			</select></td>	
+</tr>
+			<tr>	
+	<td class="a1" style="color:#CC0000">Master Code</td>	<td>: <select name="Select1" class="master3" style="width:80px">
+				<option>-select-</option>
+				<option>LC001</option>
+				<option>LC002</option>
+				<option>LC003</option>
+				<option>SP001</option>
+				<option>EB001</option>
+			</select></td>	
+					</tr>
+		</table>
+		
+		<table>
+		<tr><td class="a1">Description</td><td>: <input name="Text1" type="text" style="width:400px" /></td></tr>
+		
+		<tr><td class="a1">Content</td><td>: <input name="Text1" type="text" style="width:400px" /></td></tr>
+		</table>
+		<table>
+				<tr>
+				<td class="a1" style="color:#CC0000">UOM</td><td>: <select name="Select1" class="master3" style="width:80px">
+				<option>-select-</option>
+				<option>MTR</option>
+				<option>INC</option>
+				<option>PC</option>
+				
+				
+				</select>
+				</td>
+				</tr>
+				</table>
+				
+				<table>
+				<tr>
+				<!--<td class="a1">Density</td><td>: <input name="Text1" type="text" /></td>-->
+				<!--<td class="a2" style="width:120px; padding-left:30px">Width</td><td>: <input name="Text1" type="text" /></td>-->
+				</tr>
+			<!--	<tr>
+				<td class="a1">MOQ</td><td>: <input name="Text1" type="text" /></td>
+				<td class="a2" style="width:120px; padding-left:30px">MCQ</td><td>: <input name="Text1" type="text" /></td>
+</tr>-->
+		<!--		<tr>
+				<td class="a1">Unit Price</td><td>: <input name="Text1" type="text" /></td>
+				
+</tr>-->
+</table>
+
+<!--
+<table>
+				<tr>
+				<td class="a1">Preferred Supplier</td><td>: <input name="Text1" type="text" style="width:300px" /></td></tr>
+				</table>
+				-->
+<!--				<table>
+				<tr>
+				<td class="a1">Supplier Lead Time (days)</td><td>: <input name="Text1" type="text" /></td>
+</tr></table>-->
+
+				<table>
+		<tr>
+		<td class="green">Create By</td><td>: <input name="Text1" type="text" style="width:200px" /></td>
+		<td class="green2" width="90px">Create Date</td><td>: <input name="Text1" type="text" style="width:100px" /></td>
+		</tr>
+		</table>
+<table>
+		<tr>
+		<td class="a1">Remarks</td><td>: <input name="Text1" type="text" style="width:600px" /></td></tr></table>
+		
+			<table><tr><td style="color:fuchsia">add new colour/width screen as follow</td></tr></table>
+
+		
+	<table border="1">
+	
+	<tr class="master31">
+			
+			
+			<td width="80px">1</td>
+			<td width="80px">2</td>
+			<td width="80px">3</td>
+			<td width="80px">4</td>
+			<td width="80px">5</td>
+			<td width="120px">6</td>
+		
+			
+			</tr>
+
+			<tr class="master3">
+			
+			
+			<td width="80px" style="color:#CC0000">Colour</td>
+			<td width="120px">Colour Description</td>
+			<td width="80px" style="color:#CC0000">Width</td>
+			<td width="80px">Density</td>
+			<td width="80px">MOQ</td>
+			<td width="80px">MCQ</td>
+			<td width="120px">Supplier Lead Time</td>
+						
+			</tr>
+	
+			<tr class="master3">
+			
+			
+			<td width="80px"><select name="Select1" class="master3">
+				<option>-select-</option>
+				<option>BLCK</option>
+				<option>WHIT</option>
+				<option>BLUE</option>
+				<option>PINK</option>
+			</select></td>
+			<td></td>
+			<td><input name="Text1" type="text" style="width:80px" /></td>
+			<td><input name="Text1" type="text" style="width:80px"/></td>
+			<td><input name="Text1" type="text" style="width:80px"/></td>
+			<td><input name="Text1" type="text" style="width:80px"/></td>
+			<td><input name="Text1" type="text" style="width:120px" /></td>
+			
+			
+			</tr>
+	
+	
+			<tr class="master3">
+			
+			
+			<td width="80px"><select name="Select1" class="master3">
+				<option>-select-</option>
+				<option>BLCK</option>
+				<option>WHIT</option>
+				<option>BLUE</option>
+				<option>PINK</option>
+			</select></td>
+			<td></td>
+			<td><input name="Text1" type="text" style="width:80px" /></td>
+			<td><input name="Text1" type="text" style="width:80px"/></td>
+			<td><input name="Text1" type="text" style="width:80px"/></td>
+			<td><input name="Text1" type="text" style="width:80px"/></td>
+			<td><input name="Text1" type="text" style="width:120px" /></td>
+			
+			</tr>
+
+			<tr class="master3">
+			
+			
+			<td width="80px"><select name="Select1" class="master3">
+				<option>-select-</option>
+				<option>BLCK</option>
+				<option>WHIT</option>
+				<option>BLUE</option>
+				<option>PINK</option>
+			</select></td>
+			<td></td>
+			<td><input name="Text1" type="text" style="width:80px" /></td>
+			<td><input name="Text1" type="text" style="width:80px"/></td>
+			<td><input name="Text1" type="text" style="width:80px"/></td>
+			<td><input name="Text1" type="text" style="width:80px"/></td>
+			<td><input name="Text1" type="text" style="width:120px" /></td>
+			
+			
+			</tr>
+			<tr class="master3">
+			
+			
+			<td width="80px"><select name="Select1" class="master3">
+				<option>-select-</option>
+				<option>BLCK</option>
+				<option>WHIT</option>
+				<option>BLUE</option>
+				<option>PINK</option>
+			</select></td>
+			<td></td>
+			<td><input name="Text1" type="text" style="width:80px" /></td>
+			<td><input name="Text1" type="text" style="width:80px"/></td>
+			<td><input name="Text1" type="text" style="width:80px"/></td>
+			<td><input name="Text1" type="text" style="width:80px"/></td>
+			<td><input name="Text1" type="text" style="width:120px" /></td>
+			
+			
+			</tr>
+			<tr class="master3">
+			
+			
+			<td width="80px"><select name="Select1" class="master3">
+				<option>-select-</option>
+				<option>BLCK</option>
+				<option>WHIT</option>
+				<option>BLUE</option>
+				<option>PINK</option>
+			</select></td>
+			<td></td>
+			<td><input name="Text1" type="text" style="width:80px" /></td>
+			<td><input name="Text1" type="text" style="width:80px"/></td>
+			<td><input name="Text1" type="text" style="width:80px"/></td>
+			<td><input name="Text1" type="text" style="width:80px"/></td>
+			<td><input name="Text1" type="text" style="width:120px" /></td>
+			
+			
+			</tr>
+			</table>
+			<table>
+	<tr><td><input name="Button1" type="button" value="Save" /></td></tr>
+	</table>
+		
+		<table><tr><td style="color:fuchsia">inquiry screen as follow</td></tr></table>
+				
+					<table border="1">
+					<tr class="master3" style="font-weight:bold">
+					<td width="50px">No.</td>
+					<td width="150px">Item Code</td>
+					<td width="80px">Density</td>
+					<td width="80px">MOQ</td>
+					<td width="80px">MCQ</td>
+					<td width="120px">Supplier Lead Time</td>
+					<td width="100px">Price Quotation</td>
+					<td width="100px">Create By</td>
+					<td width="100px">Create Date</td>
+				</tr>
+				
+				<tr class="master3">
+					<td width="50px">1</td>
+					<td width="150px">LC001-BLCK-12"</td>
+					<td width="80px">0</td>
+					<td width="80px">0</td>
+					<td width="80px">0</td>
+					<td width="120px">20</td>
+					<td width="100px">DETAIL</td>
+					<td width="100px">JEGA</td>
+					<td width="100px">01/05/2012</td>
+				</tr>
+				
+				</table>
+		
+		</body>
+
+</html>

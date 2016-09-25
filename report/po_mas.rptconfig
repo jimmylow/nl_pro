@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <list-property name="configVars">
+        <structure>
+            <property name="name">__isdisplay__dbsel_192_0</property>
+            <property name="value">jdbc:mysql://192.168.0.142:9909/nl_db</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__ponum_193_1</property>
+            <property name="value">NLGP-000005</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__menuc_1719_2</property>
+            <property name="value">PURC01</property>
+        </structure>
+        <structure>
+            <property name="name">menuc_1719_3</property>
+            <property name="value">PURC01</property>
+        </structure>
+        <structure>
+            <property name="name">menuc_1719_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">dbsel_192_4</property>
+            <property name="value">jdbc:mysql://192.168.0.142:9909/nl_db</property>
+        </structure>
+        <structure>
+            <property name="name">dbsel_192_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">ponum_193_5</property>
+            <property name="value">NLGP-000005</property>
+        </structure>
+        <structure>
+            <property name="name">ponum_193_type_</property>
+            <property name="value">string</property>
+        </structure>
+    </list-property>
+</report>

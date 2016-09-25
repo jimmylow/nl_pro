@@ -1,0 +1,241 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<!--
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+-->
+<style type="text/css">
+.title {
+	font-family:"Tw Cen MT";
+	font-size:16px;
+	font-weight:bold;
+	color:#3366FF;
+	
+}
+
+.a1 {
+	font-family:"Tw Cen MT";
+	font-size:14px;
+	width:160px;
+	padding-left:30px
+	
+}
+
+.a2 {
+	font-family:"Tw Cen MT";
+	font-size:14px;
+	
+}
+
+.table1
+    {
+	border-top: thin #C0C0C0 solid;
+	padding-top:6px;
+	width:100%
+}
+
+.table2 {
+	border-bottom:thin #cococo solid;
+	width:100%
+}
+
+.button {
+		font-family:"Tw Cen MT";
+	font-size:15px;
+	width:70px	
+}
+
+.master {
+	font-family:"Tw Cen MT";
+	font-size:14px;
+	width:160px;
+	padding-left:30px;
+	color:#FF0000;
+	font-weight:bold
+	
+}
+
+.master2 {
+	font-family:"Tw Cen MT";
+	font-size:14px;
+	color:#FF0000;
+	font-weight:bold
+
+}
+
+.green {
+	font-family:"Tw Cen MT";
+	font-size:14px;
+	width:160px;
+	padding-left:30px;
+	color:#009933;
+	font-weight:bold
+
+}
+
+.green2 {
+	font-family:"Tw Cen MT";
+	font-size:14px;
+	color:#009933;
+	font-weight:bold
+
+}
+
+</style>
+<title>supplier master</title>
+</head>
+
+<body>
+<table>
+
+	<tr><td class="title" style="padding-bottom:30px">Supplier Master</td></tr>
+	
+	</table>
+	<table class="table1"></table>
+	
+	<table>
+			<tr>
+				<td class="a2"><input name="Submit1" type="submit" value="Add" class="button" /></td>
+				<td class="a2" style="padding-left:20px"><input name="Submit1" type="submit" value="Edit" class="button" /></td>
+				<td class="a2" style="padding-left:20px"><input name="Submit1" type="submit" value="Delete" class="button" /></td>
+				<td class="a2" style="padding-left:20px"><input name="Submit1" type="submit" value="Search" class="button" /></td>
+				<td class="a2" style="padding-left:20px"><input name="Submit1" type="submit" value="Print" class="button" /></td>
+
+	</tr></table>
+	
+	<table class="table1"></table>
+	
+	
+	<table>
+			<tr>	
+	<td class="a1">Supplier Code</td>	<td>: <input name="Text1" type="text" /></td>	
+	<td class="a2" style="width:90px; padding-left:30px">Status</td><td>: <select name="Select1" style="width:90px">
+				<option>active</option><option>deactive</option>
+			</select></td>
+	<td class="a2" style="width:90px; padding-left:60px"><select name="Select1" style="width:90px">
+				<option>Local</option><option>Oversea</option>
+			</select></td>	
+	<td class="a2" style="width:90px; padding-left:60px">Supplier Type</td><td>: <select name="Select1" style="width:90px">
+				<option>R/M</option><option>Label</option>
+			</select></td>		
+		</tr>
+		</table>
+		
+		<table>
+		<tr><td class="a1">Supplier Name (english)</td><td>: <input name="Text1" type="text" style="width:400px" /></td></tr>
+		
+		<tr><td class="a1">Supplier Name (chinese)</td><td>: <input name="Text1" type="text" style="width:400px" /></td></tr>
+		</table>
+		<table>
+		<tr><td class="a1">Address 1</td><td>: <input name="Text1" type="text" style="width:400px" /></td></tr>
+		<tr><td class="a1">Address 2</td><td>: <input name="Text1" type="text" style="width:400px" /></td></tr>
+		<tr><td class="a1">Address 3</td><td>: <input name="Text1" type="text" style="width:400px" /></td></tr>
+		</table>
+		<table>
+		<tr> <td class="a1">Postcode</td><td>: <input name="Text1" type="text" style="width:200px" /></td>
+		<td class="a2" width="90px">City/Town</td><td>: <input name="Text1" type="text" style="width:200px" /></td>
+		    <td class="a2" width="90px">State</td><td>: <input name="Text1" type="text" style="width:200px" /></td>
+		    </tr>
+		    <tr>
+		<td class="master">Country</td><td>: <select name="Select1" style="width:120px">
+				<option>Malaysia</option>
+				<option>China</option>
+				<option>Indonesia</option>
+				<option>Thailand</option>
+				<option>Hong Kong</option>
+			</select></td>
+			
+			<td class="master2" width="90px">Currency</td><td>: <input name="Text1" type="text" style="width:90px" /></td></tr>
+			<tr>
+			</tr>
+			</table>
+			<table>
+		<tr><td class="a1">Telephone 1</td><td>: <input name="Text1" type="text" style="width:120px" /></td>
+		    <td class="a2" width="90" >Telephone 2</td><td>: <input name="Text1" type="text" style="width:120px" /></td>
+		</tr>
+		<tr><td class="a1">Fax 1</td><td>: <input name="Text1" type="text" style="width:120px" /></td>
+		    <td class="a2" width="90">Fax 2</td><td>: <input name="Text1" type="text" style="width:120px" /></td>
+		</tr>
+		<tr><td class="a1">Homepage</td><td>: <input name="Text1" type="text" style="width:200px" /></td>
+		  </tr>
+		</table>
+		
+		<table>
+		<tr>
+			
+			<td class="a1" width="90">Bank</td><td>: <input name="Text1" type="text" style="width:200px" /></td>
+			<td class="a2" width="90">Account #</td><td>: <input name="Text1" type="text" style="width:200px" /></td>
+		    <td class="master2" width="90">Country</td><td>: <select name="Select1" style="width:120px">
+				<option>Malaysia</option>
+				<option>China</option>
+				<option>Indonesia</option>
+				<option>Thailand</option>
+				<option>Hong Kong</option>
+			</select></td>
+
+			</tr>
+			<tr>
+			<td class="master" width="90px">Payment Mode</td><td>: <select name="Select1">
+				<option>TT</option>
+				<option>Cheque</option>
+			</select></td>
+
+			<td class="master2" width="90px">Terms</td><td>: <select name="Select1">
+				<option>30 Days</option>
+				<option>COD</option>
+				</select>
+</td>
+
+			</tr>
+			</table>
+			
+
+ 		<table>
+ 		
+ 		<tr>
+ 		<td class="a1">Contact Person 1</td><td>: <input name="Text1" type="text" style="width:200px" /></td>
+ 		<td  width="70px" class="a2">Position</td><td>: <input name="Text1" type="text" style="width:200px" /></td></tr>
+ 		<tr>
+ 		<td class="a1">Contact Number</td><td>: <input name="Text1" type="text" style="width:200px" /></td>
+ 		<td  width="70px" class="a2">email</td><td>: <input name="Text1" type="text" style="width:200px" /></td>
+		</tr>
+ 		
+ 		<tr>
+ 		<td class="a1">Contact Person 2</td><td>: <input name="Text1" type="text" style="width:200px" /></td>
+ 		<td  width="70px" class="a2">Position</td><td>: <input name="Text1" type="text" style="width:200px" /></td></tr>
+ 		<tr>
+ 		<td class="a1">Contact Number</td><td>: <input name="Text1" type="text" style="width:200px" /></td>
+ 		<td  width="70px" class="a2">email</td><td>: <input name="Text1" type="text" style="width:200px" /></td>
+		</tr>
+ 		
+ 		</table>
+
+		<table>
+		<tr>
+		<td class="green">Create By</td><td>: <input name="Text1" type="text" style="width:200px" /></td>
+		<td class="green2" width="90px">Create Date</td><td>: <input name="Text1" type="text" style="width:100px" /></td>
+		</tr>
+		</table>
+		
+		<table>
+		<tr>
+		<td class="a1">Remarks</td><td>: <input name="Text1" type="text" style="width:600px" /></td></tr></table>
+		
+<table class="table1"></table>
+
+		<table style="font-family:'Tw Cen MT'; font-size:16px; color:#CC0000; font-weight:bold">
+		<tr>
+		<td>
+		* kindly pls confirm the layout <br />
+		* red color column are link from master file <br />
+		* 'create by' are capture from username <br />
+		* 'create date' are capture system date <br />
+		* pls let me know which column is a MUST <br />
+		* 'Status' by default = 'ACTIVE'
+		</td>
+		</tr></table>
+</body>
+
+</html>

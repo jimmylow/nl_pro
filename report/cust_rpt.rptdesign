@@ -1,0 +1,1060 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 3.7.2.v20120213 Build &lt;3.7.2.v20120214-1408></property>
+    <list-property name="propertyBindings">
+        <structure>
+            <property name="name">odaDriverClass</property>
+            <property name="id">7</property>
+        </structure>
+        <structure>
+            <property name="name">odaURL</property>
+            <property name="id">7</property>
+            <expression name="value" type="javascript">params["dbsel"].value;</expression>
+        </structure>
+        <structure>
+            <property name="name">odaUser</property>
+            <property name="id">7</property>
+        </structure>
+        <structure>
+            <property name="name">odaAutoCommit</property>
+            <property name="id">7</property>
+        </structure>
+        <structure>
+            <property name="name">odaIsolationMode</property>
+            <property name="id">7</property>
+        </structure>
+        <structure>
+            <property name="name">odaPassword</property>
+            <property name="id">7</property>
+        </structure>
+        <structure>
+            <property name="name">odaJndiName</property>
+            <property name="id">7</property>
+        </structure>
+        <structure>
+            <property name="name">OdaConnProfileName</property>
+            <property name="id">7</property>
+        </structure>
+        <structure>
+            <property name="name">OdaConnProfileStorePath</property>
+            <property name="id">7</property>
+        </structure>
+    </list-property>
+    <property name="units">in</property>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <property name="imageDPI">96</property>
+    <parameters>
+        <scalar-parameter name="dbsel" id="214">
+            <property name="hidden">true</property>
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+    </parameters>
+    <data-sources>
+        <oda-data-source extensionID="org.eclipse.birt.report.data.oda.jdbc" name="nlDataSource" id="7">
+            <list-property name="privateDriverProperties">
+                <ex-property>
+                    <name>metadataBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledMetadataBidiFormatStr</name>
+                </ex-property>
+                <ex-property>
+                    <name>contentBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledContentBidiFormatStr</name>
+                </ex-property>
+            </list-property>
+            <property name="odaDriverClass">com.mysql.jdbc.Driver</property>
+            <property name="odaURL">jdbc:mysql://127.0.0.1:9909/nl_db</property>
+            <property name="odaUser">root</property>
+            <encrypted-property name="odaPassword" encryptionID="base64">YWRtaW45MDAy</encrypted-property>
+            <property name="OdaConnProfileName">nlDataSource</property>
+            <property name="OdaConnProfileStorePath">nl_datasour</property>
+        </oda-data-source>
+    </data-sources>
+    <data-sets>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="Data Set" id="8">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">customer_code</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">customer_code</text-property>
+                    <text-property name="heading">customer_code</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">customer_desc</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">customer_desc</text-property>
+                    <text-property name="heading">customer_desc</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">active_flag</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">active_flag</text-property>
+                    <text-property name="heading">active_flag</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">currency_code</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">currency_code</text-property>
+                    <text-property name="heading">currency_code</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">address</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">address</text-property>
+                    <text-property name="heading">address</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">address_2</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">address_2</text-property>
+                    <text-property name="heading">address_2</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">website</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">website</text-property>
+                    <text-property name="heading">website</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">telephone</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">telephone</text-property>
+                    <text-property name="heading">telephone</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">fax</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">fax</text-property>
+                    <text-property name="heading">fax</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">contact_person</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">contact_person</text-property>
+                    <text-property name="heading">contact_person</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">email</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">email</text-property>
+                    <text-property name="heading">email</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">create_by</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">create_by</text-property>
+                    <text-property name="heading">create_by</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">creation_time</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">creation_time</text-property>
+                    <text-property name="heading">creation_time</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">modified_by</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">modified_by</text-property>
+                    <text-property name="heading">modified_by</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">modified_on</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">modified_on</text-property>
+                    <text-property name="heading">modified_on</text-property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">customer_code</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">customer_desc</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">active_flag</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">currency_code</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">address</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">address_2</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">website</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">8</property>
+                        <property name="name">telephone</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">9</property>
+                        <property name="name">fax</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">10</property>
+                        <property name="name">contact_person</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">11</property>
+                        <property name="name">email</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">12</property>
+                        <property name="name">create_by</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">13</property>
+                        <property name="name">creation_time</property>
+                        <property name="dataType">date-time</property>
+                    </structure>
+                    <structure>
+                        <property name="position">14</property>
+                        <property name="name">modified_by</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">15</property>
+                        <property name="name">modified_on</property>
+                        <property name="dataType">date-time</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">nlDataSource</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">customer_code</property>
+                    <property name="nativeName">customer_code</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">customer_desc</property>
+                    <property name="nativeName">customer_desc</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">active_flag</property>
+                    <property name="nativeName">active_flag</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">currency_code</property>
+                    <property name="nativeName">currency_code</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">address</property>
+                    <property name="nativeName">address</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">address_2</property>
+                    <property name="nativeName">address_2</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">7</property>
+                    <property name="name">website</property>
+                    <property name="nativeName">website</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">8</property>
+                    <property name="name">telephone</property>
+                    <property name="nativeName">telephone</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">9</property>
+                    <property name="name">fax</property>
+                    <property name="nativeName">fax</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">10</property>
+                    <property name="name">contact_person</property>
+                    <property name="nativeName">contact_person</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">11</property>
+                    <property name="name">email</property>
+                    <property name="nativeName">email</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">12</property>
+                    <property name="name">create_by</property>
+                    <property name="nativeName">create_by</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">13</property>
+                    <property name="name">creation_time</property>
+                    <property name="nativeName">creation_time</property>
+                    <property name="dataType">date-time</property>
+                    <property name="nativeDataType">93</property>
+                </structure>
+                <structure>
+                    <property name="position">14</property>
+                    <property name="name">modified_by</property>
+                    <property name="nativeName">modified_by</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">15</property>
+                    <property name="name">modified_on</property>
+                    <property name="nativeName">modified_on</property>
+                    <property name="dataType">date-time</property>
+                    <property name="nativeDataType">93</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select *
+from customer_master
+order by customer_code]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>customer_code</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>20</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>customer_code</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>customer_code</design:label>
+            <design:formattingHints>
+              <design:displaySize>20</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>customer_desc</design:name>
+              <design:position>2</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>50</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>customer_desc</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>customer_desc</design:label>
+            <design:formattingHints>
+              <design:displaySize>50</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>active_flag</design:name>
+              <design:position>3</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>65535</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>active_flag</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>active_flag</design:label>
+            <design:formattingHints>
+              <design:displaySize>65535</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>currency_code</design:name>
+              <design:position>4</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>20</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>currency_code</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>currency_code</design:label>
+            <design:formattingHints>
+              <design:displaySize>20</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>address</design:name>
+              <design:position>5</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>100</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>address</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>address</design:label>
+            <design:formattingHints>
+              <design:displaySize>100</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>address_2</design:name>
+              <design:position>6</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>100</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>address_2</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>address_2</design:label>
+            <design:formattingHints>
+              <design:displaySize>100</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>website</design:name>
+              <design:position>7</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>50</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>website</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>website</design:label>
+            <design:formattingHints>
+              <design:displaySize>50</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>telephone</design:name>
+              <design:position>8</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>50</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>telephone</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>telephone</design:label>
+            <design:formattingHints>
+              <design:displaySize>50</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>fax</design:name>
+              <design:position>9</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>50</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>fax</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>fax</design:label>
+            <design:formattingHints>
+              <design:displaySize>50</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>contact_person</design:name>
+              <design:position>10</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>50</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>contact_person</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>contact_person</design:label>
+            <design:formattingHints>
+              <design:displaySize>50</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>email</design:name>
+              <design:position>11</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>50</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>email</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>email</design:label>
+            <design:formattingHints>
+              <design:displaySize>50</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>create_by</design:name>
+              <design:position>12</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>20</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>create_by</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>create_by</design:label>
+            <design:formattingHints>
+              <design:displaySize>20</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>creation_time</design:name>
+              <design:position>13</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>93</design:nativeDataTypeCode>
+            <design:precision>19</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>creation_time</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>creation_time</design:label>
+            <design:formattingHints>
+              <design:displaySize>19</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>modified_by</design:name>
+              <design:position>14</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>20</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>modified_by</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>modified_by</design:label>
+            <design:formattingHints>
+              <design:displaySize>20</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>modified_on</design:name>
+              <design:position>15</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>93</design:nativeDataTypeCode>
+            <design:precision>19</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>modified_on</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>modified_on</design:label>
+            <design:formattingHints>
+              <design:displaySize>19</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+    </data-sets>
+    <styles>
+        <style name="report" id="4">
+            <property name="fontFamily">sans-serif</property>
+            <property name="fontSize">10pt</property>
+        </style>
+        <style name="crosstab-cell" id="5">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+        <style name="crosstab" id="6">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+        <style name="table-header" id="213">
+            <property name="backgroundColor">#C0C0C0</property>
+        </style>
+    </styles>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <property name="type">a4</property>
+            <property name="orientation">landscape</property>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <grid id="25">
+            <property name="height">0.6666666666666666in</property>
+            <property name="width">11.104166666666666in</property>
+            <column id="26">
+                <property name="width">2.6041666666666665in</property>
+            </column>
+            <column id="27">
+                <property name="width">5.635416666666667in</property>
+            </column>
+            <column id="28">
+                <property name="width">2.8645833333333335in</property>
+            </column>
+            <row id="29">
+                <property name="height">0.5104166666666666in</property>
+                <cell id="30">
+                    <text id="112"/>
+                </cell>
+                <cell id="31">
+                    <text id="33">
+                        <property name="fontSize">14pt</property>
+                        <property name="fontWeight">bold</property>
+                        <property name="textAlign">center</property>
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[CUSTOMER MASTER LISTING
+]]></text-property>
+                    </text>
+                </cell>
+                <cell id="32">
+                    <grid id="88">
+                        <property name="height">0.4895833333333333in</property>
+                        <property name="width">2.5625in</property>
+                        <column id="105">
+                            <property name="width">0.75in</property>
+                        </column>
+                        <column id="89">
+                            <property name="width">1.8125in</property>
+                        </column>
+                        <row id="90">
+                            <property name="height">0.23958333333333334in</property>
+                            <cell id="103">
+                                <label id="106">
+                                    <text-property name="text">Print On :</text-property>
+                                </label>
+                            </cell>
+                            <cell id="91">
+                                <text id="95">
+                                    <property name="textAlign">center</property>
+                                    <property name="display">inline</property>
+                                    <property name="contentType">html</property>
+                                    <text-property name="content"><![CDATA[<value-of format="dd/MM/yyyy">new Date()</value-of>]]></text-property>
+                                </text>
+                            </cell>
+                        </row>
+                        <row id="92">
+                            <property name="height">0.25in</property>
+                            <cell id="104">
+                                <label id="107">
+                                    <text-property name="text">Page     :</text-property>
+                                </label>
+                            </cell>
+                            <cell id="93">
+                                <auto-text id="102">
+                                    <property name="fontWeight">normal</property>
+                                    <property name="textAlign">left</property>
+                                    <property name="type">page-number</property>
+                                </auto-text>
+                            </cell>
+                        </row>
+                    </grid>
+                </cell>
+            </row>
+            <row id="74">
+                <property name="height">0.15625in</property>
+                <cell id="75">
+                    <property name="colSpan">3</property>
+                    <property name="rowSpan">1</property>
+                </cell>
+            </row>
+        </grid>
+        <table id="113">
+            <property name="width">11.135416666666666in</property>
+            <property name="dataSet">Data Set</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">customer_code</property>
+                    <text-property name="displayName">customer_code</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["customer_code"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">customer_desc</property>
+                    <text-property name="displayName">customer_desc</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["customer_desc"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">active_flag</property>
+                    <text-property name="displayName">active_flag</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["active_flag"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">currency_code</property>
+                    <text-property name="displayName">currency_code</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["currency_code"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">address</property>
+                    <text-property name="displayName">address</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["address"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">address_2</property>
+                    <text-property name="displayName">address_2</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["address_2"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">website</property>
+                    <text-property name="displayName">website</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["website"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">telephone</property>
+                    <text-property name="displayName">telephone</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["telephone"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">fax</property>
+                    <text-property name="displayName">fax</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["fax"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">contact_person</property>
+                    <text-property name="displayName">contact_person</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["contact_person"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">email</property>
+                    <text-property name="displayName">email</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["email"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">create_by</property>
+                    <text-property name="displayName">create_by</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["create_by"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">creation_time</property>
+                    <text-property name="displayName">creation_time</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["creation_time"]</expression>
+                    <property name="dataType">date-time</property>
+                </structure>
+                <structure>
+                    <property name="name">modified_by</property>
+                    <text-property name="displayName">modified_by</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["modified_by"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">modified_on</property>
+                    <text-property name="displayName">modified_on</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["modified_on"]</expression>
+                    <property name="dataType">date-time</property>
+                </structure>
+                <structure>
+                    <property name="name">Aggregation</property>
+                    <text-property name="displayName">no</text-property>
+                    <property name="dataType">integer</property>
+                    <property name="aggregateFunction">RUNNINGCOUNT</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                        </structure>
+                    </list-property>
+                    <property name="allowExport">true</property>
+                </structure>
+            </list-property>
+            <column id="210">
+                <property name="width">0.53125in</property>
+            </column>
+            <column id="192">
+                <property name="width">1.09375in</property>
+            </column>
+            <column id="193">
+                <property name="width">2.3125in</property>
+            </column>
+            <column id="196">
+                <property name="width">1.7291666666666667in</property>
+            </column>
+            <column id="197">
+                <property name="width">1.40625in</property>
+            </column>
+            <column id="199">
+                <property name="width">0.9895833333333334in</property>
+            </column>
+            <column id="200">
+                <property name="width">1.2604166666666667in</property>
+            </column>
+            <column id="201">
+                <property name="width">1.1145833333333333in</property>
+            </column>
+            <header>
+                <row id="114">
+                    <property name="borderBottomColor">#000000</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderTopColor">#000000</property>
+                    <property name="borderTopStyle">solid</property>
+                    <cell id="207">
+                        <text id="215">
+                            <property name="contentType">auto</property>
+                            <text-property name="content"><![CDATA[No]]></text-property>
+                        </text>
+                    </cell>
+                    <cell id="115">
+                        <label id="116">
+                            <text-property name="text">Customer Code</text-property>
+                        </label>
+                    </cell>
+                    <cell id="117">
+                        <label id="118">
+                            <text-property name="text">Name</text-property>
+                        </label>
+                    </cell>
+                    <cell id="123">
+                        <label id="124">
+                            <text-property name="text">Address 1</text-property>
+                        </label>
+                    </cell>
+                    <cell id="125">
+                        <label id="126">
+                            <text-property name="text">Address 2</text-property>
+                        </label>
+                    </cell>
+                    <cell id="129">
+                        <label id="130">
+                            <text-property name="text">Tel.</text-property>
+                        </label>
+                    </cell>
+                    <cell id="131">
+                        <label id="132">
+                            <text-property name="text">Fax</text-property>
+                        </label>
+                    </cell>
+                    <cell id="133">
+                        <label id="134">
+                            <text-property name="text">Contect Person</text-property>
+                        </label>
+                    </cell>
+                </row>
+            </header>
+            <detail>
+                <row id="145">
+                    <cell id="208">
+                        <data id="212">
+                            <property name="resultSetColumn">Aggregation</property>
+                        </data>
+                    </cell>
+                    <cell id="146">
+                        <data id="147">
+                            <property name="resultSetColumn">customer_code</property>
+                        </data>
+                    </cell>
+                    <cell id="148">
+                        <data id="149">
+                            <property name="resultSetColumn">customer_desc</property>
+                        </data>
+                    </cell>
+                    <cell id="154">
+                        <data id="155">
+                            <property name="resultSetColumn">address</property>
+                        </data>
+                    </cell>
+                    <cell id="156">
+                        <data id="157">
+                            <property name="resultSetColumn">address_2</property>
+                        </data>
+                    </cell>
+                    <cell id="160">
+                        <data id="161">
+                            <property name="resultSetColumn">telephone</property>
+                        </data>
+                    </cell>
+                    <cell id="162">
+                        <data id="163">
+                            <property name="resultSetColumn">fax</property>
+                        </data>
+                    </cell>
+                    <cell id="164">
+                        <data id="165">
+                            <property name="resultSetColumn">contact_person</property>
+                        </data>
+                    </cell>
+                </row>
+            </detail>
+            <footer>
+                <row id="176">
+                    <cell id="209"/>
+                    <cell id="177"/>
+                    <cell id="178"/>
+                    <cell id="181"/>
+                    <cell id="182"/>
+                    <cell id="184"/>
+                    <cell id="185"/>
+                    <cell id="186"/>
+                </row>
+            </footer>
+        </table>
+    </body>
+</report>

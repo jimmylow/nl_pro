@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <list-property name="configVars">
+        <structure>
+            <property name="name">__isdisplay__srt_49_0</property>
+            <property name="value">ColorCode</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__rprmReportTitle_80_1</property>
+            <property name="value">Colour Code Master Listing</property>
+        </structure>
+        <structure>
+            <property name="name">rprmReportTitle_80_2</property>
+            <property name="value">Colour Code Master Listing</property>
+        </structure>
+        <structure>
+            <property name="name">rprmReportTitle_80_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">srt_49_3</property>
+            <property name="value">clrcd</property>
+        </structure>
+        <structure>
+            <property name="name">srt_49_type_</property>
+            <property name="value">string</property>
+        </structure>
+    </list-property>
+</report>

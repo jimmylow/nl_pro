@@ -1,0 +1,147 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+
+
+<link rel="stylesheet" type="text/css" href="css/ddlevelsmenu-base.css" />
+<link rel="stylesheet" type="text/css" href="css/ddlevelsmenu-topbar.css" />
+<link rel="stylesheet" type="text/css" href="css/ddlevelsmenu-sidebar.css" />
+
+<script type="text/javascript" src="css/ddlevelsmenu.js">
+</script>
+
+</head>
+<body>
+
+<div id="framecontent">
+	<div class="innertube">
+<h3>nl</h3>
+
+<div id="ddtopmenubar" class="mattblackmenu">
+<ul>
+<li><a href="index.htm" rel="ddsubmenu0">Home</a></li>
+<li><a rel="ddsubmenu1">Master</a></li>
+<li><a rel="ddsubmenu2">Sales Management</a></li>
+<li><a rel="ddsubmenu4">Purchase Management</a></li>
+<li><a rel="ddsubmenu3">Inventory Management</a></li>
+</ul>
+</div>
+
+<script type="text/javascript">
+ddlevelsmenu.setup("ddtopmenubar", "topbar") //ddlevelsmenu.setup("mainmenuid", "topbar|sidebar")
+</script>
+<!--
+<p style="margin-top: 2em">More info/ documentation: <a href="http://www.dynamicdrive.com/dynamicindex1/ddlevelsmenu/">All Levels Navigational Menu</a></p>
+
+-->
+<!--HTML for the Drop Down Menus associated with Top Menu Bar-->
+<!--They should be inserted OUTSIDE any element other than the BODY tag itself-->
+<!--A good location would be the end of the page (right above "</BODY>")-->
+
+<!--Top Drop Down Menu 1 HTML-->
+
+<ul id="ddsubmenu0" class="ddsubmenustyle">
+<li><a href="" class="nil">company profile</a></li>
+<li><a href="./admin_set/user_master.php" target="frame1">user login maintenance</a></li>
+<li><a href="#" >Administrator</a>
+  <ul>
+  <li><a href="./admin_set/menu_set.php" target="frame1">Menu Master</a></li>
+  <li><a href="./admin_set/profile_master.php" target="frame1">Profile Master</a></li>
+  
+  </ul>
+</li>
+</ul>
+
+
+<ul id="ddsubmenu1" class="ddsubmenustyle">
+<li><a href="./main_mas/type_master.php" target="frame1">Type Master</a></li>
+<li><a href="./main_mas/style_master.php" target="frame1">Style Master</a></li>
+<li><a href="./main_mas/country_mas.php" target="frame1">Country Master</a></li>
+<li><a href="./main_mas/curr_mas.php" target="frame1">Currency Master</a></li>
+<li><a href="#">Stock Master File</a>
+  <ul>
+  <li><a href="./stck_mas/colormas.php" target="frame1">Color Master</a></li>
+  <li><a href="./stck_mas/catmas.php" target="frame1">Stock Category</a></li>
+  <li><a href="./stck_mas/itm_group_master.php" target="frame1">Item Group Master</a></li>
+  <li><a href="#" class="nil">Stock Location</a></li>
+  <li><a href="./stck_mas/uommas.php" target="frame1">Stock UOM</a></li>
+   </ul>
+</li>
+
+<li><a href="./main_mas/pmode_master.php" target="frame1">Payment Mode Master</a></li>
+<li><a href="./main_mas/term_mas.php" target="frame1">Terms Master</a>
+<li><a href="./main_mas/supp_mas.php" target="frame1">Supplier Master</a></li>
+<!--  <ul>
+  <li><a href="#">Sub Item 5.1a</a></li>
+  <li><a href="#">Item Folder 5.2a</a>
+    <ul>
+    <li><a href="#">Sub Item 5.2.1a</a></li>
+    <li><a href="#">Sub Item 5.2.2a</a></li>
+    <li><a href="#">Sub Item 5.2.3a</a></li>
+    <li><a href="#">Sub Item 5.2.4a</a></li>
+    </ul>
+  </li>
+	</ul>-->
+</li>
+</ul>
+
+
+<!--Top Drop Down Menu 2 HTML-->
+
+<ul id="ddsubmenu2" class="ddsubmenustyle">
+<li><a href="#">Item 1b</a></li>
+<li><a href="#">Item 2b</a></li>
+<li><a href="#">Item Folder 3b</a>
+  <ul>
+  <li><a href="#">Sub Item 3.1b</a></li>
+  <li><a href="#">Sub Item 3.2b</a></li>
+  <li><a href="#">Sub Item 3.3b</a></li>
+  <li><a href="#">Sub Item 3.4b</a></li>
+  </ul>
+</li>
+<li><a href="#">Item 4b</a></li>
+<li><a href="#">Item Folder 5b</a>
+  <ul>
+  <li><a href="#">Sub Item 5.1b</a></li>
+  <li><a href="#">Item Folder 5.2b</a>
+    <ul>
+    <li><a href="#">Sub Item 5.2.1b</a></li>
+    <li><a href="#">Sub Item 5.2.2b</a></li>
+    <li><a href="#">Sub Item 5.2.3b</a></li>
+    </ul>
+  </li>
+	</ul>
+</li>
+<li><a href="#">Item 6b</a></li>
+</ul>
+
+<!--Top Drop Down Menu 3 HTML-->
+
+<ul id="ddsubmenu3" class="ddsubmenustyle">
+<li><a href="">testing 5</a></li>
+</ul>
+
+<ul id="ddsubmenu4" class="ddsubmenustyle">
+<li><a href="">testign 4</a></li>
+</ul>
+
+		</div>
+</div>
+
+<div id="maincontent">
+		<div class="innertube">
+		
+<iframe id="canlender" name="frame1"
+        src="welcome.htm"
+		width="100%" height="1000" 
+		frameborder="0">
+</iframe>
+</div>
+		</div>
+</body>
+</html>
+
+

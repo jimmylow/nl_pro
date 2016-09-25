@@ -1,0 +1,244 @@
+<?php
+    include("../Setting/Configifx.php");
+	include("../Setting/Connection.php");
+	$var_loginid = $_SESSION['sid'];
+    
+    if($var_loginid == "") { 
+      echo "<script>";   
+      echo "alert('Not Log In to the system');"; 
+      echo "</script>"; 
+
+      echo "<script>";
+      echo 'top.location.href = "../index.php"';
+      echo "</script>";
+    } else {
+      $var_menucode = $_GET['menucd'];
+      include("../Setting/ChqAuth.php");
+    }
+
+    if (isset($_POST['Submit'])){ 
+     if ($_POST['Submit'] == "Print") {
+ 		$fwid = $_POST['selfde'];
+     	$twid = $_POST['seltde'];
+     	 
+     	#----------------Prepare Temp Table For Printing -----------------------------------
+     	$sql  = " Delete From tmpwrkrpt02 where usernm = '$var_loginid'";
+        mysql_query($sql) or die("Unable To Prepare Temp Table For Printing".mysql_error());
+		
+		$shardSize = 2000;
+	 	$sqliq = "";		   			
+	 	$k = 0;
+		$sql  = "SELECT distinct x.workid, x.prod_jobid, x.prod_jobrate, y.payratecd, y.workname, y.deptcd, y.deptde";
+		$sql .= " FROM sew_barcode x, wor_detmas y";
+    	$sql .= " where y.deptcd between '$fwid' and '$twid'";
+    	$sql .= " and x.workid = y.workid";
+    	$sql .= " Order BY x.workid, x.prod_jobid";
+		$rs_result = mysql_query($sql);
+
+		while ($row = mysql_fetch_assoc($rs_result)) { 
+		   	$workid       = $row['workid'];
+		   	$prod_jobid   = $row['prod_jobid'];
+		   	$prod_jobrate = $row['prod_jobrate'];
+		   	$payratecd    = $row['payratecd'];
+		   	$wrknm  	  = mysql_real_escape_string($row['workname']);
+       		$deptcd		  = $row['deptcd'];
+       		$deptde		  = mysql_real_escape_string($row['deptde']);
+
+		   	$sqlc  = "select jobfile_desc";
+	    	$sqlc .= " from jobfile_master";
+       		$sqlc .= " where jobfile_id ='$prod_jobid'";
+       		$sql_resultc = mysql_query($sqlc);
+       		$rowc = mysql_fetch_array($sql_resultc);
+       		$jobfile_desc  = mysql_real_escape_string($rowc['jobfile_desc']);
+		   	       		
+       		$sqlc  = "select paydesc";
+	    	$sqlc .= " from wor_payrate";
+       		$sqlc .= " where paycode ='$payratecd'";
+       		$sql_resultc = mysql_query($sqlc);
+       		$rowc = mysql_fetch_array($sql_resultc);
+       		$paydesc  = mysql_real_escape_string($rowc['paydesc']);
+		    	
+		    //$sqliq  = " Insert Into tmpwrkrpt02 ";
+        	//$sqliq .= " Values ('$var_loginid', '$payratecd', '$paydesc', '$deptcd', '$deptde', ";
+        	//$sqliq .= "   '$workid', '$wrknm', '$prod_jobid ', '$jobfile_desc', '$prod_jobrate')";
+        	if ($k % $shardSize == 0) {
+        		if ($k != 0) {	  
+            		mysql_query($sqliq) or die("Unable Save In Temp Table ".mysql_error());
+        		}
+        		$sqliq = 'Insert Into tmpwrkrpt02 Values ';
+    		}
+   			$sqliq .= (($k % $shardSize == 0) ? '' : ', ') . "('$var_loginid', '$payratecd', '$paydesc', '$deptcd', '$deptde', '$workid', '$wrknm', '$prod_jobid ', '$jobfile_desc', '$prod_jobrate')";
+		 	$k = $k + 1;
+		 }
+		 mysql_query($sqliq) or die("Unable Save In Temp Table ".mysql_error());
+		 mysql_close($db_link); 
+     	 $fname = "wrkrpt03.rptdesign&__title=myReport"; 
+         $dest = "http://".$var_prtserver.":8080/birt-viewer/frameset?__report=".$fname."&usernm=".$var_loginid."&dbsel=".$varrpturldb."&fde=".$fwid."&tde=".$twid;
+         $dest .= urlencode(realpath($fname));
+
+         //header("Location: $dest" );
+         echo "<script language=\"javascript\">window.open('".$dest."','name','height=1000,width=1000,left=200,top=200');</script>";
+         $backloc = "../wrkrpt/prod_paydept.php?menucd=".$var_menucode;
+       	 echo "<script>";
+       	 echo 'location.replace("'.$backloc.'")';
+       	 echo "</script>";        	
+     }
+    } 
+?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+	
+<style media="all" type="text/css">
+@import "../css/styles.css";
+@import "../css/demo_table.css";
+
+.style2 {
+	margin-right: 8px;
+}
+</style>
+<script type="text/javascript" src="../js/datetimepicker_css.js"></script>
+<script type="text/javascript" language="javascript" src="../media/js/jquery-1.4.4.min.js"></script>
+<script type="text/javascript" language="javascript" src="../media/js/jquery.dataTables.js"></script>
+<script type="text/javascript" language="javascript" src="../media/js/jquery.dataTables.nightly.js"></script>
+<script type="text/javascript" src="../media/js/jquery.dataTables.columnFilter.js"></script>
+<script type="text/javascript" src="../js/JavaScriptUtil.js"></script>
+<script type="text/javascript" src="../js/Parsers.js"></script>
+<script type="text/javascript" src="../js/InputMask.js"></script>
+
+<script type="text/javascript" charset="utf-8"> 
+function setup() {
+
+	document.InpRawOpen.selfde.focus();
+									
+}
+
+function getXMLHTTP() { //fuction to return the xml http object
+		var xmlhttp=false;	
+		try{
+			xmlhttp=new XMLHttpRequest();
+		}
+		catch(e)	{		
+			try{			
+				xmlhttp= new ActiveXObject("Microsoft.XMLHTTP");
+			}
+			catch(e){
+				try{
+				xmlhttp = new ActiveXObject("Msxml2.XMLHTTP");
+				}
+				catch(e1){
+					xmlhttp=false;
+				}
+			}
+		}		 	
+		return xmlhttp;
+}
+
+function chkSubmit()
+{
+	var x=document.forms["InpRawOpen"]["selfde"].value;
+	if (x==null || x=="")
+	{
+		alert("From Deparment Cannot Be Blank");
+		document.InpRawOpen.selfde.focus();
+		return false;
+	}
+	
+	var x=document.forms["InpRawOpen"]["seltde"].value;
+	if (x==null || x=="")
+	{
+		alert("To Department Cannot Be Blank");
+		document.InpRawOpen.seltde.focus();
+		return false;
+	}
+
+}
+</script>
+</head>
+
+ <!--<?php include("../sidebarm.php"); ?>--> 
+<body onload="setup()">
+   <?php include("../topbarm.php"); ?> 
+	<div class="contentc">
+	<fieldset name="Group1" style=" width: 758px; height: 205px;" class="style2">
+	 <legend class="title">WORKER REPORT BY DEPARTMENT</legend>
+	  <br />
+	  <form name="InpRawOpen" method="POST" action="<?php echo $_SERVER['PHP_SELF'].'?menucd='.$var_menucode; ?>" style="height: 139px; width: 750px;" onSubmit= "return chkSubmit()">
+		<table style="width: 807px; height: 102px;">
+		    <tr>
+		    	<td></td>
+		    	<td>From Deparment</td>
+		    	<td>:</td>
+		    	<td>
+		    		<select name="selfde" id ="selfde" style="width: 150px">
+			   		<?php
+                   		$sql = "select deptcode, deptdesc from wor_deptmas ORDER BY deptcode";
+                   		$sql_result = mysql_query($sql);
+                   		echo "<option size =30 selected></option>";
+                       
+				   		if(mysql_num_rows($sql_result)) 
+				   		{
+				   			while($row = mysql_fetch_assoc($sql_result)) 
+				   			{ 
+					  			echo '<option value="'.$row['deptcode'].'">'.$row['deptcode']." | ".$row['deptdesc'].'</option>';
+				 	 		} 
+				   		}
+	            	?>				   
+			  		</select>
+		    	</td>
+		    	<td></td>
+		    	<td>To Department</td>
+		    	<td>:</td>
+		    	<td>
+		    		<select name="seltde" id ="seltde" style="width: 150px">
+			   		<?php
+                   		$sql = "select deptcode, deptdesc from wor_deptmas ORDER BY deptcode";
+                   		$sql_result = mysql_query($sql);
+                   		echo "<option size =30 selected></option>";
+                       
+				   		if(mysql_num_rows($sql_result)) 
+				   		{
+				   			while($row = mysql_fetch_assoc($sql_result)) 
+				   			{ 
+					  			echo '<option value="'.$row['deptcode'].'">'.$row['deptcode']." | ".$row['deptdesc'].'</option>';
+				 	 		} 
+				   		}
+	            	?>				   
+			  		</select>
+		    	</td>
+		    </tr>
+			<tr><td></td></tr>
+	  	  	<tr>
+	  	  		<td style="width: 6px"></td>
+	  	  	  	<td colspan="7" align="center">	  	   
+				<?php
+	  	   			include("../Setting/btnprint.php");
+	  	   		?>
+				</td>
+		  </tr>
+	  	  <tr>
+	  	    <td style="width: 6px"></td> 
+	  	    <td colspan="3">&nbsp;</td>
+	   	  </tr> 
+	   	
+	  	  <tr>
+	  	   <td colspan="8" align="center">
+	  	   <?php
+	  	   		//include("../Setting/btnprint.php");
+	  	   ?>
+	  	   </td>
+	  	  </tr>
+	  	   <tr><td style="width: 6px"></td></tr>
+
+	  	</table>
+	   </form>	
+	</fieldset>
+	 </div>
+    <div class="spacer"></div>
+</body>
+
+</html>

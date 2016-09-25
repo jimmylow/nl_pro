@@ -1,0 +1,16 @@
+what,kind,bundleId,bundleVersion,description,time
+java.specification.name,sysinfo,,,"Java Platform API Specification",1364138832134
+java.specification.vendor,sysinfo,,,"Oracle Corporation",1364138832134
+java.specification.version,sysinfo,,,"1.7",1364138832134
+java.vendor,sysinfo,,,"Oracle Corporation",1364138832134
+java.version,sysinfo,,,"1.7.0_06",1364138832134
+java.vm.info,sysinfo,,,"mixed mode",1364138832134
+java.vm.name,sysinfo,,,"Java HotSpot(TM) Client VM",1364138832134
+java.vm.specification.name,sysinfo,,,"Java Virtual Machine Specification",1364138832134
+java.vm.specification.vendor,sysinfo,,,"Oracle Corporation",1364138832134
+java.vm.specification.version,sysinfo,,,"1.7",1364138832134
+java.vm.vendor,sysinfo,,,"Oracle Corporation",1364138832134
+java.vm.version,sysinfo,,,"23.2-b09",1364138832134
+started,bundle,org.eclipse.epp.usagedata.ui,1.3.1.R201106061540,"org.eclipse.epp.usagedata.ui",1364138833191
+deactivated,workbench,org.eclipse.ui.workbench,3.7.1.v20120104-1859,"",1364138833369
+opened,view,org.eclipse.ui.ide,3.7.0.v20110928-1505,"org.eclipse.ui.views.ProblemView",1364138836395

@@ -1,0 +1,185 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<!--
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+-->
+<style type="text/css">
+.title {
+	font-family:"Tw Cen MT";
+	font-size:16px;
+	font-weight:bold;
+	color:#3366FF;
+	
+}
+
+.a1 {
+	font-family:"Tw Cen MT";
+	font-size:14px;
+	width:160px;
+	padding-left:30px
+	
+}
+
+.a2 {
+	font-family:"Tw Cen MT";
+	font-size:14px;
+	
+}
+
+
+.a3 {
+	font-family:"Tw Cen MT";
+	font-size:14px;
+	width:160px;
+	padding-left:30px;
+	border:thin #999999 solid;
+	text-align:center;
+	width:200px;
+	height:20px
+	
+}
+
+.table1
+    {
+	border-top: thin #C0C0C0 solid;
+	padding-top:6px;
+	width:100%
+}
+
+.table2 {
+	border-bottom:thin #cococo solid;
+	width:100%
+}
+
+.button {
+		font-family:"Tw Cen MT";
+	font-size:15px;
+	width:70px	
+}
+
+.master {
+	font-family:"Tw Cen MT";
+	font-size:14px;
+	width:160px;
+	padding-left:30px;
+	color:#FF0000;
+	font-weight:bold
+	
+}
+
+.master2 {
+	font-family:"Tw Cen MT";
+	font-size:14px;
+	color:#FF0000;
+	font-weight:bold
+
+}
+
+.green {
+	font-family:"Tw Cen MT";
+	font-size:14px;
+	width:160px;
+	padding-left:30px;
+	color:#009933;
+	font-weight:bold
+
+}
+
+.green2 {
+	font-family:"Tw Cen MT";
+	font-size:14px;
+	color:#009933;
+	font-weight:bold
+
+}
+
+</style>
+<title>raw material price control</title>
+</head>
+
+<body>
+<table>
+
+	<tr><td class="title" style="padding-bottom:30px">raw material price control</td></tr>
+	
+	</table>
+	<table class="table1"></table>
+	
+	<table>
+			<tr>
+				<td class="a2"><input name="Submit1" type="submit" value="Add" class="button" /></td>
+				<td class="a2" style="padding-left:20px"><input name="Submit1" type="submit" value="Edit" class="button" /></td>
+				<td class="a2" style="padding-left:20px"><input name="Submit1" type="submit" value="Delete" class="button" /></td>
+				<td class="a2" style="padding-left:20px"><input name="Submit1" type="submit" value="Search" class="button" /></td>
+				<td class="a2" style="padding-left:20px"><input name="Submit1" type="submit" value="Print" class="button" /></td>
+
+	</tr></table>
+	
+	<table class="table1"></table>
+	
+		<table>
+		<tr>	
+	<td class="a1" style="color:#FF0000">Master Code</td>	<td>: <select name="Select1" class="master3" style="width:80px">
+				<option>-select-</option>
+				<option>LC001</option>
+				<option>LC002</option>
+				<option>LC003</option>
+				<option>SP001</option>
+				<option>EB001</option>
+			</select></td>	
+					</tr>
+
+				<tr>
+				<td class="a1" style="color:#FF0000">Item No	</td><td>: <select name="Select1" class="master3" style="width:150px">
+				<option>-select-</option>
+				<option>LC001-0101-12"</option>
+				<option>LC001-0201-14"</option>
+				
+			</select></td>	
+				<td class="a1">U O M	</td><td>: <input name="Text1" type="text" style="width:200px"/></td>
+				</tr>
+				
+				<tr><td class="a1"  style="color:#FF0000">Supplier</td><td>: <input name="Text1" type="text" style="width:200px"/></td>
+					<td class="a1">Currency</td><td>: <input name="Text1" type="text" style="width:200px"/></td></tr>
+					
+					<tr>
+					<td class="a1" style="color:#FF0000">Effective Date</td><td>: <input name="Text1" type="text" style="width:200px"/></td>
+					
+					<td class="a1">Shipping Terms</td><td>: <select name="Select1" class="master3" style="width:80px">
+				<option>-select-</option>
+				<option>FOB</option>
+			
+			</select></td>	
+</tr>
+
+			</table>
+			
+			<table>
+				<tr ><td class="a3">From</td><td class="a3">To</td><td class="a3">Price</td></tr>
+				<tr ><td class="a3"></td><td class="a3"></td><td class="a3"></td></tr>
+				<tr ><td class="a3"></td><td class="a3"></td><td class="a3"></td></tr>
+				<tr ><td class="a3"></td><td class="a3"></td><td class="a3"></td></tr>
+				<tr ><td class="a3"></td><td class="a3"></td><td class="a3"></td></tr>
+				<tr ><td class="a3"></td><td class="a3"></td><td class="a3"></td></tr>
+
+
+		
+
+				</table>	
+
+<table>
+<tr>
+			<td>
+			
+			* red color = MUST <br />
+			* UOM and currency will refer from master<br />
+			* Shipping = options field
+			</td></tr></table>
+				
+				
+</body>
+
+</html>

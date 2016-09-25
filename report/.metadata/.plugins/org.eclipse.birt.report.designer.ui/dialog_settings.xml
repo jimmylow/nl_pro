@@ -1,0 +1,696 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="Shell {Select Data Binding}/Shell {Edit Image Item}/Shell {Report Design - nl_proRpt/nlrpt_library.rptlibrary - Eclipse}">
+		<item value="951" key="DIALOG_WIDTH"/>
+		<item value="12" key="DIALOG_Y_ORIGIN"/>
+		<item value="-255" key="DIALOG_X_ORIGIN"/>
+		<item value="395" key="DIALOG_HEIGHT"/>
+		<item value="1|Tahoma|8.25|0|WINDOWS|1|-11|0|0|0|400|0|0|0|1|0|0|0|0|Tahoma" key="DIALOG_FONT_NAME"/>
+	</section>
+	<section name="Shell {Edit Data Set - Data Set}/Shell {Report Design - C:\xampp\htdocs\nl_testing\report\stk_movement_surpt.rptdesign - Eclipse}">
+		<item value="800" key="DIALOG_WIDTH"/>
+		<item value="640" key="SASHFORM.RIGHT"/>
+		<item value="160" key="SASHFORM.LEFT"/>
+		<item value="37" key="DIALOG_Y_ORIGIN"/>
+		<item value="500" key="DIALOG_HEIGHT"/>
+		<item value="112" key="DIALOG_X_ORIGIN"/>
+		<item value="1|Tahoma|8.25|0|WINDOWS|1|-11|0|0|0|400|0|0|0|1|0|0|0|0|Tahoma" key="DIALOG_FONT_NAME"/>
+	</section>
+	<section name="Shell {Edit Data Source - Data Source}/Shell {Report Design - nl_proRpt/cat_rpt.rptdesign - Eclipse}">
+		<item value="800" key="DIALOG_WIDTH"/>
+		<item value="160" key="SASHFORM.LEFT"/>
+		<item value="640" key="SASHFORM.RIGHT"/>
+		<item value="88" key="DIALOG_Y_ORIGIN"/>
+		<item value="180" key="DIALOG_X_ORIGIN"/>
+		<item value="500" key="DIALOG_HEIGHT"/>
+		<item value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
+	</section>
+	<section name="Shell {Edit Data Set - Data Set}/Shell {Report Design - C:\xampp\htdocs\nl_pro\report\ticrptsum.rptdesign - Eclipse}">
+		<item value="800" key="DIALOG_WIDTH"/>
+		<item value="160" key="SASHFORM.LEFT"/>
+		<item value="640" key="SASHFORM.RIGHT"/>
+		<item value="37" key="DIALOG_Y_ORIGIN"/>
+		<item value="112" key="DIALOG_X_ORIGIN"/>
+		<item value="500" key="DIALOG_HEIGHT"/>
+		<item value="1|Tahoma|8.25|0|WINDOWS|1|-11|0|0|0|400|0|0|0|1|0|0|0|0|Tahoma" key="DIALOG_FONT_NAME"/>
+	</section>
+	<section name="Shell {Edit Text Item}/Shell {Report Design - C:\xampp\htdocs\ice_fg\report\invform.rptdesign - Eclipse}">
+		<item value="835" key="DIALOG_WIDTH"/>
+		<item value="52" key="DIALOG_Y_ORIGIN"/>
+		<item value="484" key="DIALOG_HEIGHT"/>
+		<item value="99" key="DIALOG_X_ORIGIN"/>
+		<item value="1|Tahoma|8.25|0|WINDOWS|1|-11|0|0|0|400|0|0|0|1|0|0|0|0|Tahoma" key="DIALOG_FONT_NAME"/>
+	</section>
+	<section name="Shell {Edit Data Source - nlDataSource}/Shell {Report Design - C:\xampp\htdocs\nl_pro\report\rm_receive_rpt.rptdesign - Eclipse}">
+		<item value="800" key="DIALOG_WIDTH"/>
+		<item value="640" key="SASHFORM.RIGHT"/>
+		<item value="160" key="SASHFORM.LEFT"/>
+		<item value="37" key="DIALOG_Y_ORIGIN"/>
+		<item value="500" key="DIALOG_HEIGHT"/>
+		<item value="112" key="DIALOG_X_ORIGIN"/>
+		<item value="1|Tahoma|8.25|0|WINDOWS|1|-11|0|0|0|400|0|0|0|1|0|0|0|0|Tahoma" key="DIALOG_FONT_NAME"/>
+	</section>
+	<section name="Shell {Edit Text Item}/Shell {Report Design - C:\xampp\htdocs\nl_pro\report\sew_barentry.rptdesign - Eclipse}">
+		<item value="835" key="DIALOG_WIDTH"/>
+		<item value="52" key="DIALOG_Y_ORIGIN"/>
+		<item value="484" key="DIALOG_HEIGHT"/>
+		<item value="99" key="DIALOG_X_ORIGIN"/>
+		<item value="1|Tahoma|8.25|0|WINDOWS|1|-11|0|0|0|400|0|0|0|1|0|0|0|0|Tahoma" key="DIALOG_FONT_NAME"/>
+	</section>
+	<section name="Shell {Edit Data Set - Data Set1}/Shell {Report Design - C:\xampp\htdocs\nl_pro\report\sew_barentry.rptdesign - Eclipse}">
+		<item value="800" key="DIALOG_WIDTH"/>
+		<item value="640" key="SASHFORM.RIGHT"/>
+		<item value="160" key="SASHFORM.LEFT"/>
+		<item value="41" key="DIALOG_Y_ORIGIN"/>
+		<item value="500" key="DIALOG_HEIGHT"/>
+		<item value="116" key="DIALOG_X_ORIGIN"/>
+		<item value="1|Tahoma|8.25|0|WINDOWS|1|-11|0|0|0|400|0|0|0|1|0|0|0|0|Tahoma" key="DIALOG_FONT_NAME"/>
+	</section>
+	<section name="Shell {Edit Data Set - Data Set}/Shell {Report Design - C:\xampp\htdocs\nl_testing\report\ticrptsum.rptdesign - Eclipse}">
+		<item value="800" key="DIALOG_WIDTH"/>
+		<item value="160" key="SASHFORM.LEFT"/>
+		<item value="640" key="SASHFORM.RIGHT"/>
+		<item value="37" key="DIALOG_Y_ORIGIN"/>
+		<item value="112" key="DIALOG_X_ORIGIN"/>
+		<item value="500" key="DIALOG_HEIGHT"/>
+		<item value="1|Tahoma|8.25|0|WINDOWS|1|-11|0|0|0|400|0|0|0|1|0|0|0|0|Tahoma" key="DIALOG_FONT_NAME"/>
+	</section>
+	<section name="Shell {Edit Data Set - pojoinsupp}/Shell {Report Design - C:\xampp\htdocs\nl_pro\report\po_mas2.rptdesign - Eclipse}">
+		<item value="800" key="DIALOG_WIDTH"/>
+		<item value="160" key="SASHFORM.LEFT"/>
+		<item value="640" key="SASHFORM.RIGHT"/>
+		<item value="37" key="DIALOG_Y_ORIGIN"/>
+		<item value="112" key="DIALOG_X_ORIGIN"/>
+		<item value="500" key="DIALOG_HEIGHT"/>
+		<item value="1|Tahoma|8.25|0|WINDOWS|1|-11|0|0|0|400|0|0|0|1|0|0|0|0|Tahoma" key="DIALOG_FONT_NAME"/>
+	</section>
+	<section name="Shell {Edit Data Set - suppdet}/Shell {Report Design - C:\xampp\htdocs\nl_pro\report\sew_doform2.rptdesign - Eclipse}">
+		<item value="800" key="DIALOG_WIDTH"/>
+		<item value="640" key="SASHFORM.RIGHT"/>
+		<item value="160" key="SASHFORM.LEFT"/>
+		<item value="37" key="DIALOG_Y_ORIGIN"/>
+		<item value="500" key="DIALOG_HEIGHT"/>
+		<item value="112" key="DIALOG_X_ORIGIN"/>
+		<item value="1|Tahoma|8.25|0|WINDOWS|1|-11|0|0|0|400|0|0|0|1|0|0|0|0|Tahoma" key="DIALOG_FONT_NAME"/>
+	</section>
+	<section name="Shell {Edit Text Item}/Shell {Report Design - C:\xampp\htdocs\nl_fg\report\pur_bal.rptdesign - Eclipse}">
+		<item value="835" key="DIALOG_WIDTH"/>
+		<item value="48" key="DIALOG_Y_ORIGIN"/>
+		<item value="484" key="DIALOG_HEIGHT"/>
+		<item value="95" key="DIALOG_X_ORIGIN"/>
+		<item value="1|Tahoma|8.25|0|WINDOWS|1|-11|0|0|0|400|0|0|0|1|0|0|0|0|Tahoma" key="DIALOG_FONT_NAME"/>
+	</section>
+	<section name="Shell {Edit Data Set - MasterList}/Shell {Report Design - C:\xampp\htdocs\nl_pro\report\sew_barentry.rptdesign - Eclipse}">
+		<item value="800" key="DIALOG_WIDTH"/>
+		<item value="160" key="SASHFORM.LEFT"/>
+		<item value="640" key="SASHFORM.RIGHT"/>
+		<item value="37" key="DIALOG_Y_ORIGIN"/>
+		<item value="112" key="DIALOG_X_ORIGIN"/>
+		<item value="500" key="DIALOG_HEIGHT"/>
+		<item value="1|Tahoma|8.25|0|WINDOWS|1|-11|0|0|0|400|0|0|0|1|0|0|0|0|Tahoma" key="DIALOG_FONT_NAME"/>
+	</section>
+	<section name="Shell {Edit Text Item}/Shell {Report Design - C:\xampp\htdocs\mdf_fg\report\invform.rptdesign - Eclipse}">
+		<item value="835" key="DIALOG_WIDTH"/>
+		<item value="52" key="DIALOG_Y_ORIGIN"/>
+		<item value="484" key="DIALOG_HEIGHT"/>
+		<item value="99" key="DIALOG_X_ORIGIN"/>
+		<item value="1|Tahoma|8.25|0|WINDOWS|1|-11|0|0|0|400|0|0|0|1|0|0|0|0|Tahoma" key="DIALOG_FONT_NAME"/>
+	</section>
+	<section name="Shell {Edit Text Item}/Shell {Report Design - C:\xampp\htdocs\nl_pro\report\ticrpttyp.rptdesign - Eclipse}">
+		<item value="835" key="DIALOG_WIDTH"/>
+		<item value="48" key="DIALOG_Y_ORIGIN"/>
+		<item value="95" key="DIALOG_X_ORIGIN"/>
+		<item value="484" key="DIALOG_HEIGHT"/>
+		<item value="1|Tahoma|8.25|0|WINDOWS|1|-11|0|0|0|400|0|0|0|1|0|0|0|0|Tahoma" key="DIALOG_FONT_NAME"/>
+	</section>
+	<section name="Shell {Edit Data Set - Data Set}/Shell {Report Design - C:\xampp\htdocs\nl_pro\report\sew_barentry3.rptdesign - Eclipse}">
+		<item value="800" key="DIALOG_WIDTH"/>
+		<item value="160" key="SASHFORM.LEFT"/>
+		<item value="640" key="SASHFORM.RIGHT"/>
+		<item value="37" key="DIALOG_Y_ORIGIN"/>
+		<item value="112" key="DIALOG_X_ORIGIN"/>
+		<item value="500" key="DIALOG_HEIGHT"/>
+		<item value="1|Tahoma|8.25|0|WINDOWS|1|-11|0|0|0|400|0|0|0|1|0|0|0|0|Tahoma" key="DIALOG_FONT_NAME"/>
+	</section>
+	<section name="Shell {Edit Text Item}/Shell {Report Design - C:\xampp\htdocs\nl_pro\report\pur_bal.rptdesign - Eclipse}">
+		<item value="835" key="DIALOG_WIDTH"/>
+		<item value="48" key="DIALOG_Y_ORIGIN"/>
+		<item value="484" key="DIALOG_HEIGHT"/>
+		<item value="95" key="DIALOG_X_ORIGIN"/>
+		<item value="1|Tahoma|8.25|0|WINDOWS|1|-11|0|0|0|400|0|0|0|1|0|0|0|0|Tahoma" key="DIALOG_FONT_NAME"/>
+	</section>
+	<section name="Shell {Edit Data Set - Data Set}/Shell {Report Design - C:\xampp\htdocs\nl_pro\report\detqctic_qcgpptyp.rptdesign - Eclipse}">
+		<item value="800" key="DIALOG_WIDTH"/>
+		<item value="160" key="SASHFORM.LEFT"/>
+		<item value="640" key="SASHFORM.RIGHT"/>
+		<item value="37" key="DIALOG_Y_ORIGIN"/>
+		<item value="112" key="DIALOG_X_ORIGIN"/>
+		<item value="500" key="DIALOG_HEIGHT"/>
+		<item value="1|Tahoma|8.25|0|WINDOWS|1|-11|0|0|0|400|0|0|0|1|0|0|0|0|Tahoma" key="DIALOG_FONT_NAME"/>
+	</section>
+	<section name="Shell {Edit Text Item}/Shell {Report Design - C:\xampp\htdocs\nl_fg\report\invform.rptdesign - Eclipse}">
+		<item value="835" key="DIALOG_WIDTH"/>
+		<item value="52" key="DIALOG_Y_ORIGIN"/>
+		<item value="484" key="DIALOG_HEIGHT"/>
+		<item value="99" key="DIALOG_X_ORIGIN"/>
+		<item value="1|Tahoma|8.25|0|WINDOWS|1|-11|0|0|0|400|0|0|0|1|0|0|0|0|Tahoma" key="DIALOG_FONT_NAME"/>
+	</section>
+	<section name="Shell {Edit Data Set - Data Set}/Shell {Report Design - C:\xampp\htdocs\nl_pro\report\sumqctic_qcgpptyp.rptdesign - Eclipse}">
+		<item value="800" key="DIALOG_WIDTH"/>
+		<item value="160" key="SASHFORM.LEFT"/>
+		<item value="640" key="SASHFORM.RIGHT"/>
+		<item value="37" key="DIALOG_Y_ORIGIN"/>
+		<item value="112" key="DIALOG_X_ORIGIN"/>
+		<item value="500" key="DIALOG_HEIGHT"/>
+		<item value="1|Tahoma|8.25|0|WINDOWS|1|-11|0|0|0|400|0|0|0|1|0|0|0|0|Tahoma" key="DIALOG_FONT_NAME"/>
+	</section>
+	<section name="Shell {Edit Data Set - Data Set}/Shell {Report Design - nl_proRpt/sew_barentry3.rptdesign - Eclipse}">
+		<item value="800" key="DIALOG_WIDTH"/>
+		<item value="160" key="SASHFORM.LEFT"/>
+		<item value="640" key="SASHFORM.RIGHT"/>
+		<item value="37" key="DIALOG_Y_ORIGIN"/>
+		<item value="112" key="DIALOG_X_ORIGIN"/>
+		<item value="500" key="DIALOG_HEIGHT"/>
+		<item value="1|Tahoma|8.25|0|WINDOWS|1|-11|0|0|0|400|0|0|0|1|0|0|0|0|Tahoma" key="DIALOG_FONT_NAME"/>
+	</section>
+	<section name="Shell {Edit Data Source - Data Source}/Shell {Report Design - C:\xampp\htdocs\nl_pro\report\clr_rpt.rptdesign - Eclipse}">
+		<item value="800" key="DIALOG_WIDTH"/>
+		<item value="160" key="SASHFORM.LEFT"/>
+		<item value="640" key="SASHFORM.RIGHT"/>
+		<item value="88" key="DIALOG_Y_ORIGIN"/>
+		<item value="180" key="DIALOG_X_ORIGIN"/>
+		<item value="500" key="DIALOG_HEIGHT"/>
+		<item value="1|Tahoma|8.25|0|WINDOWS|1|-11|0|0|0|400|0|0|0|1|0|0|0|0|Tahoma" key="DIALOG_FONT_NAME"/>
+	</section>
+	<section name="Shell {Edit Text Item}/Shell {Report Design - C:\xampp\htdocs\nl_pro\report\sew_doform.rptdesign - Eclipse}">
+		<item value="835" key="DIALOG_WIDTH"/>
+		<item value="48" key="DIALOG_Y_ORIGIN"/>
+		<item value="484" key="DIALOG_HEIGHT"/>
+		<item value="95" key="DIALOG_X_ORIGIN"/>
+		<item value="1|Tahoma|8.25|0|WINDOWS|1|-11|0|0|0|400|0|0|0|1|0|0|0|0|Tahoma" key="DIALOG_FONT_NAME"/>
+	</section>
+	<section name="Shell {Edit Text Item}/Shell {Report Design - C:\xampp\htdocs\nl_testing-old\report\pur_bal.rptdesign - Eclipse}">
+		<item value="835" key="DIALOG_WIDTH"/>
+		<item value="48" key="DIALOG_Y_ORIGIN"/>
+		<item value="484" key="DIALOG_HEIGHT"/>
+		<item value="95" key="DIALOG_X_ORIGIN"/>
+		<item value="1|Tahoma|8.25|0|WINDOWS|1|-11|0|0|0|400|0|0|0|1|0|0|0|0|Tahoma" key="DIALOG_FONT_NAME"/>
+	</section>
+	<section name="Shell {Edit Data Set - areamas}/Shell {Report Design - C:\xampp\htdocs\nl_pro\report\sew_barentry3.rptdesign - Eclipse}">
+		<item value="800" key="DIALOG_WIDTH"/>
+		<item value="160" key="SASHFORM.LEFT"/>
+		<item value="640" key="SASHFORM.RIGHT"/>
+		<item value="37" key="DIALOG_Y_ORIGIN"/>
+		<item value="112" key="DIALOG_X_ORIGIN"/>
+		<item value="500" key="DIALOG_HEIGHT"/>
+		<item value="1|Tahoma|8.25|0|WINDOWS|1|-11|0|0|0|400|0|0|0|1|0|0|0|0|Tahoma" key="DIALOG_FONT_NAME"/>
+	</section>
+	<section name="Shell {Edit Text Item}/Shell {Report Design - C:\xampp\htdocs\nl_pro\report\planrpt.rptdesign - Eclipse}">
+		<item value="835" key="DIALOG_WIDTH"/>
+		<item value="48" key="DIALOG_Y_ORIGIN"/>
+		<item value="484" key="DIALOG_HEIGHT"/>
+		<item value="95" key="DIALOG_X_ORIGIN"/>
+		<item value="1|Tahoma|8.25|0|WINDOWS|1|-11|0|0|0|400|0|0|0|1|0|0|0|0|Tahoma" key="DIALOG_FONT_NAME"/>
+	</section>
+	<section name="Shell {Edit Data Set - Data Set}/Shell {Report Design - C:\xampp\htdocs\nl_pro\report\detqctic_grppr.rptdesign - Eclipse}">
+		<item value="800" key="DIALOG_WIDTH"/>
+		<item value="160" key="SASHFORM.LEFT"/>
+		<item value="640" key="SASHFORM.RIGHT"/>
+		<item value="37" key="DIALOG_Y_ORIGIN"/>
+		<item value="112" key="DIALOG_X_ORIGIN"/>
+		<item value="500" key="DIALOG_HEIGHT"/>
+		<item value="1|Tahoma|8.25|0|WINDOWS|1|-11|0|0|0|400|0|0|0|1|0|0|0|0|Tahoma" key="DIALOG_FONT_NAME"/>
+	</section>
+	<section name="Shell {Edit Data Set - Data Set2}/Shell {Report Design - C:\xampp\htdocs\nl_pro\report\rm_receive_rpt.rptdesign - Eclipse}">
+		<item value="800" key="DIALOG_WIDTH"/>
+		<item value="640" key="SASHFORM.RIGHT"/>
+		<item value="160" key="SASHFORM.LEFT"/>
+		<item value="37" key="DIALOG_Y_ORIGIN"/>
+		<item value="500" key="DIALOG_HEIGHT"/>
+		<item value="112" key="DIALOG_X_ORIGIN"/>
+		<item value="1|Tahoma|8.25|0|WINDOWS|1|-11|0|0|0|400|0|0|0|1|0|0|0|0|Tahoma" key="DIALOG_FONT_NAME"/>
+	</section>
+	<section name="Shell {Edit Data Set - Data Set2}/Shell {Report Design - C:\xampp\htdocs\nl_pro\report\ticrptsum.rptdesign - Eclipse}">
+		<item value="800" key="DIALOG_WIDTH"/>
+		<item value="160" key="SASHFORM.LEFT"/>
+		<item value="640" key="SASHFORM.RIGHT"/>
+		<item value="37" key="DIALOG_Y_ORIGIN"/>
+		<item value="112" key="DIALOG_X_ORIGIN"/>
+		<item value="500" key="DIALOG_HEIGHT"/>
+		<item value="1|Tahoma|8.25|0|WINDOWS|1|-11|0|0|0|400|0|0|0|1|0|0|0|0|Tahoma" key="DIALOG_FONT_NAME"/>
+	</section>
+	<section name="Shell {Edit Text Item}/Shell {Report Design - C:\xampp\htdocs\fnl_fg\report\pur_bal.rptdesign - Eclipse}">
+		<item value="835" key="DIALOG_WIDTH"/>
+		<item value="48" key="DIALOG_Y_ORIGIN"/>
+		<item value="484" key="DIALOG_HEIGHT"/>
+		<item value="95" key="DIALOG_X_ORIGIN"/>
+		<item value="1|Tahoma|8.25|0|WINDOWS|1|-11|0|0|0|400|0|0|0|1|0|0|0|0|Tahoma" key="DIALOG_FONT_NAME"/>
+	</section>
+	<section name="Shell {Edit Data Set - Data Set}/Shell {Report Design - C:\xampp\htdocs\nl_pro\report\detqctic_gpptyp.rptdesign - Eclipse}">
+		<item value="800" key="DIALOG_WIDTH"/>
+		<item value="160" key="SASHFORM.LEFT"/>
+		<item value="640" key="SASHFORM.RIGHT"/>
+		<item value="37" key="DIALOG_Y_ORIGIN"/>
+		<item value="112" key="DIALOG_X_ORIGIN"/>
+		<item value="500" key="DIALOG_HEIGHT"/>
+		<item value="1|Tahoma|8.25|0|WINDOWS|1|-11|0|0|0|400|0|0|0|1|0|0|0|0|Tahoma" key="DIALOG_FONT_NAME"/>
+	</section>
+	<section name="Shell {Edit Text Item}/Shell {Report Design - nl_proRpt/nlrpt_library.rptlibrary - Eclipse}">
+		<item value="835" key="DIALOG_WIDTH"/>
+		<item value="99" key="DIALOG_Y_ORIGIN"/>
+		<item value="163" key="DIALOG_X_ORIGIN"/>
+		<item value="484" key="DIALOG_HEIGHT"/>
+		<item value="1|Tahoma|8.25|0|WINDOWS|1|-11|0|0|0|400|0|0|0|1|0|0|0|0|Tahoma" key="DIALOG_FONT_NAME"/>
+	</section>
+	<section name="Shell {Edit Data Set - Data Set1}/Shell {Report Design - C:\xampp\htdocs\nl_pro\report\rm_receive_rpt.rptdesign - Eclipse}">
+		<item value="800" key="DIALOG_WIDTH"/>
+		<item value="640" key="SASHFORM.RIGHT"/>
+		<item value="160" key="SASHFORM.LEFT"/>
+		<item value="37" key="DIALOG_Y_ORIGIN"/>
+		<item value="500" key="DIALOG_HEIGHT"/>
+		<item value="112" key="DIALOG_X_ORIGIN"/>
+		<item value="1|Tahoma|8.25|0|WINDOWS|1|-11|0|0|0|400|0|0|0|1|0|0|0|0|Tahoma" key="DIALOG_FONT_NAME"/>
+	</section>
+	<section name="Shell {Edit Data Set - pricecontrol}/Shell {Report Design - C:\xampp\htdocs\nl_pro\report\po_mas2.rptdesign - Eclipse}">
+		<item value="800" key="DIALOG_WIDTH"/>
+		<item value="160" key="SASHFORM.LEFT"/>
+		<item value="640" key="SASHFORM.RIGHT"/>
+		<item value="37" key="DIALOG_Y_ORIGIN"/>
+		<item value="112" key="DIALOG_X_ORIGIN"/>
+		<item value="500" key="DIALOG_HEIGHT"/>
+		<item value="1|Tahoma|8.25|0|WINDOWS|1|-11|0|0|0|400|0|0|0|1|0|0|0|0|Tahoma" key="DIALOG_FONT_NAME"/>
+	</section>
+	<section name="Shell {Edit Data Set - Data Set}/Shell {Report Design - C:\xampp\htdocs\nl_pro\report\sew_barentry.rptdesign - Eclipse}">
+		<item value="800" key="DIALOG_WIDTH"/>
+		<item value="640" key="SASHFORM.RIGHT"/>
+		<item value="160" key="SASHFORM.LEFT"/>
+		<item value="41" key="DIALOG_Y_ORIGIN"/>
+		<item value="500" key="DIALOG_HEIGHT"/>
+		<item value="116" key="DIALOG_X_ORIGIN"/>
+		<item value="1|Tahoma|8.25|0|WINDOWS|1|-11|0|0|0|400|0|0|0|1|0|0|0|0|Tahoma" key="DIALOG_FONT_NAME"/>
+	</section>
+	<section name="Shell {Edit Data Set - Data Set}/Shell {Report Design - Eclipse}">
+		<item value="800" key="DIALOG_WIDTH"/>
+		<item value="640" key="SASHFORM.RIGHT"/>
+		<item value="160" key="SASHFORM.LEFT"/>
+		<item value="37" key="DIALOG_Y_ORIGIN"/>
+		<item value="500" key="DIALOG_HEIGHT"/>
+		<item value="112" key="DIALOG_X_ORIGIN"/>
+		<item value="1|Tahoma|8.25|0|WINDOWS|1|-11|0|0|0|400|0|0|0|1|0|0|0|0|Tahoma" key="DIALOG_FONT_NAME"/>
+	</section>
+	<section name="Shell {Edit Text Item}/Shell {Report Design - nl_proRpt/cat_rpt.rptdesign - Eclipse}">
+		<item value="835" key="DIALOG_WIDTH"/>
+		<item value="99" key="DIALOG_Y_ORIGIN"/>
+		<item value="163" key="DIALOG_X_ORIGIN"/>
+		<item value="484" key="DIALOG_HEIGHT"/>
+		<item value="1|Tahoma|8.25|0|WINDOWS|1|-11|0|0|0|400|0|0|0|1|0|0|0|0|Tahoma" key="DIALOG_FONT_NAME"/>
+	</section>
+	<section name="Shell {Edit Text Item}/Shell {Report Design - C:\xampp\htdocs\nl_pro\report\wrkrpt02.rptdesign - Eclipse}">
+		<item value="835" key="DIALOG_WIDTH"/>
+		<item value="48" key="DIALOG_Y_ORIGIN"/>
+		<item value="484" key="DIALOG_HEIGHT"/>
+		<item value="95" key="DIALOG_X_ORIGIN"/>
+		<item value="1|Tahoma|8.25|0|WINDOWS|1|-11|0|0|0|400|0|0|0|1|0|0|0|0|Tahoma" key="DIALOG_FONT_NAME"/>
+	</section>
+	<section name="Shell {Edit Data Set - fset}/Shell {Report Design - C:\xampp\htdocs\nl_fg\report\invform.rptdesign - Eclipse}">
+		<item value="800" key="DIALOG_WIDTH"/>
+		<item value="640" key="SASHFORM.RIGHT"/>
+		<item value="160" key="SASHFORM.LEFT"/>
+		<item value="36" key="DIALOG_Y_ORIGIN"/>
+		<item value="500" key="DIALOG_HEIGHT"/>
+		<item value="111" key="DIALOG_X_ORIGIN"/>
+		<item value="1|Tahoma|8.25|0|WINDOWS|1|-11|0|0|0|400|0|0|0|1|0|0|0|0|Tahoma" key="DIALOG_FONT_NAME"/>
+	</section>
+	<section name="Shell {Edit Data Source - Data Source}/Shell {Report Design - nl_proRpt/clr_rpt.rptdesign - Eclipse}">
+		<item value="800" key="DIALOG_WIDTH"/>
+		<item value="160" key="SASHFORM.LEFT"/>
+		<item value="640" key="SASHFORM.RIGHT"/>
+		<item value="105" key="DIALOG_Y_ORIGIN"/>
+		<item value="408" key="DIALOG_X_ORIGIN"/>
+		<item value="500" key="DIALOG_HEIGHT"/>
+		<item value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
+	</section>
+	<section name="Shell {Edit Text Item}/Shell {Report Design - C:\xampp\htdocs\nl_pro\report\payrptsum.rptdesign - Eclipse}">
+		<item value="835" key="DIALOG_WIDTH"/>
+		<item value="48" key="DIALOG_Y_ORIGIN"/>
+		<item value="95" key="DIALOG_X_ORIGIN"/>
+		<item value="484" key="DIALOG_HEIGHT"/>
+		<item value="1|Tahoma|8.25|0|WINDOWS|1|-11|0|0|0|400|0|0|0|1|0|0|0|0|Tahoma" key="DIALOG_FONT_NAME"/>
+	</section>
+	<section name="Shell {Edit Data Set - termcode}/Shell {Report Design - C:\xampp\htdocs\nl_pro\report\po_mas2.rptdesign - Eclipse}">
+		<item value="800" key="DIALOG_WIDTH"/>
+		<item value="160" key="SASHFORM.LEFT"/>
+		<item value="640" key="SASHFORM.RIGHT"/>
+		<item value="37" key="DIALOG_Y_ORIGIN"/>
+		<item value="112" key="DIALOG_X_ORIGIN"/>
+		<item value="500" key="DIALOG_HEIGHT"/>
+		<item value="1|Tahoma|8.25|0|WINDOWS|1|-11|0|0|0|400|0|0|0|1|0|0|0|0|Tahoma" key="DIALOG_FONT_NAME"/>
+	</section>
+	<section name="Shell {Edit Data Set - buyer}/Shell {Report Design - Eclipse}">
+		<item value="800" key="DIALOG_WIDTH"/>
+		<item value="640" key="SASHFORM.RIGHT"/>
+		<item value="160" key="SASHFORM.LEFT"/>
+		<item value="37" key="DIALOG_Y_ORIGIN"/>
+		<item value="500" key="DIALOG_HEIGHT"/>
+		<item value="112" key="DIALOG_X_ORIGIN"/>
+		<item value="1|Tahoma|8.25|0|WINDOWS|1|-11|0|0|0|400|0|0|0|1|0|0|0|0|Tahoma" key="DIALOG_FONT_NAME"/>
+	</section>
+	<section name="Shell {Edit Text Item}/Shell {Report Design - C:\xampp\htdocs\nl_pro\report\sew_ginform.rptdesign - Eclipse}">
+		<item value="835" key="DIALOG_WIDTH"/>
+		<item value="48" key="DIALOG_Y_ORIGIN"/>
+		<item value="484" key="DIALOG_HEIGHT"/>
+		<item value="95" key="DIALOG_X_ORIGIN"/>
+		<item value="1|Tahoma|8.25|0|WINDOWS|1|-11|0|0|0|400|0|0|0|1|0|0|0|0|Tahoma" key="DIALOG_FONT_NAME"/>
+	</section>
+	<section name="Shell {Edit Text Item}/Shell {Report Design - C:\xampp\htdocs\nl_pro\report\rm_receive_rpt.rptdesign - Eclipse}">
+		<item value="835" key="DIALOG_WIDTH"/>
+		<item value="48" key="DIALOG_Y_ORIGIN"/>
+		<item value="484" key="DIALOG_HEIGHT"/>
+		<item value="95" key="DIALOG_X_ORIGIN"/>
+		<item value="1|Tahoma|8.25|0|WINDOWS|1|-11|0|0|0|400|0|0|0|1|0|0|0|0|Tahoma" key="DIALOG_FONT_NAME"/>
+	</section>
+	<section name="Shell {Edit Text Item}/Shell {Report Design - C:\xampp\htdocs\nl_testing\report\pur_bal.rptdesign - Eclipse}">
+		<item value="835" key="DIALOG_WIDTH"/>
+		<item value="48" key="DIALOG_Y_ORIGIN"/>
+		<item value="484" key="DIALOG_HEIGHT"/>
+		<item value="95" key="DIALOG_X_ORIGIN"/>
+		<item value="1|Tahoma|8.25|0|WINDOWS|1|-11|0|0|0|400|0|0|0|1|0|0|0|0|Tahoma" key="DIALOG_FONT_NAME"/>
+	</section>
+	<section name="Shell {Edit Text Item}/Shell {Report Design - C:\xampp\htdocs\nl_pro\report\stk_movement_surpt.rptdesign - Eclipse}">
+		<item value="835" key="DIALOG_WIDTH"/>
+		<item value="62" key="DIALOG_Y_ORIGIN"/>
+		<item value="79" key="DIALOG_X_ORIGIN"/>
+		<item value="484" key="DIALOG_HEIGHT"/>
+		<item value="1|Tahoma|8.25|0|WINDOWS|1|-11|0|0|0|400|0|0|0|1|0|0|0|0|Tahoma" key="DIALOG_FONT_NAME"/>
+	</section>
+	<section name="Shell {Edit Data Set - buyermas}/Shell {Report Design - C:\xampp\htdocs\nl_pro\report\ticrptsum.rptdesign - Eclipse}">
+		<item value="800" key="DIALOG_WIDTH"/>
+		<item value="160" key="SASHFORM.LEFT"/>
+		<item value="640" key="SASHFORM.RIGHT"/>
+		<item value="37" key="DIALOG_Y_ORIGIN"/>
+		<item value="112" key="DIALOG_X_ORIGIN"/>
+		<item value="500" key="DIALOG_HEIGHT"/>
+		<item value="1|Tahoma|8.25|0|WINDOWS|1|-11|0|0|0|400|0|0|0|1|0|0|0|0|Tahoma" key="DIALOG_FONT_NAME"/>
+	</section>
+	<section name="Shell {Edit Data Source - nlDataSource}/Shell {Report Design - C:\xampp\htdocs\nl_pro\report\stk_movement_surpt.rptdesign - Eclipse}">
+		<item value="800" key="DIALOG_WIDTH"/>
+		<item value="160" key="SASHFORM.LEFT"/>
+		<item value="640" key="SASHFORM.RIGHT"/>
+		<item value="41" key="DIALOG_Y_ORIGIN"/>
+		<item value="116" key="DIALOG_X_ORIGIN"/>
+		<item value="500" key="DIALOG_HEIGHT"/>
+		<item value="1|Tahoma|8.25|0|WINDOWS|1|-11|0|0|0|400|0|0|0|1|0|0|0|0|Tahoma" key="DIALOG_FONT_NAME"/>
+	</section>
+	<section name="Shell {Edit Text Item}/Shell {Report Design - C:\xampp\htdocs\mdf_fg\report\pur_bal.rptdesign - Eclipse}">
+		<item value="835" key="DIALOG_WIDTH"/>
+		<item value="48" key="DIALOG_Y_ORIGIN"/>
+		<item value="484" key="DIALOG_HEIGHT"/>
+		<item value="95" key="DIALOG_X_ORIGIN"/>
+		<item value="1|Tahoma|8.25|0|WINDOWS|1|-11|0|0|0|400|0|0|0|1|0|0|0|0|Tahoma" key="DIALOG_FONT_NAME"/>
+	</section>
+	<section name="Shell {Edit Data Source - nlDataSource}/Shell {Report Design - C:\xampp\htdocs\nl_pro\report\clr_rpt.rptdesign - Eclipse}">
+		<item value="800" key="DIALOG_WIDTH"/>
+		<item value="160" key="SASHFORM.LEFT"/>
+		<item value="640" key="SASHFORM.RIGHT"/>
+		<item value="37" key="DIALOG_Y_ORIGIN"/>
+		<item value="112" key="DIALOG_X_ORIGIN"/>
+		<item value="500" key="DIALOG_HEIGHT"/>
+		<item value="1|Tahoma|8.25|0|WINDOWS|1|-11|0|0|0|400|0|0|0|1|0|0|0|0|Tahoma" key="DIALOG_FONT_NAME"/>
+	</section>
+	<section name="Shell {Edit Data Set - suppmas}/Shell {Report Design - C:\xampp\htdocs\nl_pro\report\sew_doform2.rptdesign - Eclipse}">
+		<item value="800" key="DIALOG_WIDTH"/>
+		<item value="640" key="SASHFORM.RIGHT"/>
+		<item value="160" key="SASHFORM.LEFT"/>
+		<item value="37" key="DIALOG_Y_ORIGIN"/>
+		<item value="500" key="DIALOG_HEIGHT"/>
+		<item value="112" key="DIALOG_X_ORIGIN"/>
+		<item value="1|Tahoma|8.25|0|WINDOWS|1|-11|0|0|0|400|0|0|0|1|0|0|0|0|Tahoma" key="DIALOG_FONT_NAME"/>
+	</section>
+	<section name="Shell {Edit Text Item}/Shell {Report Design - C:\xampp\htdocs\nl_pro\report\wrkrpt03.rptdesign - Eclipse}">
+		<item value="835" key="DIALOG_WIDTH"/>
+		<item value="48" key="DIALOG_Y_ORIGIN"/>
+		<item value="484" key="DIALOG_HEIGHT"/>
+		<item value="95" key="DIALOG_X_ORIGIN"/>
+		<item value="1|Tahoma|8.25|0|WINDOWS|1|-11|0|0|0|400|0|0|0|1|0|0|0|0|Tahoma" key="DIALOG_FONT_NAME"/>
+	</section>
+	<section name="Shell {Edit Text Item}/Shell {Report Design - C:\xampp\htdocs\nl_pro\report\wrkrpt01.rptdesign - Eclipse}">
+		<item value="835" key="DIALOG_WIDTH"/>
+		<item value="48" key="DIALOG_Y_ORIGIN"/>
+		<item value="484" key="DIALOG_HEIGHT"/>
+		<item value="95" key="DIALOG_X_ORIGIN"/>
+		<item value="1|Tahoma|8.25|0|WINDOWS|1|-11|0|0|0|400|0|0|0|1|0|0|0|0|Tahoma" key="DIALOG_FONT_NAME"/>
+	</section>
+	<section name="Shell {Edit Data Set - Data Set}/Shell {Report Design - C:\xampp\htdocs\nl_pro\report\stk_movement_surpt.rptdesign - Eclipse}">
+		<item value="800" key="DIALOG_WIDTH"/>
+		<item value="160" key="SASHFORM.LEFT"/>
+		<item value="640" key="SASHFORM.RIGHT"/>
+		<item value="41" key="DIALOG_Y_ORIGIN"/>
+		<item value="116" key="DIALOG_X_ORIGIN"/>
+		<item value="500" key="DIALOG_HEIGHT"/>
+		<item value="1|Tahoma|8.25|0|WINDOWS|1|-11|0|0|0|400|0|0|0|1|0|0|0|0|Tahoma" key="DIALOG_FONT_NAME"/>
+	</section>
+	<section name="Shell {Edit Data Source - Data Source}/Shell {Report Design - nl_proRpt/nlrpt_library.rptlibrary - Eclipse}">
+		<item value="800" key="DIALOG_WIDTH"/>
+		<item value="160" key="SASHFORM.LEFT"/>
+		<item value="640" key="SASHFORM.RIGHT"/>
+		<item value="88" key="DIALOG_Y_ORIGIN"/>
+		<item value="180" key="DIALOG_X_ORIGIN"/>
+		<item value="500" key="DIALOG_HEIGHT"/>
+		<item value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
+	</section>
+	<section name="Shell {Edit Data Set - Data Set}/Shell {Report Design - C:\xampp\htdocs\nl_pro\report\sew_barentry2.rptdesign - Eclipse}">
+		<item value="800" key="DIALOG_WIDTH"/>
+		<item value="160" key="SASHFORM.LEFT"/>
+		<item value="640" key="SASHFORM.RIGHT"/>
+		<item value="37" key="DIALOG_Y_ORIGIN"/>
+		<item value="112" key="DIALOG_X_ORIGIN"/>
+		<item value="500" key="DIALOG_HEIGHT"/>
+		<item value="1|Tahoma|8.25|0|WINDOWS|1|-11|0|0|0|400|0|0|0|1|0|0|0|0|Tahoma" key="DIALOG_FONT_NAME"/>
+	</section>
+	<section name="Shell {Edit Text Item}/Shell {Report Design - C:\xampp\htdocs\fnl_fg\report\invform.rptdesign - Eclipse}">
+		<item value="835" key="DIALOG_WIDTH"/>
+		<item value="52" key="DIALOG_Y_ORIGIN"/>
+		<item value="484" key="DIALOG_HEIGHT"/>
+		<item value="99" key="DIALOG_X_ORIGIN"/>
+		<item value="1|Tahoma|8.25|0|WINDOWS|1|-11|0|0|0|400|0|0|0|1|0|0|0|0|Tahoma" key="DIALOG_FONT_NAME"/>
+	</section>
+	<section name="Shell {Edit Data Set - Data Set}/Shell {Report Design - nl_proRpt/cat_rpt.rptdesign - Eclipse}">
+		<item value="800" key="DIALOG_WIDTH"/>
+		<item value="160" key="SASHFORM.LEFT"/>
+		<item value="640" key="SASHFORM.RIGHT"/>
+		<item value="88" key="DIALOG_Y_ORIGIN"/>
+		<item value="180" key="DIALOG_X_ORIGIN"/>
+		<item value="500" key="DIALOG_HEIGHT"/>
+		<item value="1|Tahoma|8.25|0|WINDOWS|1|-11|0|0|0|400|0|0|0|1|0|0|0|0|Tahoma" key="DIALOG_FONT_NAME"/>
+	</section>
+	<section name="Shell {Edit Data Set - buyall}/Shell {Report Design - C:\xampp\htdocs\nl_pro\report\sales_f_rpt.rptdesign - Eclipse}">
+		<item value="800" key="DIALOG_WIDTH"/>
+		<item value="160" key="SASHFORM.LEFT"/>
+		<item value="640" key="SASHFORM.RIGHT"/>
+		<item value="41" key="DIALOG_Y_ORIGIN"/>
+		<item value="116" key="DIALOG_X_ORIGIN"/>
+		<item value="500" key="DIALOG_HEIGHT"/>
+		<item value="1|Tahoma|8.25|0|WINDOWS|1|-11|0|0|0|400|0|0|0|1|0|0|0|0|Tahoma" key="DIALOG_FONT_NAME"/>
+	</section>
+	<section name="Shell {Edit Data Set - DetailList}/Shell {Report Design - C:\xampp\htdocs\nl_pro\report\sew_barentry3.rptdesign - Eclipse}">
+		<item value="800" key="DIALOG_WIDTH"/>
+		<item value="160" key="SASHFORM.LEFT"/>
+		<item value="640" key="SASHFORM.RIGHT"/>
+		<item value="37" key="DIALOG_Y_ORIGIN"/>
+		<item value="112" key="DIALOG_X_ORIGIN"/>
+		<item value="500" key="DIALOG_HEIGHT"/>
+		<item value="1|Tahoma|8.25|0|WINDOWS|1|-11|0|0|0|400|0|0|0|1|0|0|0|0|Tahoma" key="DIALOG_FONT_NAME"/>
+	</section>
+	<section name="Shell {Edit Data Set - Data Set}/Shell {Report Design - C:\xampp\htdocs\nl_pro\report\rm_receive_rpt.rptdesign - Eclipse}">
+		<item value="800" key="DIALOG_WIDTH"/>
+		<item value="640" key="SASHFORM.RIGHT"/>
+		<item value="160" key="SASHFORM.LEFT"/>
+		<item value="37" key="DIALOG_Y_ORIGIN"/>
+		<item value="500" key="DIALOG_HEIGHT"/>
+		<item value="112" key="DIALOG_X_ORIGIN"/>
+		<item value="1|Tahoma|8.25|0|WINDOWS|1|-11|0|0|0|400|0|0|0|1|0|0|0|0|Tahoma" key="DIALOG_FONT_NAME"/>
+	</section>
+	<section name="Shell {Edit Text Item}/Shell {Report Design - nl_proRpt/clr_rpt.rptdesign - Eclipse}">
+		<item value="835" key="DIALOG_WIDTH"/>
+		<item value="99" key="DIALOG_Y_ORIGIN"/>
+		<item value="484" key="DIALOG_HEIGHT"/>
+		<item value="163" key="DIALOG_X_ORIGIN"/>
+		<item value="1|Tahoma|8.25|0|WINDOWS|1|-11|0|0|0|400|0|0|0|1|0|0|0|0|Tahoma" key="DIALOG_FONT_NAME"/>
+	</section>
+	<section name="Shell {Edit Data Set - termjoin}/Shell {Report Design - C:\xampp\htdocs\nl_pro\report\po_mas2.rptdesign - Eclipse}">
+		<item value="800" key="DIALOG_WIDTH"/>
+		<item value="160" key="SASHFORM.LEFT"/>
+		<item value="640" key="SASHFORM.RIGHT"/>
+		<item value="37" key="DIALOG_Y_ORIGIN"/>
+		<item value="112" key="DIALOG_X_ORIGIN"/>
+		<item value="500" key="DIALOG_HEIGHT"/>
+		<item value="1|Tahoma|8.25|0|WINDOWS|1|-11|0|0|0|400|0|0|0|1|0|0|0|0|Tahoma" key="DIALOG_FONT_NAME"/>
+	</section>
+	<section name="Shell {Edit Data Source - nlDataSource}/Shell {Report Design - C:\xampp\htdocs\nl_testing\report\stk_movement_surpt.rptdesign - Eclipse}">
+		<item value="800" key="DIALOG_WIDTH"/>
+		<item value="160" key="SASHFORM.LEFT"/>
+		<item value="640" key="SASHFORM.RIGHT"/>
+		<item value="37" key="DIALOG_Y_ORIGIN"/>
+		<item value="112" key="DIALOG_X_ORIGIN"/>
+		<item value="500" key="DIALOG_HEIGHT"/>
+		<item value="1|Tahoma|8.25|0|WINDOWS|1|-11|0|0|0|400|0|0|0|1|0|0|0|0|Tahoma" key="DIALOG_FONT_NAME"/>
+	</section>
+	<section name="Shell {Edit Data Set - Data Set}/Shell {Report Design - nl_proRpt/clr_rpt.rptdesign - Eclipse}">
+		<item value="800" key="DIALOG_WIDTH"/>
+		<item value="640" key="SASHFORM.RIGHT"/>
+		<item value="160" key="SASHFORM.LEFT"/>
+		<item value="88" key="DIALOG_Y_ORIGIN"/>
+		<item value="500" key="DIALOG_HEIGHT"/>
+		<item value="180" key="DIALOG_X_ORIGIN"/>
+		<item value="1|Tahoma|8.25|0|WINDOWS|1|-11|0|0|0|400|0|0|0|1|0|0|0|0|Tahoma" key="DIALOG_FONT_NAME"/>
+	</section>
+	<section name="Shell {Edit Text Item}/Shell {Report Design - C:\xampp\htdocs\ice_fg\report\pur_bal.rptdesign - Eclipse}">
+		<item value="835" key="DIALOG_WIDTH"/>
+		<item value="48" key="DIALOG_Y_ORIGIN"/>
+		<item value="484" key="DIALOG_HEIGHT"/>
+		<item value="95" key="DIALOG_X_ORIGIN"/>
+		<item value="1|Tahoma|8.25|0|WINDOWS|1|-11|0|0|0|400|0|0|0|1|0|0|0|0|Tahoma" key="DIALOG_FONT_NAME"/>
+	</section>
+	<section name="Shell {Edit Data Set - areamas}/Shell {Report Design - C:\xampp\htdocs\nl_pro\report\sew_barentry.rptdesign - Eclipse}">
+		<item value="800" key="DIALOG_WIDTH"/>
+		<item value="640" key="SASHFORM.RIGHT"/>
+		<item value="160" key="SASHFORM.LEFT"/>
+		<item value="41" key="DIALOG_Y_ORIGIN"/>
+		<item value="500" key="DIALOG_HEIGHT"/>
+		<item value="116" key="DIALOG_X_ORIGIN"/>
+		<item value="1|Tahoma|8.25|0|WINDOWS|1|-11|0|0|0|400|0|0|0|1|0|0|0|0|Tahoma" key="DIALOG_FONT_NAME"/>
+	</section>
+	<section name="Shell {Edit Data Set - Data Set}/Shell {Report Design - C:\xampp\htdocs\nl_pro\report\detqctic_qcgrpbu.rptdesign - Eclipse}">
+		<item value="800" key="DIALOG_WIDTH"/>
+		<item value="160" key="SASHFORM.LEFT"/>
+		<item value="640" key="SASHFORM.RIGHT"/>
+		<item value="37" key="DIALOG_Y_ORIGIN"/>
+		<item value="112" key="DIALOG_X_ORIGIN"/>
+		<item value="500" key="DIALOG_HEIGHT"/>
+		<item value="1|Tahoma|8.25|0|WINDOWS|1|-11|0|0|0|400|0|0|0|1|0|0|0|0|Tahoma" key="DIALOG_FONT_NAME"/>
+	</section>
+	<section name="Shell {Edit Data Set - Data Set1}/Shell {Report Design - Eclipse}">
+		<item value="800" key="DIALOG_WIDTH"/>
+		<item value="640" key="SASHFORM.RIGHT"/>
+		<item value="160" key="SASHFORM.LEFT"/>
+		<item value="37" key="DIALOG_Y_ORIGIN"/>
+		<item value="500" key="DIALOG_HEIGHT"/>
+		<item value="112" key="DIALOG_X_ORIGIN"/>
+		<item value="1|Tahoma|8.25|0|WINDOWS|1|-11|0|0|0|400|0|0|0|1|0|0|0|0|Tahoma" key="DIALOG_FONT_NAME"/>
+	</section>
+	<section name="Shell {Edit Data Set - Data Set1}/Shell {Report Design - C:\xampp\htdocs\nl_pro\report\ticrptsum.rptdesign - Eclipse}">
+		<item value="800" key="DIALOG_WIDTH"/>
+		<item value="160" key="SASHFORM.LEFT"/>
+		<item value="640" key="SASHFORM.RIGHT"/>
+		<item value="37" key="DIALOG_Y_ORIGIN"/>
+		<item value="112" key="DIALOG_X_ORIGIN"/>
+		<item value="500" key="DIALOG_HEIGHT"/>
+		<item value="1|Tahoma|8.25|0|WINDOWS|1|-11|0|0|0|400|0|0|0|1|0|0|0|0|Tahoma" key="DIALOG_FONT_NAME"/>
+	</section>
+	<section name="Shell {Edit Data Set - Data Set}/Shell {Report Design - C:\xampp\htdocs\nl_pro\report\po_mas2.rptdesign - Eclipse}">
+		<item value="800" key="DIALOG_WIDTH"/>
+		<item value="160" key="SASHFORM.LEFT"/>
+		<item value="640" key="SASHFORM.RIGHT"/>
+		<item value="37" key="DIALOG_Y_ORIGIN"/>
+		<item value="112" key="DIALOG_X_ORIGIN"/>
+		<item value="500" key="DIALOG_HEIGHT"/>
+		<item value="1|Tahoma|8.25|0|WINDOWS|1|-11|0|0|0|400|0|0|0|1|0|0|0|0|Tahoma" key="DIALOG_FONT_NAME"/>
+	</section>
+	<section name="Shell {Edit Data Set - Data Set}/Shell {Report Design - C:\xampp\htdocs\nl_pro\report\payrptid.rptdesign - Eclipse}">
+		<item value="800" key="DIALOG_WIDTH"/>
+		<item value="160" key="SASHFORM.LEFT"/>
+		<item value="640" key="SASHFORM.RIGHT"/>
+		<item value="37" key="DIALOG_Y_ORIGIN"/>
+		<item value="112" key="DIALOG_X_ORIGIN"/>
+		<item value="500" key="DIALOG_HEIGHT"/>
+		<item value="1|Tahoma|8.25|0|WINDOWS|1|-11|0|0|0|400|0|0|0|1|0|0|0|0|Tahoma" key="DIALOG_FONT_NAME"/>
+	</section>
+	<section name="Shell {Edit Data Set - prodrate}/Shell {Report Design - C:\xampp\htdocs\nl_pro\report\sew_barentry.rptdesign - Eclipse}">
+		<item value="800" key="DIALOG_WIDTH"/>
+		<item value="640" key="SASHFORM.RIGHT"/>
+		<item value="160" key="SASHFORM.LEFT"/>
+		<item value="41" key="DIALOG_Y_ORIGIN"/>
+		<item value="500" key="DIALOG_HEIGHT"/>
+		<item value="116" key="DIALOG_X_ORIGIN"/>
+		<item value="1|Tahoma|8.25|0|WINDOWS|1|-11|0|0|0|400|0|0|0|1|0|0|0|0|Tahoma" key="DIALOG_FONT_NAME"/>
+	</section>
+	<section name="Shell {Edit Data Set - Data Set2}/Shell {Report Design - C:\xampp\htdocs\nl_pro\report\sew_barentry.rptdesign - Eclipse}">
+		<item value="800" key="DIALOG_WIDTH"/>
+		<item value="640" key="SASHFORM.RIGHT"/>
+		<item value="160" key="SASHFORM.LEFT"/>
+		<item value="41" key="DIALOG_Y_ORIGIN"/>
+		<item value="500" key="DIALOG_HEIGHT"/>
+		<item value="116" key="DIALOG_X_ORIGIN"/>
+		<item value="1|Tahoma|8.25|0|WINDOWS|1|-11|0|0|0|400|0|0|0|1|0|0|0|0|Tahoma" key="DIALOG_FONT_NAME"/>
+	</section>
+	<section name="Shell {Edit Data Set - prodrate}/Shell {Report Design - C:\xampp\htdocs\nl_pro\report\sew_barentry3.rptdesign - Eclipse}">
+		<item value="800" key="DIALOG_WIDTH"/>
+		<item value="160" key="SASHFORM.LEFT"/>
+		<item value="640" key="SASHFORM.RIGHT"/>
+		<item value="37" key="DIALOG_Y_ORIGIN"/>
+		<item value="112" key="DIALOG_X_ORIGIN"/>
+		<item value="500" key="DIALOG_HEIGHT"/>
+		<item value="1|Tahoma|8.25|0|WINDOWS|1|-11|0|0|0|400|0|0|0|1|0|0|0|0|Tahoma" key="DIALOG_FONT_NAME"/>
+	</section>
+	<section name="Shell {Edit Data Set - salesdet}/Shell {Report Design - C:\xampp\htdocs\nl_pro\report\sales_f_rpt.rptdesign - Eclipse}">
+		<item value="800" key="DIALOG_WIDTH"/>
+		<item value="160" key="SASHFORM.LEFT"/>
+		<item value="640" key="SASHFORM.RIGHT"/>
+		<item value="41" key="DIALOG_Y_ORIGIN"/>
+		<item value="116" key="DIALOG_X_ORIGIN"/>
+		<item value="500" key="DIALOG_HEIGHT"/>
+		<item value="1|Tahoma|8.25|0|WINDOWS|1|-11|0|0|0|400|0|0|0|1|0|0|0|0|Tahoma" key="DIALOG_FONT_NAME"/>
+	</section>
+	<section name="Shell {Edit Data Source - Data Source}/Shell {Report Design - Z:\report\clr_rpt.rptdesign - Eclipse}">
+		<item value="800" key="DIALOG_WIDTH"/>
+		<item value="640" key="SASHFORM.RIGHT"/>
+		<item value="160" key="SASHFORM.LEFT"/>
+		<item value="105" key="DIALOG_Y_ORIGIN"/>
+		<item value="500" key="DIALOG_HEIGHT"/>
+		<item value="408" key="DIALOG_X_ORIGIN"/>
+		<item value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
+	</section>
+	<section name="Shell {Edit Data Set - Data Set1}/Shell {Report Design - C:\xampp\htdocs\nl_pro\report\po_mas2.rptdesign - Eclipse}">
+		<item value="800" key="DIALOG_WIDTH"/>
+		<item value="160" key="SASHFORM.LEFT"/>
+		<item value="640" key="SASHFORM.RIGHT"/>
+		<item value="37" key="DIALOG_Y_ORIGIN"/>
+		<item value="112" key="DIALOG_X_ORIGIN"/>
+		<item value="500" key="DIALOG_HEIGHT"/>
+		<item value="1|Tahoma|8.25|0|WINDOWS|1|-11|0|0|0|400|0|0|0|1|0|0|0|0|Tahoma" key="DIALOG_FONT_NAME"/>
+	</section>
+	<section name="Shell {Edit Data Set - MasterList}/Shell {Report Design - C:\xampp\htdocs\nl_pro\report\sew_barentry3.rptdesign - Eclipse}">
+		<item value="800" key="DIALOG_WIDTH"/>
+		<item value="160" key="SASHFORM.LEFT"/>
+		<item value="640" key="SASHFORM.RIGHT"/>
+		<item value="37" key="DIALOG_Y_ORIGIN"/>
+		<item value="112" key="DIALOG_X_ORIGIN"/>
+		<item value="500" key="DIALOG_HEIGHT"/>
+		<item value="1|Tahoma|8.25|0|WINDOWS|1|-11|0|0|0|400|0|0|0|1|0|0|0|0|Tahoma" key="DIALOG_FONT_NAME"/>
+	</section>
+	<section name="Shell {Edit Data Set - Data Set}/Shell {Report Design - C:\xampp\htdocs\nl_pro\report\detqctic_grpbu.rptdesign - Eclipse}">
+		<item value="800" key="DIALOG_WIDTH"/>
+		<item value="160" key="SASHFORM.LEFT"/>
+		<item value="640" key="SASHFORM.RIGHT"/>
+		<item value="37" key="DIALOG_Y_ORIGIN"/>
+		<item value="112" key="DIALOG_X_ORIGIN"/>
+		<item value="500" key="DIALOG_HEIGHT"/>
+		<item value="1|Tahoma|8.25|0|WINDOWS|1|-11|0|0|0|400|0|0|0|1|0|0|0|0|Tahoma" key="DIALOG_FONT_NAME"/>
+	</section>
+	<section name="Shell {Edit Text Item}/Shell {Report Design - C:\xampp\htdocs\nl_testing\report\planrpt.rptdesign - Eclipse}">
+		<item value="835" key="DIALOG_WIDTH"/>
+		<item value="48" key="DIALOG_Y_ORIGIN"/>
+		<item value="484" key="DIALOG_HEIGHT"/>
+		<item value="95" key="DIALOG_X_ORIGIN"/>
+		<item value="1|Tahoma|8.25|0|WINDOWS|1|-11|0|0|0|400|0|0|0|1|0|0|0|0|Tahoma" key="DIALOG_FONT_NAME"/>
+	</section>
+	<section name="Shell {Edit Data Set - sewtyp}/Shell {Report Design - C:\xampp\htdocs\nl_pro\report\ticrptsum.rptdesign - Eclipse}">
+		<item value="800" key="DIALOG_WIDTH"/>
+		<item value="160" key="SASHFORM.LEFT"/>
+		<item value="640" key="SASHFORM.RIGHT"/>
+		<item value="37" key="DIALOG_Y_ORIGIN"/>
+		<item value="112" key="DIALOG_X_ORIGIN"/>
+		<item value="500" key="DIALOG_HEIGHT"/>
+		<item value="1|Tahoma|8.25|0|WINDOWS|1|-11|0|0|0|400|0|0|0|1|0|0|0|0|Tahoma" key="DIALOG_FONT_NAME"/>
+	</section>
+</section>

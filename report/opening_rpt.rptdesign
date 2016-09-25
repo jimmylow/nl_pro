@@ -1,0 +1,1361 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 3.7.2.v20120213 Build &lt;3.7.2.v20120214-1408></property>
+    <list-property name="propertyBindings">
+        <structure>
+            <property name="name">odaURL</property>
+            <property name="id">7</property>
+            <expression name="value" type="javascript">params["dbsel"].value;</expression>
+        </structure>
+    </list-property>
+    <property name="units">in</property>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <property name="imageDPI">96</property>
+    <parameters>
+        <scalar-parameter name="fd" id="321">
+            <property name="hidden">true</property>
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Custom</property>
+                <property name="pattern">yyyy-MM-dd</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="td" id="322">
+            <property name="hidden">true</property>
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Custom</property>
+                <property name="pattern">yyyy-MM-dd</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="dbsel" id="160">
+            <property name="hidden">true</property>
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="usernm" id="1130">
+            <property name="hidden">true</property>
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+    </parameters>
+    <data-sources>
+        <oda-data-source extensionID="org.eclipse.birt.report.data.oda.jdbc" name="nlDataSource" id="7">
+            <list-property name="privateDriverProperties">
+                <ex-property>
+                    <name>metadataBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledMetadataBidiFormatStr</name>
+                </ex-property>
+                <ex-property>
+                    <name>contentBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledContentBidiFormatStr</name>
+                </ex-property>
+            </list-property>
+            <property name="odaDriverClass">com.mysql.jdbc.Driver</property>
+            <property name="odaURL">jdbc:mysql://127.0.0.1:9909/nl_testing</property>
+            <property name="odaUser">root</property>
+            <encrypted-property name="odaPassword" encryptionID="base64">YWRtaW45MDAy</encrypted-property>
+            <property name="OdaConnProfileName">nlDataSource</property>
+            <property name="OdaConnProfileStorePath">nl_datasour</property>
+        </oda-data-source>
+    </data-sources>
+    <data-sets>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="Data Set" id="385">
+            <property name="nullsOrdering">nulls lowest</property>
+            <list-property name="filter">
+                <structure>
+                    <property name="operator">between</property>
+                    <expression name="expr" type="javascript">row["openingdate"]</expression>
+                    <simple-property-list name="value1">
+                        <value>params["fd"].value</value>
+                    </simple-property-list>
+                    <expression name="value2">params["td"].value</expression>
+                    <property name="updateAggregation">true</property>
+                </structure>
+            </list-property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">param_1</property>
+                    <property name="paramName">fd</property>
+                    <property name="dataType">string</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">param_2</property>
+                    <property name="paramName">td</property>
+                    <property name="dataType">string</property>
+                    <property name="position">2</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">rm_opening_id</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">refno</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">openingdate</property>
+                        <property name="dataType">date</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">item_code</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">oum</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">description</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">totalqty</property>
+                        <property name="dataType">float</property>
+                    </structure>
+                    <structure>
+                        <property name="position">8</property>
+                        <property name="name">qtyperpack</property>
+                        <property name="dataType">float</property>
+                    </structure>
+                    <structure>
+                        <property name="position">9</property>
+                        <property name="name">opening_cost</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">10</property>
+                        <property name="name">open_bas_cost</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">11</property>
+                        <property name="name">(y.totalqty * y.opening_cost)</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">12</property>
+                        <property name="name">(y.totalqty * y.open_bas_cost)</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">nlDataSource</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">rm_opening_id</property>
+                    <property name="nativeName">rm_opening_id</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">refno</property>
+                    <property name="nativeName">refno</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">openingdate</property>
+                    <property name="nativeName">openingdate</property>
+                    <property name="dataType">date</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">item_code</property>
+                    <property name="nativeName">item_code</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">oum</property>
+                    <property name="nativeName">oum</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">description</property>
+                    <property name="nativeName">description</property>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="position">7</property>
+                    <property name="name">totalqty</property>
+                    <property name="nativeName">totalqty</property>
+                    <property name="dataType">float</property>
+                </structure>
+                <structure>
+                    <property name="position">8</property>
+                    <property name="name">qtyperpack</property>
+                    <property name="nativeName">qtyperpack</property>
+                    <property name="dataType">float</property>
+                </structure>
+                <structure>
+                    <property name="position">9</property>
+                    <property name="name">opening_cost</property>
+                    <property name="nativeName">opening_cost</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="position">10</property>
+                    <property name="name">open_bas_cost</property>
+                    <property name="nativeName">open_bas_cost</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="position">11</property>
+                    <property name="name">(y.totalqty * y.opening_cost)</property>
+                    <property name="nativeName">(y.totalqty * y.opening_cost)</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="position">12</property>
+                    <property name="name">(y.totalqty * y.open_bas_cost)</property>
+                    <property name="nativeName">(y.totalqty * y.open_bas_cost)</property>
+                    <property name="dataType">decimal</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select distinct x.rm_opening_id, 
+       x.refno, 
+       x.openingdate,
+       y.item_code,
+       y.oum,
+       y.description,
+       y.totalqty,
+       y.qtyperpack,
+       y.opening_cost,
+       y.open_bas_cost,
+       (y.totalqty * y.opening_cost),
+       (y.totalqty * y.open_bas_cost)
+from rawmat_opening x,
+     rawmat_opening_tran y
+where x.openingdate between ? and ?
+and  x.rm_opening_id = y.rm_opening_id]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>rm_opening_id</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>20</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>rm_opening_id</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>rm_opening_id</design:label>
+            <design:formattingHints>
+              <design:displaySize>20</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>refno</design:name>
+              <design:position>2</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>100</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>refno</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>refno</design:label>
+            <design:formattingHints>
+              <design:displaySize>100</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>openingdate</design:name>
+              <design:position>3</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>91</design:nativeDataTypeCode>
+            <design:precision>10</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>openingdate</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>openingdate</design:label>
+            <design:formattingHints>
+              <design:displaySize>10</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>remark</design:name>
+              <design:position>4</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>100</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>remark</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>remark</design:label>
+            <design:formattingHints>
+              <design:displaySize>100</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>create_by</design:name>
+              <design:position>5</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>45</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>create_by</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>create_by</design:label>
+            <design:formattingHints>
+              <design:displaySize>45</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>create_on</design:name>
+              <design:position>6</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>93</design:nativeDataTypeCode>
+            <design:precision>19</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>create_on</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>create_on</design:label>
+            <design:formattingHints>
+              <design:displaySize>19</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>upd_by</design:name>
+              <design:position>7</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>45</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>upd_by</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>upd_by</design:label>
+            <design:formattingHints>
+              <design:displaySize>45</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>upd_on</design:name>
+              <design:position>8</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>93</design:nativeDataTypeCode>
+            <design:precision>19</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>upd_on</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>upd_on</design:label>
+            <design:formattingHints>
+              <design:displaySize>19</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="Data Set1" id="542">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">rm_code</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">rm_code</text-property>
+                    <text-property name="heading">rm_code</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">category</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">category</text-property>
+                    <text-property name="heading">category</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">cat_desc</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">cat_desc</text-property>
+                    <text-property name="heading">cat_desc</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters"/>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">rm_code</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">category</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">cat_desc</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">nlDataSource</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">rm_code</property>
+                    <property name="nativeName">rm_code</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">category</property>
+                    <property name="nativeName">category</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">cat_desc</property>
+                    <property name="nativeName">cat_desc</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select y.rm_code, 
+	   x.category,
+	   z.cat_desc
+from rawmat_master x, 
+	 rawmat_subcode y,
+	 cat_master z
+where x.rm_code = y.main_code
+and x.category = z.cat_code]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>rm_code</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>50</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>rm_code</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>rm_code</design:label>
+            <design:formattingHints>
+              <design:displaySize>50</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>category</design:name>
+              <design:position>2</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>10</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>category</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>category</design:label>
+            <design:formattingHints>
+              <design:displaySize>10</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+        <joint-data-set name="Data Set2" id="608">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">Data Set1::category</property>
+                    <property name="alias">category</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">Data Set1::category</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">Data Set::refno</property>
+                    <property name="alias">refno</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">Data Set::refno</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">Data Set::item_code</property>
+                    <property name="alias">item_code</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">Data Set::item_code</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">Data Set::openingdate</property>
+                    <property name="alias">openingdate</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">Data Set::openingdate</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">Data Set::totalqty</property>
+                    <property name="alias">totalqty</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">Data Set::totalqty</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">Data Set::description</property>
+                    <property name="alias">description</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">Data Set::description</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">Data Set1::rm_code</property>
+                    <property name="alias">rm_code</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">Data Set1::rm_code</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">Data Set::qtyperpack</property>
+                    <property name="alias">qtyperpack</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">Data Set::qtyperpack</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">Data Set::rm_opening_id</property>
+                    <property name="alias">rm_opening_id</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">Data Set::rm_opening_id</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">Data Set::opening_cost</property>
+                    <property name="alias">opening_cost</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">Data Set::opening_cost</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">Data Set::param_1</property>
+                    <property name="dataType">string</property>
+                    <property name="position">1</property>
+                    <property name="isOptional">false</property>
+                    <property name="allowNull">false</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">Data Set::param_2</property>
+                    <property name="dataType">string</property>
+                    <property name="position">2</property>
+                    <property name="isOptional">false</property>
+                    <property name="allowNull">false</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">Data Set::rm_opening_id</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">Data Set::refno</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">Data Set::openingdate</property>
+                        <property name="dataType">date</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">Data Set::item_code</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">Data Set::oum</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">Data Set::description</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">Data Set::totalqty</property>
+                        <property name="dataType">float</property>
+                    </structure>
+                    <structure>
+                        <property name="position">8</property>
+                        <property name="name">Data Set::qtyperpack</property>
+                        <property name="dataType">float</property>
+                    </structure>
+                    <structure>
+                        <property name="position">9</property>
+                        <property name="name">Data Set::opening_cost</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">10</property>
+                        <property name="name">Data Set::open_bas_cost</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">11</property>
+                        <property name="name">Data Set::(y.totalqty * y.opening_cost)</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">12</property>
+                        <property name="name">Data Set::(y.totalqty * y.open_bas_cost)</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">13</property>
+                        <property name="name">Data Set1::rm_code</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">14</property>
+                        <property name="name">Data Set1::category</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">15</property>
+                        <property name="name">Data Set1::cat_desc</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <simple-property-list name="dataSets">
+                <value>Data Set</value>
+                <value>Data Set1</value>
+            </simple-property-list>
+            <list-property name="joinConditions">
+                <structure>
+                    <property name="joinType">left-out</property>
+                    <property name="joinOperator">eq</property>
+                    <property name="leftDataSet">Data Set</property>
+                    <property name="rightDataSet">Data Set1</property>
+                    <expression name="leftExpression">dataSetRow["item_code"]</expression>
+                    <expression name="rightExpression">dataSetRow["rm_code"]</expression>
+                </structure>
+            </list-property>
+        </joint-data-set>
+    </data-sets>
+    <styles>
+        <style name="report" id="4">
+            <property name="fontFamily">sans-serif</property>
+            <property name="fontSize">10pt</property>
+        </style>
+        <style name="crosstab-cell" id="5">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+        <style name="crosstab" id="6">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+        <style name="table-header" id="313">
+            <property name="backgroundColor">#C0C0C0</property>
+        </style>
+    </styles>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <property name="type">a4</property>
+            <property name="headerHeight">0.7in</property>
+            <property name="footerHeight">0.2in</property>
+            <page-header>
+                <grid id="25">
+                    <property name="width">7.947916666666667in</property>
+                    <column id="26">
+                        <property name="width">1.8645833333333333in</property>
+                    </column>
+                    <column id="27">
+                        <property name="width">4.03125in</property>
+                    </column>
+                    <column id="28">
+                        <property name="width">2.0520833333333335in</property>
+                    </column>
+                    <row id="29">
+                        <cell id="30">
+                            <grid id="1122">
+                                <column id="1123"/>
+                                <column id="1124"/>
+                                <row id="1125">
+                                    <cell id="1126">
+                                        <text id="1128">
+                                            <property name="contentType">auto</property>
+                                            <text-property name="content"><![CDATA[Print By :]]></text-property>
+                                        </text>
+                                    </cell>
+                                    <cell id="1127">
+                                        <data id="1129">
+                                            <structure name="stringFormat">
+                                                <property name="category">></property>
+                                                <property name="pattern">></property>
+                                            </structure>
+                                            <list-property name="boundDataColumns">
+                                                <structure>
+                                                    <property name="name">usernm</property>
+                                                    <expression name="expression" type="javascript">params["usernm"]</expression>
+                                                    <property name="dataType">string</property>
+                                                </structure>
+                                            </list-property>
+                                            <property name="resultSetColumn">usernm</property>
+                                        </data>
+                                    </cell>
+                                </row>
+                            </grid>
+                        </cell>
+                        <cell id="31">
+                            <text id="1121">
+                                <property name="fontSize">12pt</property>
+                                <property name="fontWeight">bold</property>
+                                <property name="textAlign">center</property>
+                                <property name="contentType">auto</property>
+                                <text-property name="content"><![CDATA[NYOK LAN GARMENT SDN BHD (202814-K) ]]></text-property>
+                            </text>
+                            <text id="33">
+                                <property name="fontSize">12pt</property>
+                                <property name="fontWeight">bold</property>
+                                <property name="textAlign">center</property>
+                                <property name="contentType">auto</property>
+                                <text-property name="content"><![CDATA[OPENING BALANCE LISTING
+]]></text-property>
+                            </text>
+                            <text-data id="730">
+                                <property name="textAlign">center</property>
+                                <expression name="valueExpr">dArr1 = params["fd"].value.split("-");  &#13;
+dArr2 = params["td"].value.split("-");  &#13;
+&#13;
+var f = dArr1[2]+ "-" +dArr1[1]+ "-" +dArr1[0];&#13;
+var t = dArr2[2]+ "-" +dArr2[1]+ "-" +dArr2[0];&#13;
+&#13;
+"Opening Date From "+f+" To "+t;</expression>
+                                <property name="contentType">html</property>
+                            </text-data>
+                        </cell>
+                        <cell id="32">
+                            <grid id="88">
+                                <property name="height">0.4895833333333333in</property>
+                                <property name="width">1.6770833333333333in</property>
+                                <column id="105">
+                                    <property name="width">0.75in</property>
+                                </column>
+                                <column id="89">
+                                    <property name="width">0.9270833333333334in</property>
+                                </column>
+                                <row id="90">
+                                    <property name="height">0.23958333333333334in</property>
+                                    <cell id="103">
+                                        <label id="106">
+                                            <text-property name="text">Print On :</text-property>
+                                        </label>
+                                    </cell>
+                                    <cell id="91">
+                                        <text id="95">
+                                            <property name="textAlign">left</property>
+                                            <property name="display">inline</property>
+                                            <property name="contentType">html</property>
+                                            <text-property name="content"><![CDATA[<value-of format="dd-MM-yyyy">new Date()</value-of>]]></text-property>
+                                        </text>
+                                    </cell>
+                                </row>
+                                <row id="92">
+                                    <property name="height">0.25in</property>
+                                    <cell id="104">
+                                        <label id="107">
+                                            <text-property name="text">Page     :</text-property>
+                                        </label>
+                                    </cell>
+                                    <cell id="93">
+                                        <auto-text id="102">
+                                            <property name="fontWeight">normal</property>
+                                            <property name="textAlign">left</property>
+                                            <property name="type">page-number</property>
+                                        </auto-text>
+                                    </cell>
+                                </row>
+                            </grid>
+                        </cell>
+                    </row>
+                    <row id="74">
+                        <cell id="75">
+                            <property name="colSpan">3</property>
+                            <property name="rowSpan">1</property>
+                        </cell>
+                    </row>
+                </grid>
+            </page-header>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <table id="609">
+            <property name="width">7.770833333333333in</property>
+            <property name="dataSet">Data Set2</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">Data Set::rm_opening_id</property>
+                    <text-property name="displayName">Data Set::rm_opening_id</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["Data Set::rm_opening_id"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">Data Set::refno</property>
+                    <text-property name="displayName">Data Set::refno</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["Data Set::refno"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">Data Set::openingdate</property>
+                    <text-property name="displayName">Data Set::openingdate</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["Data Set::openingdate"]</expression>
+                    <property name="dataType">date</property>
+                </structure>
+                <structure>
+                    <property name="name">Data Set::item_code</property>
+                    <text-property name="displayName">Data Set::item_code</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["Data Set::item_code"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">Data Set::description</property>
+                    <text-property name="displayName">Data Set::description</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["Data Set::description"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">Data Set::totalqty</property>
+                    <text-property name="displayName">Data Set::totalqty</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["Data Set::totalqty"]</expression>
+                    <property name="dataType">float</property>
+                </structure>
+                <structure>
+                    <property name="name">Data Set::qtyperpack</property>
+                    <text-property name="displayName">Data Set::qtyperpack</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["Data Set::qtyperpack"]</expression>
+                    <property name="dataType">float</property>
+                </structure>
+                <structure>
+                    <property name="name">Data Set::opening_cost</property>
+                    <text-property name="displayName">Data Set::opening_cost</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["Data Set::opening_cost"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">Data Set1::rm_code</property>
+                    <text-property name="displayName">Data Set1::rm_code</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["Data Set1::rm_code"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">Data Set1::category</property>
+                    <text-property name="displayName">Data Set1::category</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["Data Set1::category"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">Aggregation</property>
+                    <text-property name="displayName">no</text-property>
+                    <property name="dataType">integer</property>
+                    <property name="aggregateFunction">RUNNINGCOUNT</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                        </structure>
+                    </list-property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">Aggregation_1</property>
+                    <property name="dataType">float</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>NewTableGroup1</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">SUM</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value" type="javascript">row["Data Set::(y.totalqty * y.open_bas_cost)"]</expression>
+                        </structure>
+                    </list-property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">Data Set::(y.totalqty * y.opening_cost)</property>
+                    <text-property name="displayName">Data Set::(y.totalqty * y.opening_cost)</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["Data Set::(y.totalqty * y.opening_cost)"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">Aggregation_2</property>
+                    <property name="dataType">float</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>NewTableGroup1</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">SUM</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value" type="javascript">dataSetRow["Data Set::totalqty"]</expression>
+                        </structure>
+                    </list-property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">Aggregation_3</property>
+                    <property name="dataType">float</property>
+                    <property name="aggregateFunction">SUM</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value" type="javascript">row["Aggregation_2"]</expression>
+                        </structure>
+                    </list-property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">Aggregation_4</property>
+                    <property name="dataType">float</property>
+                    <property name="aggregateFunction">SUM</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value" type="javascript">row["Aggregation_1"]</expression>
+                        </structure>
+                    </list-property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">Data Set1::cat_desc</property>
+                    <text-property name="displayName">Data Set1::cat_desc</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["Data Set1::cat_desc"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">Data Set::oum</property>
+                    <text-property name="displayName">Data Set::oum</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["Data Set::oum"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">Data Set::open_bas_cost</property>
+                    <text-property name="displayName">Data Set::open_bas_cost</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["Data Set::open_bas_cost"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">Data Set::(y.totalqty * y.open_bas_cost)</property>
+                    <text-property name="displayName">Data Set::(y.totalqty * y.open_bas_cost)</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["Data Set::(y.totalqty * y.open_bas_cost)"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+            </list-property>
+            <column id="703">
+                <property name="width">0.4583333333333333in</property>
+            </column>
+            <column id="663">
+                <property name="width">0.84375in</property>
+            </column>
+            <column id="666">
+                <property name="width">1.0520833333333333in</property>
+            </column>
+            <column id="771">
+                <property name="width">2.5104166666666665in</property>
+            </column>
+            <column id="756">
+                <property name="width">0.3020833333333333in</property>
+            </column>
+            <column id="668">
+                <property name="width">0.8125in</property>
+            </column>
+            <column id="670">
+                <property name="width">0.84375in</property>
+            </column>
+            <column id="672">
+                <property name="width">0.8958333333333334in</property>
+            </column>
+            <header>
+                <row id="610">
+                    <property name="borderBottomColor">#000000</property>
+                    <property name="borderBottomStyle">solid</property>
+                    <property name="borderTopColor">#000000</property>
+                    <property name="borderTopStyle">solid</property>
+                    <cell id="698">
+                        <text id="704">
+                            <property name="contentType">auto</property>
+                            <text-property name="content"><![CDATA[No]]></text-property>
+                        </text>
+                    </cell>
+                    <cell id="611">
+                        <label id="612">
+                            <text-property name="text">Opening ID</text-property>
+                        </label>
+                    </cell>
+                    <cell id="617">
+                        <label id="618">
+                            <text-property name="text">Item Code</text-property>
+                        </label>
+                    </cell>
+                    <cell id="766">
+                        <text id="772">
+                            <property name="contentType">auto</property>
+                            <text-property name="content"><![CDATA[Description]]></text-property>
+                        </text>
+                    </cell>
+                    <cell id="751">
+                        <text id="757">
+                            <property name="contentType">auto</property>
+                            <text-property name="content"><![CDATA[UOM]]></text-property>
+                        </text>
+                    </cell>
+                    <cell id="621">
+                        <label id="622">
+                            <text-property name="text">Opening Qty</text-property>
+                        </label>
+                    </cell>
+                    <cell id="625">
+                        <label id="626">
+                            <text-property name="text">Opening Cost (MYR)</text-property>
+                        </label>
+                    </cell>
+                    <cell id="629">
+                        <label id="630">
+                            <text-property name="text">Balance (MYR)</text-property>
+                        </label>
+                    </cell>
+                </row>
+            </header>
+            <group id="673">
+                <property name="groupName">NewTableGroup1</property>
+                <expression name="keyExpr" type="javascript">row["Data Set1::category"]</expression>
+                <structure name="toc">
+                    <expression name="expressionValue" type="javascript">row["Data Set1::category"]</expression>
+                </structure>
+                <property name="hideDetail">false</property>
+                <header>
+                    <row id="674">
+                        <cell id="699">
+                            <data id="696">
+                                <property name="fontWeight">bold</property>
+                                <property name="textUnderline">underline</property>
+                                <property name="resultSetColumn">Data Set1::category</property>
+                            </data>
+                        </cell>
+                        <cell id="675">
+                            <property name="colSpan">3</property>
+                            <property name="rowSpan">1</property>
+                            <data id="717">
+                                <property name="fontWeight">bold</property>
+                                <property name="textUnderline">underline</property>
+                                <property name="resultSetColumn">Data Set1::cat_desc</property>
+                            </data>
+                        </cell>
+                        <cell id="752"/>
+                        <cell id="680"/>
+                        <cell id="682"/>
+                        <cell id="684"/>
+                    </row>
+                </header>
+                <footer>
+                    <row id="685">
+                        <cell id="701"/>
+                        <cell id="686"/>
+                        <cell id="689"/>
+                        <cell id="769"/>
+                        <cell id="754"/>
+                        <cell id="691">
+                            <data id="709">
+                                <property name="borderBottomColor">#000000</property>
+                                <property name="borderBottomStyle">solid</property>
+                                <property name="borderBottomWidth">2px</property>
+                                <property name="borderTopColor">#000000</property>
+                                <property name="borderTopStyle">solid</property>
+                                <property name="borderTopWidth">2px</property>
+                                <structure name="numberFormat">
+                                    <property name="category">Fixed</property>
+                                    <property name="pattern">###0.00{RoundingMode=HALF_UP}</property>
+                                </structure>
+                                <property name="textAlign">right</property>
+                                <property name="resultSetColumn">Aggregation_2</property>
+                            </data>
+                        </cell>
+                        <cell id="693"/>
+                        <cell id="695">
+                            <data id="707">
+                                <property name="borderBottomColor">#000000</property>
+                                <property name="borderBottomStyle">solid</property>
+                                <property name="borderBottomWidth">2px</property>
+                                <property name="borderTopColor">#000000</property>
+                                <property name="borderTopStyle">solid</property>
+                                <property name="borderTopWidth">2px</property>
+                                <structure name="numberFormat">
+                                    <property name="category">Fixed</property>
+                                    <property name="pattern">###0.00{RoundingMode=HALF_UP}</property>
+                                </structure>
+                                <property name="textAlign">right</property>
+                                <property name="resultSetColumn">Aggregation_1</property>
+                            </data>
+                        </cell>
+                    </row>
+                </footer>
+            </group>
+            <detail>
+                <row id="631">
+                    <cell id="700">
+                        <data id="705">
+                            <property name="textAlign">center</property>
+                            <property name="resultSetColumn">Aggregation</property>
+                        </data>
+                    </cell>
+                    <cell id="632">
+                        <data id="633">
+                            <property name="textAlign">center</property>
+                            <property name="resultSetColumn">Data Set::rm_opening_id</property>
+                        </data>
+                    </cell>
+                    <cell id="638">
+                        <data id="639">
+                            <property name="resultSetColumn">Data Set::item_code</property>
+                        </data>
+                    </cell>
+                    <cell id="768">
+                        <data id="773">
+                            <structure name="numberFormat">
+                                <property name="category">Unformatted</property>
+                            </structure>
+                            <structure name="stringFormat">
+                                <property name="category">Custom</property>
+                            </structure>
+                            <property name="resultSetColumn">Data Set::description</property>
+                        </data>
+                    </cell>
+                    <cell id="753">
+                        <data id="758">
+                            <property name="textAlign">right</property>
+                            <property name="resultSetColumn">Data Set::oum</property>
+                        </data>
+                    </cell>
+                    <cell id="642">
+                        <data id="643">
+                            <structure name="numberFormat">
+                                <property name="category">Fixed</property>
+                                <property name="pattern">###0.00{RoundingMode=HALF_UP}</property>
+                            </structure>
+                            <property name="textAlign">right</property>
+                            <property name="resultSetColumn">Data Set::totalqty</property>
+                        </data>
+                    </cell>
+                    <cell id="646">
+                        <data id="774">
+                            <structure name="numberFormat">
+                                <property name="category">Fixed</property>
+                                <property name="pattern">###0.000{RoundingMode=HALF_UP}</property>
+                            </structure>
+                            <property name="textAlign">right</property>
+                            <property name="resultSetColumn">Data Set::open_bas_cost</property>
+                        </data>
+                    </cell>
+                    <cell id="650">
+                        <data id="775">
+                            <structure name="numberFormat">
+                                <property name="category">Fixed</property>
+                                <property name="pattern">###0.00{RoundingMode=HALF_UP}</property>
+                            </structure>
+                            <property name="textAlign">right</property>
+                            <property name="resultSetColumn">Data Set::(y.totalqty * y.open_bas_cost)</property>
+                        </data>
+                    </cell>
+                </row>
+            </detail>
+            <footer>
+                <row id="652">
+                    <cell id="702"/>
+                    <cell id="653"/>
+                    <cell id="656"/>
+                    <cell id="770"/>
+                    <cell id="755"/>
+                    <cell id="658">
+                        <data id="711">
+                            <property name="borderBottomColor">#000000</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">2px</property>
+                            <property name="borderTopColor">#000000</property>
+                            <property name="borderTopStyle">solid</property>
+                            <property name="borderTopWidth">2px</property>
+                            <structure name="numberFormat">
+                                <property name="category">Fixed</property>
+                                <property name="pattern">###0.00{RoundingMode=HALF_UP}</property>
+                            </structure>
+                            <property name="textAlign">right</property>
+                            <property name="resultSetColumn">Aggregation_3</property>
+                        </data>
+                    </cell>
+                    <cell id="660">
+                        <text id="759">
+                            <property name="textAlign">right</property>
+                            <property name="contentType">auto</property>
+                            <text-property name="content"><![CDATA[Grand Total]]></text-property>
+                        </text>
+                    </cell>
+                    <cell id="662">
+                        <data id="712">
+                            <property name="borderBottomColor">#000000</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">2px</property>
+                            <property name="borderTopColor">#000000</property>
+                            <property name="borderTopStyle">solid</property>
+                            <property name="borderTopWidth">2px</property>
+                            <structure name="numberFormat">
+                                <property name="category">Fixed</property>
+                                <property name="pattern">###0.00{RoundingMode=HALF_UP}</property>
+                            </structure>
+                            <property name="textAlign">right</property>
+                            <property name="resultSetColumn">Aggregation_4</property>
+                        </data>
+                    </cell>
+                </row>
+            </footer>
+        </table>
+    </body>
+</report>
