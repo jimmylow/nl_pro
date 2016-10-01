@@ -16,7 +16,7 @@
 	$frdate= date('Y-m-d', strtotime($frdate));		
 	$todate= date('Y-m-d', strtotime($todate));	
      
-	$sql = "SELECT x.sew_doid, x.buyer, x.create_on, x.totproduct, x.totdefect, x.totgrand  ";
+	$sql = "SELECT x.sew_doid, x.buyer, x.dodate, x.totproduct, x.totdefect, x.totgrand  ";
 	$sql.= " FROM sew_do  x ";
 	$sql.= " where  x.buyer = '$supp_code' ";
 	$sql.= " and x.posted = 'Y'  ";
@@ -61,7 +61,7 @@
 			
 			// end here//
 					
-			$dodate= date('Y-m-d', strtotime($rowq['create_on']));
+			$dodate= date('Y-m-d', strtotime($rowq['dodate']));
 			
 			$ticketno = $rowq['ticketno'];
 			if ($rowq['seqno']==2)
