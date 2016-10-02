@@ -122,10 +122,35 @@
 <script type="text/javascript"> 
 
 $(document).ready(function() {
-				$('#example').dataTable( {
-					"sPaginationType": "full_numbers"
-				} );
-			} );
+	$('#example').dataTable( {
+		"sPaginationType": "full_numbers"
+	} );
+				
+	var rowIndex = 0;
+	$("#dataTable tr").click(function(){
+		var value=$(this).index();
+	   	rowIndex = value;
+	   	var selected = $(this).hasClass("highlight");
+    	$("#dataTable tr").removeClass("highlight");
+    	if(!selected)
+            $(this).addClass("highlight");    
+	});
+
+	$("#deleteRow").click(function(){
+		try {
+			var table = document.getElementById("dataTable");
+			var rowCount = rowIndex+1; //table.rows.length-1;
+			if (rowCount > 2){
+	             table.deleteRow(rowCount);
+	        }else{
+	             alert ("No More Row To Remove");
+	        }
+		}catch(e) {
+			alert(e);
+		}
+	}); 
+				
+});
 
 function upperCase(x)
 {
@@ -556,7 +581,7 @@ function calcAmt(vid)
 		  
 			 <div align="left">
 				<a href="javascript:addRow('dataTable')" id="addRow" class="button-clean large"><span><img src="../images/icon-plus.png" alt="Add" title="Add Row"> Add Row</span></a>
-				<a href="javascript:deleteRow('dataTable')" id="addRow" class="button-clean large"><span><img src="../images/icon-minus.png" alt="Add" title="Delete Row">Delete Row</span></a>
+				<a href="#" id="deleteRow" class="button-clean large"><span><img src="../images/icon-minus.png" alt="Add" title="Delete Row">Delete Row</span></a>
 			  </div> 
 			 
 			
