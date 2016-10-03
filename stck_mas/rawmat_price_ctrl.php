@@ -22,7 +22,7 @@
     
     if ($_POST['Submit'] == "Save") {
 		$rawmat_maincode   = mysql_real_escape_string($_POST['selmain_code']);
-	    $rawmat_subcode    = mysql_real_escape_string($_POST['selrmcode']);
+	    //$rawmat_subcode    = mysql_real_escape_string($_POST['selrmcode']);
      	$rawmat_supplierid = $_POST['selsupplier'];
      	$rawmat_curr       = $_POST['selcurr'];
      	$rawmat_uom        = $_POST['seluom'];
@@ -39,6 +39,9 @@
      		$rawmat_supplier = $row['supplier_code'];        
      	}
 		
+     	foreach ($_POST['selrmcode'] as $rawmat_subcode)
+     	{
+    	     	
 		if ($rawmat_subcode <> "") {
 			 
 			$sysno = '';
@@ -114,6 +117,7 @@
             	echo "</script>"; 	
 			}		
 		}
+     	}
 	}
 ?>
 
@@ -184,6 +188,14 @@ $(document).ready(function(){
 		
 	};
 	$("#prod_code").autocomplete(ac_config);
+
+	$('#select_all').click( function() {
+		$('#selrmcode option').prop('selected', true);
+	});
+	
+	$('#unselect_all').click( function() {
+		$('#selrmcode option').prop('selected', false);
+	});
 });
 
 function upperCase(x)
@@ -551,7 +563,7 @@ function get_labrate(itemcode)
 function getItem(supp_code, main_code)
 {
 //   var strURL="aja_get_itemno.php?main_code="+main_code;
-   var strURL="aja_get_itemno.php?supp_code="+supp_code+"&main_code="+main_code;
+   var strURL="aja_get_itemno_multi.php?supp_code="+supp_code+"&main_code="+main_code;
    //alert("Image's Source is: " + strURL);
 
    var req = getXMLHTTP();
@@ -739,6 +751,8 @@ function disp_dec(vid)
 	  	    <td style="width: 418px;" class="tdlabel">Sub Code No.</td>
 	  	    <td style="width: 4px;">:</td>
 	  	    <td style="width: 231px;">
+	  	    <a href="#" id="select_all">Select All</a>&nbsp;|&nbsp;<a href="#" id="unselect_all">Unselect All</a>
+			<br>(CTRL + Left Click for Multiple)	  	    
 			<p id="statedivx" style="width: 210px;"></p>
 			
 			</td>
