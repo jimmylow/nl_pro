@@ -152,6 +152,29 @@ $(document).ready(function(){
 	};
 	$("#prod_code").autocomplete(ac_config);
 	
+	var rowIndex = 0;
+	$("#itemsTable tr").click(function(){
+		var value=$(this).index();
+	   	rowIndex = value;
+	   	var selected = $(this).hasClass("highlight");
+    	$("#itemsTable tr").removeClass("highlight");
+    	if(!selected)
+            $(this).addClass("highlight");    
+	});
+
+	$("#deleteRow").click(function(){
+		try {
+			var table = document.getElementById("itemsTable");
+			var rowCount = rowIndex+1; //table.rows.length-1;
+			if (rowCount > 2){
+	             table.deleteRow(rowCount);
+	        }else{
+	             alert ("No More Row To Remove");
+	        }
+		}catch(e) {
+			alert(e);
+		}
+	}); 
 	
 	var table = document.getElementById('itemsTable');
     var rowCount = table.rows.length; 
@@ -853,7 +876,7 @@ function get_desc(itemcode, vid)
            </table>
            
          <a href="#" id="addRow" class="button-clean large"><span><img src="../images/icon-plus.png" alt="Add" title="Add Row"> Add Item</span></a>
-         <a href="javascript:deleteRow('itemsTable')" id="addRow" class="button-clean large"><span><img src="../images/icon-minus.png" alt="Add" title="Delete Row">Delete Row</span></a>
+         <a href="#" id="deleteRow" class="button-clean large"><span><img src="../images/icon-minus.png" alt="Add" title="Delete Row">Delete Row</span></a>
 
 	
 		 <table>
