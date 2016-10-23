@@ -70,7 +70,6 @@
 			intval( $_GET['iDisplayLength'] );
 	}
 	
-	
 	/*
 	 * Ordering
 	 */
@@ -140,7 +139,9 @@
 	 */
 	$sQuery = "
 		SELECT SQL_CALC_FOUND_ROWS `".str_replace(" , ", " ", implode("`, `", $aColumns))."`
-		FROM   $sTable
+		, rpt.prod_desc FROM   $sTable AS m
+		INNER JOIN (select prod_desc, prod_code AS pcode from pro_cd_master)
+		AS rpt ON rpt.pcode = m.prod_code
 		$sWhere
 		$sOrder
 		$sLimit
@@ -192,12 +193,13 @@
 					$pcd = htmlentities($aRow[ $aColumns[$i] ]);
 				}else{
 					if ($aColumns[$i] == "create_by"){
-						$sql2 = "select prod_desc from pro_cd_master ";
-        				$sql2 .= " where prod_code ='".$pcd."'";
-        				$sql_result2 = mysql_query($sql2);
-        				$row2 = mysql_fetch_array($sql_result2);
-        				$pcdde = $row2[0];
-        				$row[] = $pcdde;
+						//$sql2 = "select prod_desc from pro_cd_master ";
+        				//$sql2 .= " where prod_code ='".$pcd."'";
+        				//$sql_result2 = mysql_query($sql2);
+        				//$row2 = mysql_fetch_array($sql_result2);
+        				//$pcdde = $row2[0];
+        				//$row[] = $pcdde;
+						$row[] = $aRow[ "prod_desc" ];
 					}else{
 						if ($aColumns[$i] == "docdate"){
 							$row[] = date('d-m-Y', strtotime($aRow[ $aColumns[$i] ]));;
@@ -209,18 +211,18 @@
 			}
 		}
 
-		$sql1 = "select count(*) from salesentrydet";
-        $sql1 .= " where sprocd='".$pcd."' ";
-        $sql_result1 = mysql_query($sql1) or die("error query sales entry:".mysql_error());
-        $row2 = mysql_fetch_array($sql_result1);
-		$cnt = $row2[0];
+		//$sql1 = "select count(*) from salesentrydet";
+        //$sql1 .= " where sprocd='".$pcd."' ";
+        //$sql_result1 = mysql_query($sql1) or die("error query sales entry:".mysql_error());
+        //$row2 = mysql_fetch_array($sql_result1);
+		//$cnt = $row2[0];
 		
 		// to check the approve product costing, control delete
-        $sqlc = "select stat from procos_appr";
-        $sqlc .= " where pro_code ='$pcd' ";
-        $sql_resultc = mysql_query($sqlc) or die("error query approve table :".mysql_error());
-        $rowc = mysql_fetch_array($sql_resultc);
-		$apstat = $rowc[0];
+        //$sqlc = "select stat from procos_appr";
+        //$sqlc .= " where pro_code ='$pcd' ";
+        //$sql_resultc = mysql_query($sqlc) or die("error query approve table :".mysql_error());
+        //$rowc = mysql_fetch_array($sql_resultc);
+		//$apstat = $rowc[0];
 
     	$urlpop = 'upd_procost.php?procd='.$pcd.'&menucd='.$var_menucode;
 		$urlvm = 'vm_procost.php?procd='.$pcd.'&menucd='.$var_menucode;		
@@ -238,7 +240,7 @@
 			$row[] = '<a href="#" title="You Are Not Authorice To Update Product Costing">[EDIT]</a>';
 		}else{	
 			if ($apstat == 'APPROVE'){
-				$row[] = '<a href="#" title="This Product Costing Has Been Approved Not Allowed To Edot">[EDIT]</a>';
+				$row[] = '<a href="#" title="This Product Costing Has Been Approved Not Allowed To Edit">[EDIT]</a>';
 			}else{
 				$row[] = '<a href="'.$urlpop.'" title="'.$apstat.'">[EDIT]</a>';
 			}
