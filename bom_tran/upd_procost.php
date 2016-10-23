@@ -166,7 +166,8 @@ $(document).ready(function(){
 		try {
 			var table = document.getElementById("itemsTable");
 			var rowCount = rowIndex+1; //table.rows.length-1;
-			if (rowCount > 2){
+			if (rowCount > table.rows.length-1) rowCount = table.rows.length-1; 
+			if (rowCount > 0){
 	             table.deleteRow(rowCount);
 	        }else{
 	             alert ("No More Row To Remove");
@@ -656,7 +657,7 @@ function get_desc(itemcode, vid)
     
 	var strURL="aja_get_itmdesc.php?itmcod="+itemcode;
 	var req = getXMLHTTP();
-
+	
     if (req)
 	{
 		req.onreadystatechange = function()
@@ -664,10 +665,8 @@ function get_desc(itemcode, vid)
 			if (req.readyState == 4)
 			{
 				// only if "OK"
-				
 				if (req.status == 200)
 				{
-				
 					var obj = jQuery.parseJSON(req.responseText);
 					if (obj != null){
 						document.getElementById(iditmdesc).value = obj.desc.replace(/&quot;/g, "\"");
@@ -841,14 +840,14 @@ function get_desc(itemcode, vid)
 					echo '<td><input name="seqno[]" id="seqno" value="'.$i.'" readonly="readonly" style="width: 27px; border:0;"></td>'; 
 					echo '<td><input name="procomat[]" value="'.htmlentities($rowq['rm_code']).'" id="procomat'.$i.'" class="autosearch" style="width: 161px" onchange ="upperCase(this.id)" onblur="get_desc(this.value, '.$i.')"></td>';
                 	echo '<td><input name="procodesc[]" value="'.htmlentities($rowq['rm_desc'], ENT_QUOTES).'" id="procodesc'.$i.'" style="width: 303px;" onchange ="upperCase(this.id)"></td>';
-             		echo '<td><input name="procouom[]" value="'.$rowq['rm_uom'].'" id="procouom1" readonly="readonly" style="border-style: none; border-color: inherit; border-width: 0; width: 48px;"></td>';
+             		echo '<td><input name="procouom[]" value="'.$rowq['rm_uom'].'" id="procouom'.$i.'" readonly="readonly" style="border-style: none; border-color: inherit; border-width: 0; width: 48px;"></td>';
                     echo '<td><input name="procoucost[]" id="procoucost'.$i.'" value="'.$rowq['rm_ucost'].'"style="width: 75px; text-align:right;" onBlur="calcCost('.$i.');"></td>';             	
                 	echo '<td><input name="prococompt[]" value="'.$rowq['rm_comps'].'" id="prococompt'.$i.'" style="width: 75px; text-align:right;" onblur="checkcompsum('.$i.')" onkeyup="calcCost('.$i.');" ></td>';
                 	echo '<td><input name="prococost[]" value="'.$rowq['rm_costing'].'" id="prococost'.$i.'" readonly="readonly" style="width: 75px; border:0; text-align:right;"></td>';
-                	echo '<td><input name="procomark[]" tMark="1" id="procomark1" readonly="readonly" style="width: 75px; border:0; text-align:right;" value="'.$rowq['rm_mark'].'"></td>';
-                	echo '<td><input name="procospre[]" tSpre="1" value="'.$rowq['rm_spre'].'" id="procospre1" readonly="readonly" style="width: 75px; border:0; text-align:right;"> </td>';
-                	echo '<td><input name="prococut[]" tCut="1" value="'.$rowq['rm_cut'].'" id="prococut1" readonly="readonly" style="width: 75px; border:0; text-align:right;"></td>';
-                	echo '<td><input name="procobund[]" tBund="1" value="'.$rowq['rm_bundl'].'" id="procobund1" readonly="readonly" style="width: 75px; border:0; text-align:right;"></td>';
+                	echo '<td><input name="procomark[]" tMark="1" id="procomark'.$i.'" readonly="readonly" style="width: 75px; border:0; text-align:right;" value="'.$rowq['rm_mark'].'"></td>';
+                	echo '<td><input name="procospre[]" tSpre="1" value="'.$rowq['rm_spre'].'" id="procospre'.$i.'" readonly="readonly" style="width: 75px; border:0; text-align:right;"> </td>';
+                	echo '<td><input name="prococut[]" tCut="1" value="'.$rowq['rm_cut'].'" id="prococut'.$i.'" readonly="readonly" style="width: 75px; border:0; text-align:right;"></td>';
+                	echo '<td><input name="procobund[]" tBund="1" value="'.$rowq['rm_bundl'].'" id="procobund'.$i.'" readonly="readonly" style="width: 75px; border:0; text-align:right;"></td>';
                 	echo ' </tr>';
                 	
                 	$i = $i + 1;
@@ -862,10 +861,10 @@ function get_desc(itemcode, vid)
                     echo '<td><input name="procoucost[]" id="procoucost'.$i.'" value="'.$rowq['rm_ucost'].'"style="width: 75px; text-align:right;" onBlur="calcCost('.$i.');"></td>';             	
                 	echo '<td><input name="prococompt[]" value="'.$rowq['rm_comps'].'" id="prococompt'.$i.'" style="width: 75px; text-align:right;" onblur="checkcompsum('.$i.')" onkeyup="calcCost('.$i.');" ></td>';
                 	echo '<td><input name="prococost[]" value="'.$rowq['rm_costing'].'" id="prococost'.$i.'" readonly="readonly" style="width: 75px; border:0; text-align:right;"></td>';
-                	echo '<td><input name="procomark[]" tMark="1" id="procomark1" readonly="readonly" style="width: 75px; border:0; text-align:right;" value="'.$rowq['rm_mark'].'"></td>';
-                	echo '<td><input name="procospre[]" tSpre="1" value="'.$rowq['rm_spre'].'" id="procospre1" readonly="readonly" style="width: 75px; border:0; text-align:right;"> </td>';
-                	echo '<td><input name="prococut[]" tCut="1" value="'.$rowq['rm_cut'].'" id="prococut1" readonly="readonly" style="width: 75px; border:0; text-align:right;"></td>';
-                	echo '<td><input name="procobund[]" tBund="1" value="'.$rowq['rm_bundl'].'" id="procobund1" readonly="readonly" style="width: 75px; border:0; text-align:right;"></td>';
+                	echo '<td><input name="procomark[]" tMark="1" id="procomark'.$i.'" readonly="readonly" style="width: 75px; border:0; text-align:right;" value="'.$rowq['rm_mark'].'"></td>';
+                	echo '<td><input name="procospre[]" tSpre="1" value="'.$rowq['rm_spre'].'" id="procospre'.$i.'" readonly="readonly" style="width: 75px; border:0; text-align:right;"> </td>';
+                	echo '<td><input name="prococut[]" tCut="1" value="'.$rowq['rm_cut'].'" id="prococut'.$i.'" readonly="readonly" style="width: 75px; border:0; text-align:right;"></td>';
+                	echo '<td><input name="procobund[]" tBund="1" value="'.$rowq['rm_bundl'].'" id="procobund'.$i.'" readonly="readonly" style="width: 75px; border:0; text-align:right;"></td>';
                 	echo ' </tr>';
                 	
                 	$i = $i + 1;
