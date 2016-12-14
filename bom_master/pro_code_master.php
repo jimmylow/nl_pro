@@ -126,8 +126,14 @@
      	{
            $moby= $var_loginid;
            $moon= date("Y-m-d");
+           $isexist = 0;
            foreach($_POST['procd'] as $value ) {
            	
+            // check existing at sewing
+           	include("../bom_master/aja_chk_sew_entry.php");          	
+           	if ($numSewEntry == 0)
+           	{
+
            	//delete from product code master
 		    $sql = "DELETE FROM pro_cd_master ";
             $sql .= " WHERE prod_code ='".$value."'";
@@ -163,11 +169,14 @@
  
 		 	//mysql_query($sql) or die(mysql_error());
 		 	mysql_query($sql) or die("Error DELETE Product Costing Approval :".mysql_error(). ' Failed SQL is -->'. $sql);
+           	}
 		   }
 		   $backloc = "../bom_master/pro_code_master.php?stat=1&menucd=".$var_menucode;
-           echo "<script>";
-           echo 'location.replace("'.$backloc.'")';
-           echo "</script>";        
+		   if ($isexist == 0) {
+           	echo "<script>";
+            echo 'location.replace("'.$backloc.'")';
+            echo "</script>";
+		   }               
      	}      
     }
 

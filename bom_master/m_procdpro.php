@@ -217,13 +217,13 @@
 			$row[] = '<a href="'.$urlpop.'" title="Update Detail Product Code Detail">[EDIT]</a>';
 		}
 		
-		if ($var_accupd == 0){
+		if ($var_accdel == 0){
             $row[] = '<input type="checkbox" DISABLED  name="procd[]" value="'.$prodcd.'" />';
         }else{             
             $row[] = '<input type="checkbox" name="procd[]" value="'.$prodcd.'" />';
         }
         
-        if ($var_accupd == 0){
+        if ($var_accdel == 0){
             $row[] = '<input type="checkbox" DISABLED  name="procd[]" value="'.$prodcd.'" />';
         }else{             
             $row[] = '<input type="checkbox" name="procd[]" value="'.$prodcd.'" />';
