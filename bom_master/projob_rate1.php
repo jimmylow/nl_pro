@@ -124,10 +124,16 @@
 
 		if(!empty($_POST['procd']) && is_array($_POST['procd'])) 
 		{
+			$isexist = 0;
             foreach($_POST['procd'] as $value ) {
-				$sql = "DELETE FROM pro_jobmodel WHERE prod_code ='".$value."'"; 
-				echo $sql; 			
-				//mysql_query($sql); 
+           	
+            	// check existing at sewing
+            	include("../bom_master/aja_chk_sew_entry.php");
+            	if ($numSewEntry == 0)
+            	{
+					$sql = "DELETE FROM pro_jobmodel WHERE prod_code ='".$value."'"; 						
+					mysql_query($sql) or die("Error DELETE Product Code Master :".mysql_error(). ' Failed SQL is -->'. $sql); 
+            	}
 			}
 		   //$backloc = "../bom_master/projob_rate1.php?stat=1&menucd=".$var_menucode;
            //echo "<script>";
@@ -153,6 +159,7 @@
       	
 		
    	 }	
+   	 
 ?>
 
 
@@ -764,6 +771,16 @@ function calcAmt(vid)
               
     	  	   $msgdel = "Are You Sure Delete Selected Product Code Product Model Job File List?";
     	  	   include("../Setting/btndelete.php");
+    	  	   $locatr = "vm_projob_rate.php?menucd=".$var_menucode;
+    	  	   if ($var_accvie != 0){
+    	  	   	echo '<input type="button" value="View" class="butsub" style="width: 60px; height: 32px" onclick="location.href=\''.$locatr.'\'" >';
+    	  	   }
+    	  	   $locatr = "upd_projob_rate.php?menucd=".$var_menucode;
+    	  	   if ($var_accupd != 0){
+    	  	   	echo '<input type="button" value="Edit" class="butsub" style="width: 60px; height: 32px" onclick="location.href=\''.$locatr.'\'" >';
+    	  	   }
+    	  	   $locatr = "projob_rate1.php?menucd=".$var_menucode;
+    	  	   echo '<input type="submit" name="btnListing" id="btnListing" value="Listing" class="butsub" style="width: 60px; height: 32px">';
     	      ?>
            </td>
 		 </tr>
@@ -800,11 +817,11 @@ function calcAmt(vid)
 		   //soluction : removed modified_on
 		  //end blocked //
 			
+		 if ($_POST['btnListing'] == "Listing") {
 			$sql = "SELECT DISTINCT prod_code, prod_desc ";
 		    $sql .= " FROM pro_jobmodel";
     		 
-			$rs_result = mysql_query($sql); 
-
+			$rs_result = mysql_query($sql);  
 		 
 		    $numi = 1;
 			while ($rowq = mysql_fetch_assoc($rs_result)) {
@@ -847,6 +864,7 @@ function calcAmt(vid)
            
             $numi = $numi + 1;
 			}
+		 }
 		 ?>
 		 </tbody>
 		 </table>

@@ -18,8 +18,12 @@
       $var_menucode = $_GET['menucd']; 
     }
    
+    if ($_POST['Submit'] == "Get" && !empty($_POST['prod_code'])) {
+    	$var_prodcode= $_POST['prod_code'];
+    }
+    
     if ($_POST['Submit'] == "Update") {
-		$vprocode = $_POST['prodcode'];
+		$vprocode = $_POST['prod_code'];
 		$vprodesc = $_POST['procddesc'];
 		$var_menucode  = $_POST['menudcode'];
             
@@ -102,6 +106,7 @@
 <link rel="stylesheet" href="../css/autocomplete.css" type="text/css" media="screen">
 	
 <style media="all" type="text/css">
+@import "../css/multitable/themes/smoothness/jquery-ui-1.8.4.custom.css";
 @import "../css/styles.css";
 @import "../css/demo_table.css";
 
@@ -109,19 +114,20 @@
 	margin-right: 0px;
 }
 </style>
-<script type="text/javascript" language="javascript" src="../js/jquery.js"></script>
-<script type="text/javascript" language="javascript" src="../js/dimensions.js"></script>
-<script type="text/javascript" language="javascript" src="../media/js/jquery.js"></script>
-<script type="text/javascript" language="javascript" src="../media/js/jquery.dataTables.js"></script>
-<script type="text/javascript" language="javascript" src="../js/datetimepicker_css.js"></script>
+<script type="text/javascript" src="../js/datetimepicker_css.js"></script>
+<script type="text/javascript" src="../js/multitable/jquery-1.6.1.min.js"></script>
+<script type="text/javascript" src="../js/multitable/jquery-ui-1.8.14.custom.min.js"></script>
 <script type="text/javascript" src="../js/JavaScriptUtil.js"></script>
 <script type="text/javascript" src="../js/Parsers.js"></script>
 <script type="text/javascript" src="../js/InputMask.js"></script>
 
+<?php
+	include("../Setting/jquery_script.php");
+?>
 
 <script type="text/javascript"> 
 
-$(document).ready(function() {
+$(document).ready(function() {			
 	$('#example').dataTable( {
 		"sPaginationType": "full_numbers"
 	} );
@@ -140,7 +146,7 @@ $(document).ready(function() {
 		try {
 			var table = document.getElementById("dataTable");
 			var rowCount = rowIndex+1; //table.rows.length-1;
-			if (rowCount > 2){
+			if (rowCount > 0){
 	             table.deleteRow(rowCount);
 	        }else{
 	             alert ("No More Row To Remove");
@@ -442,11 +448,19 @@ function calcAmt(vid)
 <body>
 <?php include("../topbarm.php"); ?> 
 <?php
+	if (!empty($_POST['prod_code'])) {
 		$sql = "select *";
         $sql .= " from pro_cd_master";
         $sql .= " where prod_code ='".$var_prodcode."'";
         $sql_result = mysql_query($sql);
         $row = mysql_fetch_array($sql_result);
+        $num=mysql_numrows($sql_result);
+        if ($num==0) {
+        	echo "<script>";
+        	echo "alert('Product Code ".$var_prodcode. " not exist at Job Pay Rate!')";
+        	echo "</script>";
+        }
+	}  
         $proddesc = $row[6];
 		
 		$vartotal = 0;
@@ -474,7 +488,8 @@ function calcAmt(vid)
 	  	    <td>Product Code</td>
 	  	    <td>:</td>
 	  	    <td>
-			<input class="textnoentry1" readonly="readonly" name="prodcode" id ="prodcodeid" type="text" value="<?php echo $var_prodcode;?>" style="width: 136px">
+			<input class="autosearch" name="prod_code" id="prod_code" type="text" style="width: 129px" value="<?php echo $var_prodcode;?>">
+			<input type=submit name = "Submit" value="Get" class="butsub" style="width: 60px; height: 32px" >
 			</td>
 			
 	  	  </tr>  

@@ -18,6 +18,10 @@
       $var_menucode = $_GET['menucd'];    
     }
     
+   if ($_POST['Submit'] == "Get" && !empty($_POST['prod_code'])) {
+    	$var_prodcode= $_POST['prod_code'];
+    }
+    
     if ($_POST['Submit'] == "Back") {
          $var_menucode  = $_POST['menudcode'];
          $backloc = "../bom_master/projob_rate1.php?menucd=".$var_menucode;
@@ -75,38 +79,52 @@
     }   
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 
 <head>
 
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
 
 <link rel="stylesheet" href="../css/lightbox.css" type="text/css" media="screen">	
-<style media="all" type="text/css">@import "../css/styles.css";
+<style media="all" type="text/css">
+@import "../css/multitable/themes/smoothness/jquery-ui-1.8.4.custom.css";
+@import "../css/styles.css";
 .style2 {
 	margin-right: 0px;
 }
 </style>
-<script type="text/javascript" language="javascript" src="../media/js/jquery.js"></script>
-<script type="text/javascript" language="javascript" src="../media/js/jquery.dataTables.js"></script>
-<script type="text/javascript" src="../js/imgjs/prototype.js"></script>
-<script type="text/javascript" src="../js/imgjs/scriptaculous.js?load=effects,builder"></script>
-<script type="text/javascript" src="../js/imgjs/lightbox.js"></script>
+
+<!-- jQuery libs -->
+<script type="text/javascript" src="../js/datetimepicker_css.js"></script>
+<script type="text/javascript" src="../js/multitable/jquery-1.6.1.min.js"></script>
+<script type="text/javascript" src="../js/multitable/jquery-ui-1.8.14.custom.min.js"></script>
+<script type="text/javascript" src="../js/JavaScriptUtil.js"></script>
+<script type="text/javascript" src="../js/Parsers.js"></script>
+<script type="text/javascript" src="../js/InputMask.js"></script>
 
 
-<script type="text/javascript" charset="utf-8"> 
-</script>
+<?php
+	include("../Setting/jquery_script.php");
+?>
+
 </head>
 <?php include("../topbarm.php"); ?> 
-  <!--<?php include("../sidebarm.php"); ?>--> 
+
 <body>
 	<?php
-        $sql = "select * ";
-        $sql .= " from pro_cd_master";
-        $sql .= " where prod_code ='".$var_prodcode."'";
-        $sql_result = mysql_query($sql);
-        $row = mysql_fetch_array($sql_result);
-
+		if (!empty($_POST['prod_code'])) {
+	        $sql = "select * ";
+	        $sql .= " from pro_cd_master";
+	        $sql .= " where prod_code ='".$var_prodcode."'";
+	        $sql_result = mysql_query($sql);
+	        $row = mysql_fetch_array($sql_result);
+	        $num=mysql_numrows($sql_result);
+	        if ($num==0) {
+	        	echo "<script>";
+	        	echo "alert('Product Code ".$var_prodcode. " not exist at Product Costing Details!')";
+	        	echo "</script>";
+	        }
+		}
         $prodbuyer = $row[1];
         $prodtype = $row[2];
         $prodcat = $row[14];
@@ -143,7 +161,9 @@
 	  	    <td style="width: 113px;">Product Code</td>
 	  	    <td style="width: 10px">:</td>
 	  	    <td style="width: 197px;">
-			<input class="inputtxt" readonly="readonly" name="prodcode" id ="prodcodeid" type="text" value="<?php echo $var_prodcode;?>" style="width: 106px"></td>
+				<input class="autosearch" name="prod_code" id="prod_code" type="text" style="width: 129px" value="<?php echo $var_prodcode;?>">
+				<input type=submit name = "Submit" value="Get" class="butsub" style="width: 60px; height: 32px" >
+			</td>
 			<td></td>
 			<td colspan="3" rowspan="6">
 			<a href="<?php echo $imgname; ?>" rel="lightbox">
