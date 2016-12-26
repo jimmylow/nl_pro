@@ -18,6 +18,10 @@
       include("../Setting/ChqAuth.php");
     }
     
+    if ($_POST['Submit'] == "Get" && !empty($_POST['prod_code'])) {
+    	$var_prodcd = $_POST['prod_code'];
+    }
+    
     if (isset($_POST['Submit'])){ 
      if ($_POST['Submit'] == "Print") {
         $prcode = $_POST['prod_code'];
@@ -62,6 +66,9 @@
 <script type="text/javascript" src="../js/multitable/jquery-1.6.1.min.js"></script>
 <script type="text/javascript" src="../js/multitable/jquery-ui-1.8.14.custom.min.js"></script>
 
+<?php
+	include("../Setting/jquery_script.php");
+?>
 <script type="text/javascript"> 
 
 
@@ -92,9 +99,17 @@ function calsalrm(){
 
 <body>
   <?php
+  if (!empty($var_prodcd)) {
   	 $sql = "select * from prod_matmain";
      $sql .= " where prod_code ='".$var_prodcd."'";
      $sql_result = mysql_query($sql);
+     $num=mysql_numrows($sql_result);
+     if ($num==0) {
+     	echo "<script>";
+     	echo "alert('Product Code ".$var_prodcd. " not exist at Product Costing Details!')";
+     	echo "</script>";
+     }
+     
      $row = mysql_fetch_array($sql_result);
 
      $docdte = date('d-m-Y', strtotime($row['docdate']));
@@ -112,6 +127,7 @@ function calsalrm(){
      $create_on = date("d-m-Y", strtotime($row['create_on']));
      $modified_by= $row['modified_by'];
  	 $modified_on = date("d-m-Y", strtotime($row['modified_on']));
+  }
 ?>
   <div class ="contentc">
 
@@ -127,7 +143,8 @@ function calsalrm(){
 	  	   <td style="width: 126px">Product Code </td>
 	  	   <td style="width: 13px">:</td>
 	  	   <td style="width: 239px">
-		   <input name="prod_code" id="prod_code" type="text" style="width: 129px" readonly="readonly" value="<?php echo $var_prodcd; ?>">
+		   <input class="autosearch" name="prod_code" id="prod_code" type="text" style="width: 129px" value="<?php echo $var_prodcd; ?>">
+		   <input type=submit name = "Submit" value="Get" class="butsub" style="width: 60px; height: 32px" >
 		   </td>
 		   <td></td>
 		   <td>Date</td>

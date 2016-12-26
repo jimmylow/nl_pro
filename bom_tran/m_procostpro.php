@@ -146,6 +146,13 @@
 		$sOrder
 		$sLimit
 		";
+	/* $sQuery = "
+	 SELECT SQL_CALC_FOUND_ROWS `".str_replace(" , ", " ", implode("`, `", $aColumns))."`
+	 FROM $sTable 
+	 $sWhere
+	 $sOrder
+	 $sLimit
+	 "; */
 	$rResult = mysql_query( $sQuery, $gaSql['link'] ) or fatal_error( 'MySQL Error: ' . mysql_error() );
 	
 	/* Data set length after filtering */
@@ -193,13 +200,8 @@
 					$pcd = htmlentities($aRow[ $aColumns[$i] ]);
 				}else{
 					if ($aColumns[$i] == "create_by"){
-						//$sql2 = "select prod_desc from pro_cd_master ";
-        				//$sql2 .= " where prod_code ='".$pcd."'";
-        				//$sql_result2 = mysql_query($sql2);
-        				//$row2 = mysql_fetch_array($sql_result2);
-        				//$pcdde = $row2[0];
-        				//$row[] = $pcdde;
 						$row[] = $aRow[ "prod_desc" ];
+						//$row[] = "testing";
 					}else{
 						if ($aColumns[$i] == "docdate"){
 							$row[] = date('d-m-Y', strtotime($aRow[ $aColumns[$i] ]));;

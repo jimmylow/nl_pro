@@ -18,6 +18,10 @@
       include("../Setting/ChqAuth.php");
     }
     
+    if ($_POST['Submit'] == "Get" && !empty($_POST['prod_code'])) {
+    	$var_prodcd = $_POST['prod_code'];
+    }
+    
     if ($_POST['Submit'] == "Update") {
 		$vmrevdte = date('Y-m-d', strtotime($_POST['prorevdte']));
 		$vmprodcd = $_POST['prod_code'];
@@ -136,22 +140,12 @@
 <!-- Our jQuery Script to make everything work -->
 <script  type="text/javascript" src="jq-ac-script.js"></script>
 
+<?php
+	include("../Setting/jquery_script.php");
+?>
 
 <script type="text/javascript"> 
 $(document).ready(function(){
-	var ac_config = {
-		source: "autocomscrpro1.php",
-		select: function(event, ui){
-			$("#prod_code").val(ui.item.prod_code);
-			$("#promodesc").val(ui.item.prod_desc);
-			$("#totallabcid").val(ui.item.prod_labcst);
-	
-		},
-		minLength:1
-		
-	};
-	$("#prod_code").autocomplete(ac_config);
-	
 	var rowIndex = 0;
 	$("#itemsTable tr").click(function(){
 		var value=$(this).index();
@@ -699,11 +693,19 @@ function get_desc(itemcode, vid)
  <!-- <?php include("../sidebarm.php"); ?>-->
 
   <?php
+  if (!empty($_POST['prod_code'])) {
   	 $sql = "select * from prod_matmain";
      $sql .= " where prod_code ='".$var_prodcd."'";
      $sql_result = mysql_query($sql);
      $row = mysql_fetch_array($sql_result);
-
+     $num=mysql_numrows($sql_result);
+     if ($num==0) {
+     	echo "<script>";
+     	echo "alert('Product Code ".$var_prodcd. " not exist at Product Costing Details!')";
+     	echo "</script>";
+     }
+  }
+     
      $docdte = date('d-m-Y', strtotime($row['docdate']));
      $rmcost = $row['rmcost'];
      $labcst = $row['labcost'];
@@ -730,7 +732,8 @@ function get_desc(itemcode, vid)
 	  	   <td style="width: 126px">Product Code </td>
 	  	   <td style="width: 13px">:</td>
 	  	   <td style="width: 239px">
-		   <input name="prod_code" id="prod_code" type="text" style="width: 129px" readonly="readonly" value="<?php echo $var_prodcd;?>">
+		   <input class="autosearch" name="prod_code" id="prod_code" type="text" style="width: 129px" value="<?php echo $var_prodcd;?>">
+		   <input type=submit name = "Submit" value="Get" class="butsub" style="width: 60px; height: 32px" >
 		   </td>
 		   <td></td>
 		   <td>Date</td>

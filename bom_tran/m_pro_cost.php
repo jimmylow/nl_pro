@@ -23,28 +23,33 @@
 	 if ($_POST['Submit'] == "Delete") {
      	if(!empty($_POST['procd']) && is_array($_POST['procd'])) 
      	{
+     	   $isexist = 0;
            foreach($_POST['procd'] as $key) {
              $defarr = explode(",", $key);
              
-             $var_proccd = $defarr[0];
-                         
-		     $sql = "DELETE FROM prod_matmain "; 
-		     $sql .= "WHERE prod_code ='".$var_proccd."'";  
-		 	 mysql_query($sql); 
-		 	 
-		 	 $sql = "DELETE FROM prod_matlis "; 
-		     $sql .= "WHERE prod_code ='".$var_proccd."'";  
-		 	 mysql_query($sql);
-		 	 
-			 $sql = "DELETE FROM procos_appr "; 
-		     $sql .= "WHERE pro_code ='".$var_proccd."'";  
-		 	 mysql_query($sql);  
-
-		   }
-		   $backloc = "../bom_tran/m_pro_cost.php?stat=1&menucd=".$var_menucode;
-           echo "<script>";
-           echo 'location.replace("'.$backloc.'")';
-           echo "</script>";   
+             $value = $defarr[0];
+             // check existing at sewing
+             include("../bom_master/aja_chk_sew_entry.php");
+             if ($numSewEntry == 0)
+             {                        
+			     $sql = "DELETE FROM prod_matmain "; 
+			     $sql .= "WHERE prod_code ='".$value."'";  
+			 	 mysql_query($sql); 
+			 	 
+			 	 $sql = "DELETE FROM prod_matlis "; 
+			     $sql .= "WHERE prod_code ='".$value."'";  
+			 	 mysql_query($sql);
+			 	 
+				 $sql = "DELETE FROM procos_appr "; 
+			     $sql .= "WHERE pro_code ='".$value."'";  
+			 	 mysql_query($sql);  
+             }
+		   }		
+		   	//$backloc = "../bom_tran/m_pro_cost.php?stat=1&menucd=".$var_menucode;
+           	//echo "<script>";
+           	//echo 'location.replace("'.$backloc.'")';
+           	//echo "</script>";   
+		   
        }      
     }
     
@@ -85,6 +90,8 @@ thead th input { width: 90% }
 <script type="text/javascript" language="javascript" src="../media/js/jquery.dataTables.js"></script>
 <script type="text/javascript" language="javascript" src="../media/js/jquery.dataTables.nightly.js"></script>
 <script type="text/javascript" src="../media/js/jquery.dataTables.columnFilter.js"></script>
+<script type="text/javascript" src="../media/js/fnReloadAjax.js"></script>
+
     
 <script type="text/javascript"> 
 $(document).ready(function() {
@@ -94,7 +101,7 @@ $(document).ready(function() {
 		"bStateSave": true,
 		"bFilter": true,
 		"sDom": "Rlfrtip",
-		"sAjaxSource": "m_procostpro.php",
+/*  		"sAjaxSource": "m_procostpro.php", */
 		"sPaginationType": "full_numbers",
 		"bAutoWidth":false,
 		"aoColumns": [
@@ -129,13 +136,16 @@ jQuery(function($) {
     $("tr :checkbox").live("click", function() {
         $(this).closest("tr").css("background-color", this.checked ? "#FFCC33" : "");
     });
-  
+
+    $('#btnListing').click(function(event) {
+    	var table = $('#example').dataTable();
+    	table.fnReloadAjax( 'm_procostpro.php' );
+    });
 });
 			
 </script>
 </head>
   <?php include("../topbarm.php"); ?> 
-  <!--<?php include("../sidebarm.php"); ?>--> 
 <body>
   
   <div class ="contentc">
@@ -165,6 +175,16 @@ jQuery(function($) {
   				}
     	  	   $msgdel = "Are You Sure Delete Selected Product Code From Material & Costing List?";
     	  	   include("../Setting/btndelete.php");
+    	  	   $locatr = "vm_procost.php?menucd=".$var_menucode;
+    	  	   if ($var_accvie != 0){    	  	   
+    	  	   	echo '<input type="button" value="View" class="butsub" style="width: 60px; height: 32px" onclick="location.href=\''.$locatr.'\'" >';
+    	  	   }
+    	  	   $locatr = "upd_procost.php?menucd=".$var_menucode;
+    	  	   if ($var_accupd != 0){    	  	   
+    	  	   	echo '<input type="button" value="Edit" class="butsub" style="width: 60px; height: 32px" onclick="location.href=\''.$locatr.'\'" >';
+    	  	   }
+    	  	   $locatr = "m_pro_cost.php?menucd=".$var_menucode;   	  	     	  	   
+    	  	   echo '<input type="button" id="btnListing" value="Listing" class="butsub" style="width: 60px; height: 32px">';
     	      ?></td>
 		 </tr>
 		 </table>
@@ -192,9 +212,9 @@ jQuery(function($) {
          </tr>
          </thead>
 		 <tbody>
-		 	<tr>
+		 	<!-- <tr>
 				<td colspan="8" class="dataTables_empty">Loading data from server</td>
-			</tr>
+			</tr> -->
 		 </tbody>
 		 </table>
 		</form>
