@@ -63,6 +63,111 @@
          echo "</script>";   
      }
     } 
+    
+    if(isset($_POST['importSubmit'])){
+    
+    	//validate whether uploaded file is a csv file
+    	$csvMimes = array('application/vnd.ms-excel','text/plain','text/csv','text/tsv');
+    	if(!empty($_FILES['file']['name']) && in_array($_FILES['file']['type'],$csvMimes)){
+    		if(is_uploaded_file($_FILES['file']['tmp_name'])){
+    
+    			//open uploaded csv file with read only mode
+    			$csvFile = fopen($_FILES['file']['tmp_name'], 'r');
+    
+    			//skip first line
+    			//fgetcsv($csvFile);
+    
+    			//parse data from csv file line by line
+    			while(($line = fgetcsv($csvFile)) !== FALSE){    			
+    				$refno = $line[0];
+    				$matcode = $line[1];
+    				$matdesc = $line[2];
+    				$matuom = $line[3];
+    				$openingqty = $line[4];
+    				$openingcost = $line[5];
+    				$qtyperpack = "0";
+    				$remark = "";
+    				$vartoday = date("Y-m-d H:i:s");
+    				
+    				if (!empty($matcode)) {   					
+    					//check whether opening balance already exists in database with same code and ref
+    					$prevQuery = "SELECT item_code FROM rawmat_tran WHERE tran_type = 'OPB' AND item_code ='".$matcode."' AND refno='".$refno."'";    					
+    					$prevResult = mysql_query($prevQuery);
+    					$num=mysql_numrows($prevResult);
+    					if ($num>0) {    						
+    						//update data
+    						$upd_sql1 = "UPDATE rawmat_subcode SET cost_price = '$openingcost', modified_by = '$var_loginid', modified_on = '$vartoday' WHERE rm_code = '$matcode'";
+							mysql_query($upd_sql1); 							
+    					}else{
+    						   						
+    					$sqlcode = " select rm_code, description from rawmat_subcode where rm_code ='".mysql_real_escape_string($matcode)."'";
+    					$sql_result = mysql_query($sqlcode);   					
+    					while($row = mysql_fetch_array($sql_result))
+    					{
+    						$rmcode = $row['rm_code'];
+    						$matdesc = mysql_real_escape_string($row['description']);
+    					}
+    					if ($rmcode != NULL) {
+		    				$sqlchk = " select sysno from system_number ";
+		    				$sqlchk.= " where type = 'opening'";   				 
+		    				$dumsysno= mysql_query($sqlchk) or die(mysql_error());
+		    				while($row = mysql_fetch_array($dumsysno))
+		    				{
+		    					$sysno = $row['sysno'];
+		    				}
+		    				if ($sysno ==NULL)
+		    				{
+		    					$sysno = '0';
+		    					$sysno_sql = "INSERT INTO system_number values ('OPENING', '$sysno')";
+		    				
+		    					mysql_query($sysno_sql);
+		    				
+		    				}
+		    				$newsysno = $sysno + 1;
+		    						    				
+		    				$opening_sysno  = str_pad($newsysno , 6, '0', STR_PAD_LEFT);
+		    				$opening_sysno = "OPB".$opening_sysno;
+		    				$remark = "";    				
+		    				
+		    				$prorevdte = $vartoday;
+		    				
+		    				$updsysno_sql = "UPDATE system_number SET sysno = '$newsysno' WHERE type = 'OPENING'";
+		    				mysql_query($updsysno_sql);
+		    				
+		    				$sql = "INSERT INTO rawmat_opening values
+		    					('$opening_sysno', '$refno','$prorevdte', '$remark', '$var_loginid', '$vartoday','$var_loginid', '$vartoday')";
+		    				mysql_query($sql) or die("query 1 :".mysql_error());
+	    				   	
+							$sql = "INSERT INTO rawmat_opening_tran values
+	    					('$opening_sysno', '1', '$matcode', '$matdesc', '$matuom','$openingqty','$qtyperpack', '$openingcost', '0')";
+	    					mysql_query($sql) or die("query 2 :".mysql_error());
+	    														
+	    					$sql = "INSERT INTO rawmat_tran values
+	    					('OPB', '$opening_sysno', '$refno','$remark', '$prorevdte', '$matcode', '$openingcost', '$matdesc', '$qtyperpack', '$openingqty','$var_loginid', '$vartoday','$var_loginid', '$vartoday')";
+	    					mysql_query($sql) or die("query 3 :".mysql_error());
+	    				    				
+							$upd_sql = "UPDATE rawmat_subcode SET cost_price = '$openingcost', modified_by = '$var_loginid', modified_on = '$vartoday' WHERE rm_code = '$matcode'";
+							mysql_query($upd_sql); 
+	
+    					}
+    					}
+    				}
+    			}
+    
+    			//close opened csv file
+    			fclose($csvFile);
+    
+    			$statusMsgClass = 'alert-success';
+    			$statusMsg = 'Opening Balance has been inserted successfully.';
+    		}else{
+    			$statusMsgClass = 'alert-danger';
+    			$statusMsg = 'Some problem occurred, please try again.';
+    		}
+    	}else{
+    		$statusMsgClass = 'alert-danger';
+    		$statusMsg = 'Please upload a valid CSV file.';
+    	}
+    }
 ?>
 
 
@@ -142,7 +247,35 @@ jQuery(function($) {
 	<fieldset name="Group1" style=" width: 800px;" class="style2">
 	 <legend class="title">RAW MAT OPENING LISTING</legend>
 	  <br>
-	 
+	 	<div class="container">
+    <?php if(!empty($statusMsg)){
+        echo '<div class="alert '.$statusMsgClass.'">'.$statusMsg.'</div>';
+    } ?>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            Import Opening Balance
+        </div>
+        <div class="panel-body">
+        	<table>
+        		<tr>
+        			<td width="30%">
+            	<form action="<?php echo $_SERVER['PHP_SELF'].'?menucd='.$var_menucode;; ?>" method="post" enctype="multipart/form-data" id="importFrm">
+                <input type="file" name="file" />
+                <input type="submit" class="btn btn-primary" name="importSubmit" value="IMPORT">
+                </form>
+                	</td>
+                <td>
+                <b>
+                	Refno,Item Code,Description,UOM,On Hand Bal,Cost Price
+            		<br>2016-01,AA001600101,J2299-SATIN PRINTING 60-BLACK,MTR,337.50,15.992</br>
+            	</b>
+            	</td>
+            
+            </tr>            
+        </div>
+    </div>
+</div>
+
         <form name="LstCatMas" method="POST" action="<?php echo $_SERVER['PHP_SELF'].'?menucd='.$var_menucode;; ?>">
 		 <table>
 		 <tr>
