@@ -159,7 +159,7 @@
             if(mysql_numrows($tmp2) >0) {
 
               $rst2 = mysql_fetch_object($tmp2);
-              $var_desc = $rst2->description;               
+              $var_desc = mysql_real_escape_string($rst2->description);            
              } else { $var_desc = ""; }
                       
             $sql2 = "insert into tmp_return_rawmat";
@@ -225,7 +225,7 @@
             if(mysql_numrows($tmp2) >0) {
 
               $rst2 = mysql_fetch_object($tmp2);
-              $var_desc = $rst2->description;               
+              $var_desc = mysql_real_escape_string($rst2->description);               
              } else { $var_desc = ""; }
                       
             $sql2 = "insert into tmp_adj_rawmat";
@@ -290,7 +290,7 @@
             if(mysql_numrows($tmp2) >0) {
 
               $rst2 = mysql_fetch_object($tmp2);
-              $var_desc = $rst2->description;               
+              $var_desc = mysql_real_escape_string($rst2->description);               
              } else { $var_desc = ""; }
                       
             $sql2 = "insert into tmp_reject_rawmat";
