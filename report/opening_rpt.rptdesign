@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
-    <property name="createdBy">Eclipse BIRT Designer Version 3.7.2.v20120213 Build &lt;3.7.2.v20120214-1408></property>
+    <property name="createdBy">Eclipse BIRT Designer Version 4.4.2.v201410272105 Build &lt;4.4.2.v20150217-1805></property>
     <list-property name="propertyBindings">
         <structure>
             <property name="name">odaURL</property>
@@ -1016,7 +1016,7 @@ var t = dArr2[2]+ "-" +dArr2[1]+ "-" +dArr2[0];&#13;
                     <list-property name="arguments">
                         <structure>
                             <property name="name">Expression</property>
-                            <expression name="value" type="javascript">row["Data Set::(y.totalqty * y.open_bas_cost)"]</expression>
+                            <expression name="value" type="javascript">row["Data Set::(y.totalqty * y.opening_cost)"]</expression>
                         </structure>
                     </list-property>
                     <property name="allowExport">true</property>
@@ -1080,15 +1080,17 @@ var t = dArr2[2]+ "-" +dArr2[1]+ "-" +dArr2[0];&#13;
                 </structure>
                 <structure>
                     <property name="name">Data Set::open_bas_cost</property>
-                    <text-property name="displayName">Data Set::open_bas_cost</text-property>
-                    <expression name="expression" type="javascript">dataSetRow["Data Set::open_bas_cost"]</expression>
+                    <text-property name="displayName">Data Set::opening_cost</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["Data Set::opening_cost"]</expression>
                     <property name="dataType">decimal</property>
+                    <property name="allowExport">true</property>
                 </structure>
                 <structure>
                     <property name="name">Data Set::(y.totalqty * y.open_bas_cost)</property>
-                    <text-property name="displayName">Data Set::(y.totalqty * y.open_bas_cost)</text-property>
-                    <expression name="expression" type="javascript">dataSetRow["Data Set::(y.totalqty * y.open_bas_cost)"]</expression>
+                    <text-property name="displayName">Data Set::(y.totalqty * y.opening_cost)</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["Data Set::(y.totalqty * y.opening_cost)"]</expression>
                     <property name="dataType">decimal</property>
+                    <property name="allowExport">true</property>
                 </structure>
             </list-property>
             <column id="703">
