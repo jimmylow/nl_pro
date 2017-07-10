@@ -16,24 +16,58 @@
       include("../Setting/ChqAuth.php");
     }
 
+    $datefrom = date("01-m-Y");
+    $dateto = date("t-m-Y");
+    
     if (isset($_POST['Submit'])){ 
      if ($_POST['Submit'] == "Print") {
 		$fdte = date("Y-m-d", strtotime($_POST['rptofdte']));
      	$tdte = date("Y-m-d", strtotime($_POST['rptotdte']));
+     	$datefrom = date("d-m-Y", strtotime($_POST['rptofdte']));
+     	$dateto = date("d-m-Y", strtotime($_POST['rptotdte']));
      	$fjid = $_POST['selfjid'];
      	$tjid = $_POST['seltjid'];
+     	$show0Balance = $_POST['chkShowBalance'];
+     	$nodata = 0;
      	
      	#----------------Prepare Temp Table For Printing -----------------------------------
      	$sql  = " Delete From tmpfgmove where usernm = '$var_loginid'";
         mysql_query($sql) or die("Unable To Prepare Temp Table For Printing".mysql_error());
 	
+        $prod_code_csv = "";
+        if (empty($show0Balance)) {
+            $sql  = "SELECT sum(totalqty), item_code";
+            $sql .= " FROM fg_tran";
+            $sql .= " where trxdate between '2001-01-01' and '$tdte'";
+            $sql .= " and item_code between '$fjid' and '$tjid'";
+            $sql .= " group by item_code having sum(totalqty) != 0";
+            
+            $rs_result = mysql_query($sql);            
+            while ($row = mysql_fetch_assoc($rs_result)) {
+                if (!empty($prod_code_csv)) {
+                    $prod_code_csv .= ",";   
+                }
+                $prod_code_csv .= "'" .$row['item_code']. "'";               
+            }   
+            if (empty($prod_code_csv)) {
+                /* echo "<script>";
+                echo "alert('No data for the report!');";
+                echo "</script>"; */
+                $nodata = 1;
+            }       
+        }
+        
 		$shardSize = 8000;
 	 	$sqliq = "";		   			
 	 	$k = 0;	
+	 	if ($nodata==0) {
 		$sql  = "SELECT sum(totalqty), item_code";
 		$sql .= " FROM fg_tran";
     	$sql .= " where trxdate < '$fdte'";
-    	$sql .= " and item_code between '$fjid' and '$tjid'";		
+    	$sql .= " and item_code between '$fjid' and '$tjid'";
+    	if (empty($show0Balance)) {
+    	    $sql .= " and item_code in ($prod_code_csv)";
+    	}
     	$sql .= " group by item_code";
 		$rs_result = mysql_query($sql);
 
@@ -63,7 +97,10 @@
 		 $sql  = "SELECT sum(totalqty), tran_type, item_code";
 		 $sql .= " FROM fg_tran";
     	 $sql .= " where trxdate between '$fdte' and '$tdte'";
-    	 $sql .= " and item_code between '$fjid' and '$tjid'";	
+    	 $sql .= " and item_code between '$fjid' and '$tjid'";
+    	 if (empty($show0Balance)) {
+    	     $sql .= " and item_code in (".$prod_code_csv.")";
+    	 }
     	 $sql .= " group by tran_type, item_code";
 		 $rs_result = mysql_query($sql);
 
@@ -103,19 +140,22 @@
 		 if (!empty($sqliq)){
 		 	mysql_query($sqliq) or die("Unable Save In Temp Table ".mysql_error());
 		 }
-	
+	 	} // end if nodata=0
+	 	
      	 $fname = "fg_moverpt.rptdesign&__title=myReport"; 
      	 $fname .= "&fd=".$fdte."&td=".$tdte;
      	 $fname .= "&fpr=".$fjid."&tpr=".$tjid;
+     	 
          $dest = "http://".$var_prtserver.":8080/birt-viewer/frameset?__report=".$fname."&usernm=".$var_loginid."&dbsel=".$varrpturldb;
          $dest .= urlencode(realpath($fname));
 
          //header("Location: $dest" );
          echo "<script language=\"javascript\">window.open('".$dest."','name','height=1000,width=1000,left=200,top=200');</script>";
-         $backloc = "../prod_rpt/fg_moverpt.php?menucd=".$var_menucode;
-       	 echo "<script>";
-       	 echo 'location.replace("'.$backloc.'")';
-       	 echo "</script>";        	
+         //$backloc = "../prod_rpt/fg_moverpt.php?menucd=".$var_menucode;
+       	 //echo "<script>";
+       	 //echo 'location.replace("'.$backloc.'")';
+       	 //echo "</script>";  
+	 	
      }
     } 
 ?>
@@ -237,14 +277,14 @@ function chkSubmit()
 	  	    	<td style="width: 180px" class="tdlabel">From Transaction Date</td>
 	  	    	<td>:</td> 
 	  	    	<td style="width: 134px">
-					<input class="inputtxt" name="rptofdte" id ="rptofdte" type="text" value="<?php  echo date("01-m-Y"); ?>" style="width: 100px" />
+					<input class="inputtxt" name="rptofdte" id ="rptofdte" type="text" value="<?php  echo $datefrom; ?>" style="width: 100px" />
 					<img alt="Date Selection" src="../images/cal.gif" onclick="javascript:NewCssCal('rptofdte','ddMMyyyy')" style="cursor:pointer" />
 				</td>
 				<td style="width: 27px"></td>
 				<td style="width: 180px">To Transaction Date</td>
 				<td>:</td>
 				<td>
-					<input class="inputtxt" name="rptotdte" id ="rptotdte" type="text" value="<?php  echo date("t-m-Y"); ?>" style="width: 100px" />
+					<input class="inputtxt" name="rptotdte" id ="rptotdte" type="text" value="<?php  echo $dateto; ?>" style="width: 100px" />
 					<img alt="Date Selection" src="../images/cal.gif" onclick="javascript:NewCssCal('rptotdte','ddMMyyyy')" style="cursor:pointer" />
 				</td>
 		    </tr>
@@ -254,7 +294,7 @@ function chkSubmit()
 		    	<td>From Product code</td>
 		    	<td>:</td>
 		    	<td>
-		    		<select name="selfjid" id ="selfjid" style="width: 100px">
+		    		<select name="selfjid" id ="selfjid">
 			   		<?php
                    		$sql = "select prod_code from pro_cd_master where actvty != 'D' ORDER BY prod_code";
                    		$sql_result = mysql_query($sql);                       
@@ -262,7 +302,11 @@ function chkSubmit()
 				   		{
 				   			while($row = mysql_fetch_assoc($sql_result)) 
 				   			{ 
-					  			echo '<option value="'.$row['prod_code'].'">'.$row['prod_code'].'</option>';
+				   			    $selected = "";
+				   			    if ($fjid == $row['prod_code']) {
+				   			        $selected = "selected";
+				   			    }
+				   			    echo '<option value="'.$row['prod_code'].'" '.$selected.' >'.$row['prod_code'].'</option>';
 				 	 		} 
 				   		}
 	            	?>				   
@@ -272,7 +316,7 @@ function chkSubmit()
 		    	<td>To Product code</td>
 		    	<td>:</td>
 		    	<td>
-		    		<select name="seltjid" id ="seltjid" style="width: 100px">
+		    		<select name="seltjid" id ="seltjid">
 			   		<?php
                    		$sql = "select prod_code from pro_cd_master where actvty != 'D' ORDER BY prod_code";
                    		$sql_result = mysql_query($sql);
@@ -281,13 +325,29 @@ function chkSubmit()
 				   		{
 				   			while($row = mysql_fetch_assoc($sql_result)) 
 				   			{ 
-					  			echo '<option value="'.$row['prod_code'].'">'.$row['prod_code'].'</option>';
+				   			    $selected = "";
+				   			    if ($tjid == $row['prod_code']) {
+				   			        $selected = "selected";
+				   			    }
+					  			echo '<option value="'.$row['prod_code'].'" '.$selected.' >'.$row['prod_code'].'</option>';
 				 	 		} 
 				   		}
 	            	?>				   
 			  		</select>
 		    	</td>
 		    </tr>
+			<tr>
+				<td></td>
+				<td>Show 0 Balance</td>
+				<td>:</td>
+				<td>					
+					<input type="checkbox" name="chkShowBalance" value="1" <?php echo ($show0Balance==1?"checked":"") ?>/>
+				</td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
 			<tr><td></td></tr>
 	  	  	<tr>
 	  	  	  	<td colspan="8" align="center">	  	   
