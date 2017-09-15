@@ -58,10 +58,22 @@
 			$prod_uom= $row[1];
 		}
 		
-		$sql = "select totamt from prod_matmain ";
-		$sql .= " where prod_code = '". $rowq['productcode']. "'";
+		//$sql = "select totamt from prod_matmain ";
+		//$sql .= " where prod_code = '". $rowq['productcode']. "'";
 		//$sql .= " where prod_code = 'M902-BK-FR'";
 		
+		$pieces = explode("-", $rowq['productcode']);
+				
+		$sql = " SELECT totamt FROM (";
+		$sql .= " SELECT prod_code, totamt,";
+		$sql .= " SUBSTRING_INDEX(SUBSTRING_INDEX(prod_code, '-', 1), '-', -1) AS code_number,";
+		$sql .= " If(length(prod_code) - length(replace(prod_code, '-', ''))>1,";
+		$sql .= "     SUBSTRING_INDEX(SUBSTRING_INDEX(prod_code, '-', 2), '-', -1) ,NULL) as color,";
+		$sql .= " SUBSTRING_INDEX(SUBSTRING_INDEX(prod_code, '-', 3), '-', -1) AS size";
+		$sql .= " FROM prod_matmain";
+		$sql .= " ) AS rpt";
+		$sql .= " WHERE code_number = '".$pieces[0]. "'";
+				
 		$sql_result = mysql_query($sql);
 		if ($sql_result <> FALSE)
 		{
