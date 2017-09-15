@@ -291,10 +291,10 @@ function poptastic(url)
 		    $numi = 1;
 			while ($rowq = mysql_fetch_assoc($rs_result)) { 
 			
-				$sql = "select prod_desc from pro_cd_master ";
+				/* $sql = "select prod_desc from pro_cd_master ";
         		$sql .= " where prod_code ='".$rowq['prod_code']."'";
         		$sql_result = mysql_query($sql);
-        		$row2 = mysql_fetch_array($sql_result);
+        		$row2 = mysql_fetch_array($sql_result); */
 			
 				$po_no = htmlentities($rowq['po_no']);
 				$trx_no = htmlentities($rowq['trx_no']);

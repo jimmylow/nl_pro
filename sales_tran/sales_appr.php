@@ -30,7 +30,7 @@
              
 			 $var_sql = " SELECT count(*) as cnt from salesappr";
 	      	 $var_sql .= " Where sordno = '$var_sale' And sbuycd = '$var_buyer'";
-	      	 $query_id = mysql_query($var_sql) or die ("Cant Check Sales Entry Approval Order No");
+	      	 $query_id = mysql_query($var_sql) or die ("Cant Check Buyer Purchase Order Entry Approval Order No");
 	      	 $res_id = mysql_fetch_object($query_id);
              
              $vartoday = date("Y-m-d H:i:s");
@@ -84,7 +84,7 @@
              
 			 $var_sql = " SELECT count(*) as cnt from salesappr";
 	      	 $var_sql .= " Where sordno = '$var_sale' And sbuycd = '$var_buyer'";
-	      	 $query_id = mysql_query($var_sql) or die ("Cant Check Sales Entry Approval Order No");
+	      	 $query_id = mysql_query($var_sql) or die ("Cant Check Buyer Purchase Order Entry Approval Order No");
 	      	 $res_id = mysql_fetch_object($query_id);
              
              $vartoday = date("Y-m-d H:i:s");
@@ -181,7 +181,7 @@ function poptastic(url)
 
 
 	<fieldset name="Group1" style=" width: 1143px;" class="style2">
-	 <legend class="title">SALES FORM STATUS (APPROVE/RELEASE/REJECT) LISTING</legend>
+	 <legend class="title">BUYER PROCHASE ORDER FORM STATUS (APPROVE/RELEASE/REJECT) LISTING</legend>
 	  <br>
 	 
         <form name="LstCatMas" method="POST" action="<?php echo $_SERVER['PHP_SELF'].'?menucd='.$var_menucode;; ?>">
@@ -191,14 +191,14 @@ function poptastic(url)
            <td style="width: 1131px; height: 38px;" align="left">
            <?php
            		
-                $msgdel = "Are You Sure Approve Selected Sales Entry?";
+                $msgdel = "Are You Sure Approve Selected Buyer Purchase Order Entry?";
     	  	    if ($var_accadd == 0){
    					echo '<input disabled="disabled" type=button name = "Submit" value="Approve" class="butsub" style="width: 75px; height: 32px">';
   				}else{
    					echo '<input type=submit name = "Submit" value="Approve" class="butsub" style="width: 75px; height: 32px" onclick="return confirm(\''.$msgdel.'\')">';
   				}
   				
-  				$msgdel = "Are You Sure Release Selected Sales Entry?";
+  				$msgdel = "Are You Sure Release Selected Buyer Purchase Order Entry?";
     	  	    if ($var_accadd == 0){
    					echo '<input disabled="disabled" type=button name = "Submit" value="Release" class="butsub" style="width: 75px; height: 32px">';
   				}else{
@@ -295,7 +295,7 @@ function poptastic(url)
 				if ($var_accadd == 0){
 	              echo '<td align="center"><input type="checkbox" DISABLED  name="salorno[]" value="'.$values.'" />'.'</td>';
 	            }else{
-	              echo '<td align="center"><a href=javascript:poptastic("'.$urlrejapp.'")><img src="../images/deleterow.png" title="Reject This Sales Entry"></a>';'</td>';
+	              echo '<td align="center"><a href=javascript:poptastic("'.$urlrejapp.'")><img src="../images/deleterow.png" title="Reject This Buyer Purchase Order Entry"></a>';'</td>';
     	        }         		
            		
            		echo '</tr>';

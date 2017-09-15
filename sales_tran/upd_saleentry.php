@@ -218,7 +218,7 @@ function validateForm()
 	var x=document.forms["InpSalesF"]["saorddte"].value;
 	if (x==null || x=="")
 	{
-		alert("Sales Order Date Must Not Be Blank");
+		alert("Order Date Must Not Be Blank");
 		document.InpSalesF.saorddte.focus();
 		return false;
 	}
@@ -537,7 +537,7 @@ function setup() {
   <div class="contentc">
 
 	<fieldset name="Group1" style=" width: 960px;" class="style2">
-	 <legend class="title">SALES ORDER UPDATE : <?php echo $var_sor; ?></legend>
+	 <legend class="title">BUYER PURCHASE ORDER UPDATE : <?php echo $var_sor; ?></legend>
 	  <br>	 
 	  
 	  <form name="InpSalesF" method="POST" action="<?php echo $_SERVER['PHP_SELF'].'?menucd='.$var_menucode; ?>" onsubmit="return validateForm()">
@@ -776,10 +776,10 @@ function setup() {
 							echo("<span>Process Fail</span>");
 							break;
 						case 4:
-							echo("<span>Please Fill In The Sales Order No; Process Fail</span>");
+							echo("<span>Please Fill In The Buyer Purchase Order No; Process Fail</span>");
 							break;
 						case 5:
-							echo("<span>This Sales Order No Is Use For This Buyer Code; Process Fail</span>");
+							echo("<span>This Buyer Purchase Order No Is Use For This Buyer Code; Process Fail</span>");
 							break;
 						default:
 							echo "";

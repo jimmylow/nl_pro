@@ -125,7 +125,7 @@
   <div class="contentc">
 
 	<fieldset name="Group1" style=" width: 960px;" class="style2">
-	 <legend class="title">SALES ORDER VIEW :&nbsp; <?php echo $var_sor; ?></legend>
+	 <legend class="title">BUYER PURCHASE ORDER VIEW :&nbsp; <?php echo $var_sor; ?></legend>
 	  <br>	 
 	  
 	  <form name="InpSalesF" method="POST" action="<?php echo $_SERVER['PHP_SELF'].'?menucd='.$var_menucode; ?>">

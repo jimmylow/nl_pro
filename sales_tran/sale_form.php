@@ -290,7 +290,7 @@ function validateForm()
 	var x=document.forms["InpSalesF"]["saorddte"].value;
 	if (x==null || x=="")
 	{
-		alert("Sales Order Date Must Not Be Blank");
+		alert("Order Date Must Not Be Blank");
 		document.InpSalesF.saorddte.focus();
 		return false;
 	}
@@ -327,7 +327,7 @@ function validateForm()
 					{
 					  flgchk = 0;
 					  document.InpSalesF.saordnoid.focus;
-					  alert ('This Sales Order No Is Use For This Buyer Code :'+x);
+					  alert ('This Buyer Purchase Order No Is Use For This Buyer Code :'+x);
 					  return false;
 					}
 				} else {
@@ -596,7 +596,7 @@ function get_desc(prodcode, vid)
   <div class="contentc">
 
 	<fieldset name="Group1" style=" width: 973px;" class="style2">
-	 <legend class="title">SALES ORDER ENTRY</legend>
+	 <legend class="title">BUYER PURCHASE ORDER ENTRY</legend>
 	  <br>	 
 	  
 	  <form name="InpSalesF" method="POST" action="<?php echo $_SERVER['PHP_SELF'].'?menucd='.$var_menucode; ?>" onsubmit="return validateForm()" style="width: 1200px">

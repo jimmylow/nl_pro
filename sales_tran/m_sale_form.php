@@ -188,7 +188,7 @@ jQuery(function($) {
 
 
 	<fieldset name="Group1" style=" width: 1143px;" class="style2">
-	 <legend class="title">SALES FORM LISTING</legend>
+	 <legend class="title">BUYER PURCHASE ORDER LISTING</legend>
 	  <br>
 	 
         <form name="LstCatMas" method="POST" action="<?php echo $_SERVER['PHP_SELF'].'?menucd='.$var_menucode;; ?>">
