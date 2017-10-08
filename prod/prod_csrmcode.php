@@ -313,8 +313,8 @@ function mycheckdec(valdecbk, valid){
 
     					
     					if($rmmark == 0){$rmmark = $tmark;}
-                	    if($rmspre == 0){$rmspre = $tcut;}
-                	    if($rmcut  == 0){$rmcut  = $tspread ;}
+    					if($rmspre == 0){$rmspre = $tspread;}
+    					if($rmcut  == 0){$rmcut  = $tcut;}
                 	    if($rm_bundl == 0){$rm_bundl = $tbundle;}
                 	    
                 	    
