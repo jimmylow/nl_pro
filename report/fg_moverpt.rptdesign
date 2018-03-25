@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
-    <property name="createdBy">Eclipse BIRT Designer Version 4.4.1.v201408290142 Build &lt;4.4.1.v20140916-1320></property>
+    <property name="createdBy">Eclipse BIRT Designer Version 4.7.0.v201706142203</property>
     <list-property name="propertyBindings">
         <structure>
             <property name="name">odaURL</property>
@@ -8,40 +8,21 @@
             <expression name="value" type="javascript">params["dbsel"].value;</expression>
         </structure>
         <structure>
-            <property name="name">odaDriverClass</property>
-            <property name="id">7</property>
+            <property name="name">queryText</property>
+            <property name="id">1133</property>
         </structure>
         <structure>
-            <property name="name">odaUser</property>
-            <property name="id">7</property>
+            <property name="name">queryTimeOut</property>
+            <property name="id">1133</property>
         </structure>
         <structure>
-            <property name="name">odaAutoCommit</property>
-            <property name="id">7</property>
-        </structure>
-        <structure>
-            <property name="name">odaIsolationMode</property>
-            <property name="id">7</property>
-        </structure>
-        <structure>
-            <property name="name">odaPassword</property>
-            <property name="id">7</property>
-        </structure>
-        <structure>
-            <property name="name">odaJndiName</property>
-            <property name="id">7</property>
-        </structure>
-        <structure>
-            <property name="name">OdaConnProfileName</property>
-            <property name="id">7</property>
-        </structure>
-        <structure>
-            <property name="name">OdaConnProfileStorePath</property>
-            <property name="id">7</property>
+            <property name="name">rowFetchSize</property>
+            <property name="id">1133</property>
         </structure>
     </list-property>
     <property name="units">in</property>
     <property name="iconFile">/templates/blank_report.gif</property>
+    <property name="layoutPreference">fixed layout</property>
     <property name="bidiLayoutOrientation">ltr</property>
     <property name="imageDPI">96</property>
     <parameters>
@@ -141,15 +122,14 @@
                 </ex-property>
             </list-property>
             <property name="odaDriverClass">com.mysql.jdbc.Driver</property>
-            <property name="odaURL">jdbc:mysql://10.10.1.28:9909/nl_db</property>
+            <property name="odaURL">jdbc:mysql://127.0.0.1:3306/nl_db</property>
             <property name="odaUser">root</property>
             <encrypted-property name="odaPassword" encryptionID="base64">YWRtaW45MDAy</encrypted-property>
-            <property name="OdaConnProfileName">nlDataSource</property>
-            <property name="OdaConnProfileStorePath">nl_datasour</property>
         </oda-data-source>
     </data-sources>
     <data-sets>
         <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="Data Set" id="1133">
+            <property name="nullsOrdering">nulls lowest</property>
             <list-property name="columnHints"/>
             <list-property name="parameters">
                 <structure>
@@ -195,6 +175,11 @@
                         <property name="name">sum(adjqty)</property>
                         <property name="dataType">decimal</property>
                     </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">sum(invoiceqty)</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
                 </list-property>
             </structure>
             <property name="dataSource">nlDataSource</property>
@@ -235,35 +220,20 @@
                     <property name="nativeName">sum(adjqty)</property>
                     <property name="dataType">decimal</property>
                 </structure>
+                <structure>
+                    <property name="position">7</property>
+                    <property name="name">sum(invoiceqty)</property>
+                    <property name="nativeName">sum(invoiceqty)</property>
+                    <property name="dataType">decimal</property>
+                </structure>
             </list-property>
             <xml-property name="queryText"><![CDATA[select prodcd, sum(bfqty),
        sum(openqty), sum(issqty),
-       sum(recqty), sum(adjqty)
+       sum(recqty), sum(adjqty), sum(invoiceqty)
 from tmpfgmove
 where usernm = ?
 group by prodcd
 order by prodcd]]></xml-property>
-            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
-<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
-  <Version>2.0</Version>
-  <DataSetParameters>
-    <parameter>
-      <design:ParameterDefinition>
-        <design:inOutMode>In</design:inOutMode>
-        <design:attributes>
-          <design:identifier>
-            <design:name></design:name>
-            <design:position>1</design:position>
-          </design:identifier>
-          <design:nativeDataTypeCode>-1</design:nativeDataTypeCode>
-          <design:precision>0</design:precision>
-          <design:scale>0</design:scale>
-          <design:nullability>Unknown</design:nullability>
-        </design:attributes>
-      </design:ParameterDefinition>
-    </parameter>
-  </DataSetParameters>
-</model:DesignValues>]]></xml-property>
         </oda-data-set>
         <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="Data Set1" id="1208">
             <list-property name="columnHints">
@@ -435,42 +405,47 @@ group by prod_code
                 <list-property name="resultSet">
                     <structure>
                         <property name="position">1</property>
-                        <property name="name">Data Set::prodcd</property>
+                        <property name="name">prodcd</property>
                         <property name="dataType">string</property>
                     </structure>
                     <structure>
                         <property name="position">2</property>
-                        <property name="name">Data Set::sum(bfqty)</property>
+                        <property name="name">sum(bfqty)</property>
                         <property name="dataType">decimal</property>
                     </structure>
                     <structure>
                         <property name="position">3</property>
-                        <property name="name">Data Set::sum(openqty)</property>
+                        <property name="name">sum(openqty)</property>
                         <property name="dataType">decimal</property>
                     </structure>
                     <structure>
                         <property name="position">4</property>
-                        <property name="name">Data Set::sum(issqty)</property>
+                        <property name="name">sum(issqty)</property>
                         <property name="dataType">decimal</property>
                     </structure>
                     <structure>
                         <property name="position">5</property>
-                        <property name="name">Data Set::sum(recqty)</property>
+                        <property name="name">sum(recqty)</property>
                         <property name="dataType">decimal</property>
                     </structure>
                     <structure>
                         <property name="position">6</property>
-                        <property name="name">Data Set::sum(adjqty)</property>
+                        <property name="name">sum(adjqty)</property>
                         <property name="dataType">decimal</property>
                     </structure>
                     <structure>
                         <property name="position">7</property>
-                        <property name="name">Data Set1::sum(totamt)/12</property>
+                        <property name="name">Data Set::sum(invoiceqty)</property>
                         <property name="dataType">decimal</property>
                     </structure>
                     <structure>
                         <property name="position">8</property>
-                        <property name="name">Data Set1::prod_code</property>
+                        <property name="name">sum(totamt)/12</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">9</property>
+                        <property name="name">prod_code</property>
                         <property name="dataType">string</property>
                     </structure>
                 </list-property>
@@ -661,7 +636,7 @@ var t = dArr2[2]+ "-" +dArr2[1]+ "-" +dArr2[0];&#13;
     <body>
         <table id="1210">
             <property name="fontFamily">"Times New Roman"</property>
-            <property name="width">100%</property>
+            <property name="width">7.947916666666667in</property>
             <property name="dataSet">Data Set2</property>
             <list-property name="boundDataColumns">
                 <structure>
@@ -687,6 +662,7 @@ var t = dArr2[2]+ "-" +dArr2[1]+ "-" +dArr2[0];&#13;
                     <text-property name="displayName">Data Set::sum(issqty)</text-property>
                     <expression name="expression" type="javascript">dataSetRow["Data Set::sum(issqty)"]</expression>
                     <property name="dataType">decimal</property>
+                    <property name="allowExport">true</property>
                 </structure>
                 <structure>
                     <property name="name">Data Set::sum(recqty)</property>
@@ -811,6 +787,26 @@ var t = dArr2[2]+ "-" +dArr2[1]+ "-" +dArr2[0];&#13;
                     </list-property>
                     <property name="allowExport">true</property>
                 </structure>
+                <structure>
+                    <property name="name">t8</property>
+                    <text-property name="displayName">t8</text-property>
+                    <property name="dataType">float</property>
+                    <property name="aggregateFunction">SUM</property>
+                    <list-property name="arguments">
+                        <structure>
+                            <property name="name">Expression</property>
+                            <expression name="value" type="javascript">row["Data Set::sum(invoiceqty)"]</expression>
+                        </structure>
+                    </list-property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">Data Set::sum(invoiceqty)</property>
+                    <text-property name="displayName">Data Set::sum(invoiceqty)</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["Data Set::sum(invoiceqty)"]</expression>
+                    <property name="dataType">decimal</property>
+                    <property name="allowExport">true</property>
+                </structure>
             </list-property>
             <property name="pageBreakInterval">60</property>
             <list-property name="filter">
@@ -824,31 +820,34 @@ var t = dArr2[2]+ "-" +dArr2[1]+ "-" +dArr2[0];&#13;
                 </structure>
             </list-property>
             <column id="1254">
-                <property name="width">1.3541666666666667in</property>
+                <property name="width">1.74375in</property>
             </column>
             <column id="1255">
-                <property name="width">1.0104166666666667in</property>
-            </column>
-            <column id="1265">
-                <property name="width">0.8125in</property>
-            </column>
-            <column id="1256">
-                <property name="width">0.8541666666666666in</property>
-            </column>
-            <column id="1257">
-                <property name="width">0.8125in</property>
-            </column>
-            <column id="1258">
-                <property name="width">0.7916666666666666in</property>
-            </column>
-            <column id="1259">
                 <property name="width">0.8020833333333334in</property>
             </column>
+            <column id="1265">
+                <property name="width">0.6916666666666667in</property>
+            </column>
+            <column id="1256">
+                <property name="width">0.6916666666666667in</property>
+            </column>
+            <column id="1257">
+                <property name="width">0.6916666666666667in</property>
+            </column>
+            <column id="1258">
+                <property name="width">0.6916666666666667in</property>
+            </column>
+            <column id="1280">
+                <property name="width">0.6916666666666667in</property>
+            </column>
+            <column id="1259">
+                <property name="width">0.6916666666666667in</property>
+            </column>
             <column id="1260">
-                <property name="width">0.8333333333333334in</property>
+                <property name="width">0.6916666666666667in</property>
             </column>
             <column id="1261">
-                <property name="width">0.78125in</property>
+                <property name="width">0.6916666666666667in</property>
             </column>
             <header>
                 <row id="1211">
@@ -887,6 +886,11 @@ var t = dArr2[2]+ "-" +dArr2[1]+ "-" +dArr2[0];&#13;
                     <cell id="1220">
                         <label id="1219">
                             <text-property name="text">Issue</text-property>
+                        </label>
+                    </cell>
+                    <cell id="1277">
+                        <label id="1284">
+                            <text-property name="text">Invoice</text-property>
                         </label>
                     </cell>
                     <cell id="1222">
@@ -965,6 +969,16 @@ var t = dArr2[2]+ "-" +dArr2[1]+ "-" +dArr2[0];&#13;
                             </structure>
                             <property name="textAlign">right</property>
                             <property name="resultSetColumn">Data Set::sum(issqty)</property>
+                        </data>
+                    </cell>
+                    <cell id="1278">
+                        <data id="1285">
+                            <structure name="numberFormat">
+                                <property name="category">Fixed</property>
+                                <property name="pattern">###0{RoundingMode=HALF_UP}</property>
+                            </structure>
+                            <property name="textAlign">right</property>
+                            <property name="resultSetColumn">Data Set::sum(invoiceqty)</property>
                         </data>
                     </cell>
                     <cell id="1239">
@@ -1054,6 +1068,16 @@ var t = dArr2[2]+ "-" +dArr2[1]+ "-" +dArr2[0];&#13;
                             </structure>
                             <property name="textAlign">right</property>
                             <property name="resultSetColumn">Aggregation_1</property>
+                        </data>
+                    </cell>
+                    <cell id="1279">
+                        <data id="1286">
+                            <structure name="numberFormat">
+                                <property name="category">Fixed</property>
+                                <property name="pattern">###0{RoundingMode=HALF_UP}</property>
+                            </structure>
+                            <property name="textAlign">right</property>
+                            <property name="resultSetColumn">t8</property>
                         </data>
                     </cell>
                     <cell id="1251">
