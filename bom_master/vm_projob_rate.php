@@ -33,8 +33,12 @@
     
     if ($_POST['Submit'] == "Update to Costing") {
          $var_menucode  = $_POST['menudcode'];
-         $prcode  = $_POST['prodcode'];
+         $prcode  = $_POST['prod_code'];
          $tlabcst = $_POST['totlab'];
+         
+         echo "<script>";
+         echo "alert('$prcode');";
+         echo "</script>"; 
          
          $query  = "SELECT count(*) FROM prod_matmain "; 
 		 $query .= " WHERE prod_code='$prcode'";
