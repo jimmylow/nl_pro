@@ -22,6 +22,7 @@
     	$var_prodcd = $_POST['prod_code'];
     }
     
+   
     if ($_POST['Submit'] == "Update") {
 		$vmrevdte = date('Y-m-d', strtotime($_POST['prorevdte']));
 		$vmprodcd = $_POST['prod_code'];
@@ -693,7 +694,7 @@ function get_desc(itemcode, vid)
  <!-- <?php include("../sidebarm.php"); ?>-->
 
   <?php
-  if (!empty($_POST['prod_code'])) {
+  if (!empty($var_prodcd)) {
   	 $sql = "select * from prod_matmain";
      $sql .= " where prod_code ='".$var_prodcd."'";
      $sql_result = mysql_query($sql);
