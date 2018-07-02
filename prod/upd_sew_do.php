@@ -47,9 +47,9 @@
 			$var_db_name='mdf_fgood'; 
 			*/
 			
-			$var_server = '192.168.0.142:9909';
-		    $var_userid = 'root';
-		    $var_password = 'admin9002';
+			//$var_server = '192.168.0.142:9909';
+		    //$var_userid = 'root';
+		    //$var_password = 'admin9002';
 		    $var_db_name='mdf_fgood'; 
 		   
 		
@@ -98,9 +98,9 @@
 						$var_db_name='nl_db'; 
 						*/
 						
-						$var_server = '192.168.0.142:9909';
-					    $var_userid = 'root';
-					    $var_password = 'admin9002';
+						//$var_server = '192.168.0.142:9909';
+					    //$var_userid = 'root';
+					    //$var_password = 'admin9002';
 					    $var_db_name='nl_db'; 
 					  
 					
@@ -150,9 +150,9 @@
 						$var_db_name='mdf_fgood'; 
 						*/
 						
-						$var_server = '192.168.0.142:9909';
-					    $var_userid = 'root';
-					    $var_password = 'admin9002';
+						//$var_server = '192.168.0.142:9909';
+					    //$var_userid = 'root';
+					    //$var_password = 'admin9002';
 					    $var_db_name='mdf_fgood'; 
 					    
 						$db_link2  = mysql_connect($var_server, $var_userid, $var_password)or die("cannot connect");
@@ -184,9 +184,9 @@
 			*/
 			
 			
-			$var_server = '192.168.0.142:9909';
-		    $var_userid = 'root';
-		    $var_password = 'admin9002';
+			//$var_server = '192.168.0.142:9909';
+		    //$var_userid = 'root';
+		    //$var_password = 'admin9002';
 		    $var_db_name='fnl_fgood'; 
 		   
 		
@@ -235,9 +235,9 @@
 						$var_db_name='nl_db'; 
 						*/
 						
-						$var_server = '192.168.0.142:9909';
-					    $var_userid = 'root';
-					    $var_password = 'admin9002';
+						//$var_server = '192.168.0.142:9909';
+					    //$var_userid = 'root';
+					    //$var_password = 'admin9002';
 					    $var_db_name='nl_db'; 
 					  
 					
@@ -289,9 +289,9 @@
 						$var_db_name='fnl_fgood'; 
 						*/
 						
-						$var_server = '192.168.0.142:9909';
-					    $var_userid = 'root';
-					    $var_password = 'admin9002';
+						//$var_server = '192.168.0.142:9909';
+					    //$var_userid = 'root';
+					    //$var_password = 'admin9002';
 					    $var_db_name='fnl_fgood'; 
 					    
 						$db_link2  = mysql_connect($var_server, $var_userid, $var_password)or die("cannot connect");
