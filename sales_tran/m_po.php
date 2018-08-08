@@ -181,9 +181,9 @@ jQuery(function($) {
 		 //$var_userid = 'root';
 		 //$var_password = '';
 		 //$var_db_name='nl_fgood'; 
-		 	$var_server = '192.168.0.142:9909';
-      $var_userid = 'root';
-      $var_password = 'admin9002';
+		 	//$var_server = '192.168.0.142:9909';
+      //$var_userid = 'root';
+      //$var_password = 'admin9002';
       $var_db_name='nl_fgood'; 
 	  
 
