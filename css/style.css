@@ -53,3 +53,155 @@ width: 100%;
 	left:3%;
 }
 
+table.lamp {
+	width: 100%;
+	padding: 0px;
+	border: 1px solid #d4d4d4;
+	font-size: 12px;
+	border-collapse: collapse;
+	font-weight: bold;
+}
+
+table.lamp th {
+	color: #000000;
+	background-color: white;
+	padding: 4px;
+	padding-left: 3px;
+	padding-right: 3px;
+	border: 1px solid #d4d4d4;
+}
+
+table.lamp td {
+	padding: 4px;
+	padding-left: 3px;
+	padding-right: 3px;
+	background-color: #ffffff;
+	border: 1px solid #d4d4d4;
+}
+
+table.lamp td.maincontent {
+	background-color: #bbbbbb;
+	color: #333333
+}
+
+table.noborder {
+	width: 100%;
+	padding: 0px;
+	font-size: 12px;
+	border: 0px;
+	border-collapse: collapse;
+}
+
+table.noborder td {
+	padding: 4px;
+	padding-left: 3px;
+	padding-right: 3px;
+	background-color: transparent;
+	border: 0px solid #d4d4d4;
+}
+
+table.reference,table.printable,table.reference1 {
+	/* border-collapse: collapse; not working with firefox*/
+	width: 100%;
+	font-size: 12px;
+	border-spacing: 0;	
+}
+
+/* table.printable {
+	table-layout: fixed;
+} */
+
+table.reference tbody tr:hover,table.reference1 tbody tr:hover,table.printable tbody tr:hover {
+	background-color: #ffffdd;
+}
+
+table.reference tr:nth-child(odd) {
+	background-color: #dddddd;
+}
+
+table.reference tr:nth-child(even) {
+	background-color: #f6f4f0;
+}
+
+.odd {
+	background-color: #dddddd;
+}
+
+.even {
+	background-color: #f6f4f0;
+}
+
+table.reference tr.maincontent,table.reference1 tr.maincontent {
+	background-color: #bbbbbb;
+	font-weight: bold;
+	font-size: 100%;
+}
+
+table.reference tr.summary,table.reference1 tr.summary {
+	background-color: #999999;
+	font-weight: bold;
+	font-size: 100%;
+}
+
+table.reference th,table.reference1 th {
+	color: #ffffff;
+	background-color: #555555;
+	border: 1px solid #d4d4d4;
+	font-size: 100%;
+	padding: 3px;
+	vertical-align: top;
+	text-align: center;	
+}
+
+table.reference th a:link,table.reference th a:visited,table.reference1 th a:link,table.reference1 th a:visited {
+	color: #ffffff;
+}
+
+table.reference th a:hover,table.reference th a:active,table.reference1 th a:hover,table.reference1 th a:active {
+	color: #EE872A;
+}
+
+table.reference td,table.reference1 td {
+	border: 1px solid #d4d4d4 !important;
+	padding: 3px;
+	padding-top: 3px;
+	padding-bottom: 3px;
+	vertical-align: top;
+	/* overflow: hidden; */
+	/* text-overflow: ellipsis; */
+	word-wrap: break-word;
+}
+
+table.printable th {
+	color: #000000;
+	background-color: #dddddd;
+	border: 1px solid #808080;
+	font-size: 100%;
+	padding: 3px;
+	vertical-align: top;
+	text-align: center;
+	/* overflow: hidden; */
+	/* text-overflow: ellipsis; */
+	word-wrap: break-word;
+}
+
+table.printable td {
+	border: 1px solid #808080;
+	padding: 3px;
+	padding-top: 3px;
+	padding-bottom: 3px;
+	vertical-align: top;
+	/* overflow: hidden; */
+	/* text-overflow: ellipsis; */
+	word-wrap: break-word;
+}
+
+table.printable tr.summary {
+	font-weight: bold;
+	font-size: 100%;
+}
+
+table.printable tr.maincontent {	
+	font-weight: bold;
+	font-size: 100%;
+}

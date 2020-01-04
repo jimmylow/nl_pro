@@ -12,13 +12,14 @@
 	/* Array of database columns which should be read and sent back to DataTables. Use a space where
 	 * you want to insert a non-database field (for example a counter or static image)
 	 */ 
-	$aColumns = array('x.ticketno', 'x.qcdate', 'batchno', 'productcode', 'x.creation_time');
+	$aColumns = array('ticketno', 'qcdate', 'batchno', 'productcode', 'creation_time');
 	
 	/* Indexed column (used for fast and accurate table cardinality) */
-	$sIndexColumn = "x.ticketno";
+	$sIndexColumn = "ticketno";
 	
 	/* DB table to use */
-	$sTable = "sew_qc x, sew_entry y";
+	//$sTable = "sew_qc x, sew_entry y";
+	$sTable = " sew_qc x INNER JOIN (SELECT ticketno AS t_no, batchno, productcode FROM sew_entry) AS y on y.t_no = x.ticketno ";
 	
 	/* Database connection information */
 	$gaSql['user']       = $var_userid;
@@ -75,7 +76,7 @@
 	$sOrder = "";
 	if ( isset( $_GET['iSortCol_0'] ) )
 	{
-		$sOrder = "ORDER BY ticketno";
+		$sOrder = "ORDER BY x.ticketno";
 		/*
 		for ( $i=0 ; $i<intval( $_GET['iSortingCols'] ) ; $i++ )
 		{
@@ -134,11 +135,11 @@
 	
 	if ( $sWhere == "" )
 	{
-		$sWhere = "WHERE x.ticketno = y.ticketno";
+		// $sWhere = "WHERE x.ticketno = y.ticketno";
 	}
 	else
 	{
-		$sWhere .= " AND x.ticketno = y.ticketno";
+		//$sWhere .= " AND x.ticketno = y.ticketno";
 	}
 	
 	/*
@@ -166,7 +167,6 @@
 	$sQuery = "
 		SELECT COUNT('".$sIndexColumn."')
 		FROM   $sTable
-		WHERE x.ticketno = y.ticketno
 	";
 	$rResultTotal = mysql_query( $sQuery, $gaSql['link'] ) or fatal_error( '3. MySQL Error: ' . mysql_errno() );
 	$aResultTotal = mysql_fetch_array($rResultTotal);
@@ -196,19 +196,19 @@
 			else if ( $aColumns[$i] != ' ' )
 			{
 				/* General output */
-				if ($aColumns[$i] == "x.ticketno"){
+				if ($aColumns[$i] == "ticketno"){
 					$pon = $aRow[$i];
 					$row3[] = $aRow[$i];
 					$row[] = $aRow[$i];
 				}else{
-					if ($aColumns[$i] == "x.qcdate"){
+					if ($aColumns[$i] == "qcdate"){
 						if ($aRow[ $aColumns[$i] ] == '1970-01-01'){
 							$row[] = NULL;
 						}else{
 							$row[] = date('d-m-Y', strtotime($aRow[$i]));;
 						}
 					}else{
-						if ($aColumns[$i] == "x.creation_time"){
+						if ($aColumns[$i] == "creation_time"){
 							if ($aRow[ $aColumns[$i] ] == '1970-01-01'){
 								$row[] = NULL;
 							}else{

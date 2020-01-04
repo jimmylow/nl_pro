@@ -107,9 +107,9 @@ $(document).ready(function() {
 		"bServerSide": true,
 		"aLengthMenu": [[10, 25, 50, -1], [10, 25, 50,"All"]],
 		"bStateSave": true,
-		"sDom": "Rlfrtip",
 		"sAjaxSource": "m_prosqc.php",
 		"bFilter": true,
+		"sDom": "Rlfrtip",
 		"sPaginationType": "full_numbers",
 		"bAutoWidth":false,
 		"aoColumns": [
@@ -134,7 +134,8 @@ $(document).ready(function() {
 				     { type: "text" },
 				     { type: "text" },
 				     null,
-				     null
+				     null,
+					 null
 				   ]
 		});	
 } );

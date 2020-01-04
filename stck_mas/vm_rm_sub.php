@@ -86,6 +86,7 @@ $(document).ready(function() {
 				     { type: "text" },
 				     { type: "text" },
 				     { type: "text" },
+				     { type: "text" },
 				     { type: "text" }
 				   ]
 		});	
@@ -501,6 +502,7 @@ echo $sql;
           <th style="width: 15px">Trx Type</th>
           <th style="width: 30px">Trx No</th>
           <th style="width: 30px">Ref No</th>
+          <th style="width: 15px">Unit Cost</th>
           <th style="width: 15px">Trx Qty</th>
           <th style="width: 15px">Trx Date</th>
           <th style="width: 30px">Modified By</th>

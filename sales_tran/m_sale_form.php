@@ -266,7 +266,7 @@ jQuery(function($) {
 		 <?php 
 		    $sql = "SELECT sordno, sorddte, sexpddte, sbuycd, modified_by, modified_on, stat ";
 		    $sql .= " FROM salesentry";
-    		$sql .= " ORDER BY modified_on desc";  
+    		$sql .= " ORDER BY modified_on desc limit 10";  
 			$rs_result = mysql_query($sql); 
 	
 		    $numi = 1;
@@ -278,12 +278,13 @@ jQuery(function($) {
 				$showdte = date('d-m-Y', strtotime($rowq['modified_on']));
 				$postat = date('d-m-Y', strtotime($rowq['stat']));
 				
-				$sql1 = "select app_stat from salesappr";
-        		$sql1 .= " where sordno ='".$salorno."' ";
-        		$sql1 .= " and sbuycd ='".$rowq['sbuycd']."' ";
-        		$sql_result1 = mysql_query($sql1) or die("error query sales order status :".mysql_error());
-        		$row2 = mysql_fetch_array($sql_result1);
-				$sstat = $row2[0];
+				//$sql1 = "select app_stat from salesappr";
+        		//$sql1 .= " where sordno ='".$salorno."' ";
+        		//$sql1 .= " and sbuycd ='".$rowq['sbuycd']."' ";
+        		//$sql_result1 = mysql_query($sql1) or die("error query sales order status :".mysql_error());
+        		//$row2 = mysql_fetch_array($sql_result1);
+				//$sstat = $row2[0];
+				$sstat = "1";
 				
 				$urlpop = 'upd_saleentry.php';
 				$urlvie = 'vm_saleentry.php';
