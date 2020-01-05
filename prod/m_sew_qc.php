@@ -120,7 +120,8 @@ $(document).ready(function() {
     					{ "sType": "uk_date" },
     					null,
     					null,
-    					null
+    					null,
+						null
     				]
 
 	})
@@ -133,6 +134,7 @@ $(document).ready(function() {
 				     { type: "text" },
 				     { type: "text" },
 				     { type: "text" },
+					 { type: "text" },
 				     null,
 				     null,
 					 null
@@ -202,6 +204,7 @@ jQuery(function($) {
           <th class="tabheader" style="width: 9px">Batch No</th>
           <th class="tabheader" style="width: 106px">Product Code</th>
           <th class="tabheader" style="width: 64px">Keyin Date</th>
+		  <th class="tabheader" style="width: 64px">Modified By</th>
           <th class="tabheader" style="width: 12px">Detail</th>
           <th class="tabheader" style="width: 12px">Update</th>
 		  <th class="tabheader" style="width: 12px">Delete</th>

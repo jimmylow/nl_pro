@@ -12,7 +12,7 @@
 	/* Array of database columns which should be read and sent back to DataTables. Use a space where
 	 * you want to insert a non-database field (for example a counter or static image)
 	 */ 
-	$aColumns = array('ticketno', 'qcdate', 'batchno', 'productcode', 'creation_time');
+	$aColumns = array('ticketno', 'qcdate', 'batchno', 'productcode', 'creation_time', 'modified_by');
 	
 	/* Indexed column (used for fast and accurate table cardinality) */
 	$sIndexColumn = "ticketno";
@@ -76,13 +76,12 @@
 	$sOrder = "";
 	if ( isset( $_GET['iSortCol_0'] ) )
 	{
-		$sOrder = "ORDER BY x.ticketno";
-		/*
+		$sOrder = "ORDER BY  ";
 		for ( $i=0 ; $i<intval( $_GET['iSortingCols'] ) ; $i++ )
 		{
 			if ( $_GET[ 'bSortable_'.intval($_GET['iSortCol_'.$i]) ] == "true" )
 			{
-				$sOrder .= $aColumns[ intval( $_GET['iSortCol_'.$i] ) ]."".
+				$sOrder .= "`".$aColumns[ intval( $_GET['iSortCol_'.$i] ) ]."` ".
 				 	mysql_real_escape_string( $_GET['sSortDir_'.$i] ) .", ";
 			}
 		}
@@ -92,7 +91,7 @@
 		{
 			$sOrder = "";
 		}
-		*/
+		
 	}
 	
 	/* 
