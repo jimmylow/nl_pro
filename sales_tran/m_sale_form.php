@@ -131,13 +131,16 @@ thead th input { width: 90% }
 <script type="text/javascript"> 
 $(document).ready(function() {
 	$('#example').dataTable( {
+		"bProcessing": true,
+		"bServerSide": true,
 		"aLengthMenu": [[10, 25, 50, -1], [10, 25, 50,"All"]],
 		"bStateSave": true,
 		"bFilter": true,
+		"sDom": "Rlfrtip",
+		"sAjaxSource": "getSalesForm.php",
 		"sPaginationType": "full_numbers",
 		"bAutoWidth":false,
 		"aoColumns": [
-    					null,
     					null,
     					{ "sType": "uk_date" },
     					{ "sType": "uk_date" },
@@ -155,7 +158,6 @@ $(document).ready(function() {
 	.columnFilter({sPlaceHolder: "head:after",
 
 		aoColumns: [ 
-					 null,	
 					 { type: "text" },
 				     { type: "text" },
 				     { type: "text" },
@@ -165,7 +167,8 @@ $(document).ready(function() {
 				     null,
 				     null,
 				     null,
-				     null
+				     null,
+					 null
 				   ]
 		});	
 } );
@@ -232,8 +235,7 @@ jQuery(function($) {
 		 <br>
 		 <table cellpadding="0" cellspacing="0" id="example" class="display" width="100%">
          <thead>
-           <tr>
-          <th></th>
+		  <tr>
           <th style="width: 234px">Order No</th>
           <th style="width: 129px">Order Date</th>
           <th style="width: 128px">Exp Del Date</th>
@@ -245,10 +247,8 @@ jQuery(function($) {
 		  <th></th>
 		  <th></th>
 		  <th></th>
-         </tr>
-
-         <tr>
-          <th class="tabheader" style="width: 12px">#</th>
+          </tr>
+          <tr>
           <th class="tabheader" style="width: 234px">Order No.</th>
           <th class="tabheader" style="width: 129px">Order Date</th>
           <th class="tabheader" style="width: 128px">Exp Delivery Date</th>
@@ -262,100 +262,6 @@ jQuery(function($) {
 		  <th class="tabheader" style="width: 12px">Delete</th>
          </tr>
          </thead>
-		 <tbody>
-		 <?php 
-		    $sql = "SELECT sordno, sorddte, sexpddte, sbuycd, modified_by, modified_on, stat ";
-		    $sql .= " FROM salesentry";
-    		$sql .= " ORDER BY modified_on desc limit 10";  
-			$rs_result = mysql_query($sql); 
-	
-		    $numi = 1;
-			while ($rowq = mysql_fetch_assoc($rs_result)) { 
-			
-				$salorno = htmlentities($rowq['sordno']);
-				$orddte = date('d-m-Y', strtotime($rowq['sorddte']));
-				$expddte = date('d-m-Y', strtotime($rowq['sexpddte']));
-				$showdte = date('d-m-Y', strtotime($rowq['modified_on']));
-				$postat = date('d-m-Y', strtotime($rowq['stat']));
-				
-				//$sql1 = "select app_stat from salesappr";
-        		//$sql1 .= " where sordno ='".$salorno."' ";
-        		//$sql1 .= " and sbuycd ='".$rowq['sbuycd']."' ";
-        		//$sql_result1 = mysql_query($sql1) or die("error query sales order status :".mysql_error());
-        		//$row2 = mysql_fetch_array($sql_result1);
-				//$sstat = $row2[0];
-				$sstat = "1";
-				
-				$urlpop = 'upd_saleentry.php';
-				$urlvie = 'vm_saleentry.php';
-				echo '<tr>';
-            	echo '<td>'.$numi.'</td>';
-           		echo '<td>'.$salorno.'</td>';
-            	echo '<td>'.$orddte.'</td>';
-            	echo '<td>'.$expddte.'</td>';
-            	echo '<td>'.$rowq['sbuycd'].'</td>';
-            	echo '<td>'.$rowq['stat'].'</td>';
-            
-            	if ($var_accvie == 0){
-            		echo '<td align="center"><a href="#">[VIEW]</a>';'</td>';
-            	}else{
-            		echo '<td align="center"><a href="'.$urlvie.'?sorno='.$salorno.'&buycd='.$rowq['sbuycd'].'&menucd='.$var_menucode.'">[VIEW]</a>';'</td>';
-            	}
-            	
-            	echo '<td align="center"><a href="m_sale_form.php?p=Print&sno='.$salorno.'&buycd='.$rowq['sbuycd'].'&menucd='.$var_menucode.'" title="Print Sales Order"><img src="../images/b_print.png" border="0" width="16" height="16" hspace="2" alt="Duplicate Sales Order" /></a></td>'; 
-
-	            if ($var_accupd == 0){
-		            echo '<td align="center"><a href="#">[EDIT]</a>';'</td>';
-	            }else{
-	            	if ($sstat == "APPROVE"){
-	            		echo '<td align="center"><a href="#" title="This Sales Order Is Approved; Edit Is Not Allow">[EDIT]</a>';'</td>';
-	            	}else{ 
-		            	echo '<td align="center"><a href="'.$urlpop.'?sorno='.$salorno.'&buycd='.$rowq['sbuycd'].'&menucd='.$var_menucode.'">[EDIT]</a>';'</td>';
-	            	}
-	            }
-	            if ($var_accdel == 0){
-	              echo '<td align="center"><input type="checkbox" DISABLED  name="procd[]" value="'.$values.'" />'.'</td>';
-	            }else{
-	              if ($sstat == "APPROVE"){
-					echo '<td align="center"><input type="checkbox" title="This Sales Order Is Approved; Edit Is Not Allow" DISABLED  name="procd[]" value="'.$values.'" />'.'</td>';
-				  }else{	
-	              	$values = implode(',', $rowq);	
-	              	echo '<td align="center"><input type="checkbox" name="salorno[]" value="'.$values.'" />'.'</td>';
-    	          }	
-    	        }
-           		
-           		 if ($var_accdel == 0){
-	              echo '<td align="center"><input type="checkbox" DISABLED  name="procd[]" value="'.$values.'" />'.'</td>';
-	            }else{
-	              if ($sstat == "APPROVE"){
-					echo '<td align="center"><input type="checkbox" DISABLED  name="procd[]" value="'.$values.'" />'.'</td>';
-				  }else{	
-	              	$values = implode(',', $rowq);	
-	              	echo '<td align="center"><input type="checkbox" name="salorno[]" value="'.$values.'" />'.'</td>';
-    	          }	
-    	        }
-    	        
-    	        if ($var_accdel == 0){
-	              echo '<td align="center"><input type="checkbox" DISABLED  name="procd[]" value="'.$values.'" />'.'</td>';
-	            }else{
-	              if ($sstat == "APPROVE"){
-					echo '<td align="center"><input type="checkbox" title="This Sales Order Is Approved; Cannot Delete" DISABLED  name="procd[]" value="'.$values.'" />'.'</td>';
-				  }else{	
-				  	$values = implode(',', $rowq);	
-				  	if ($postat <> "CANCEL"){       		
-	              		echo '<td align="center"><input type="checkbox" name="salorno[]" value="'.$values.'" />'.'</td>';
-	              	}else{
-	              		echo '<td align="center"><input type="checkbox" DISABLED  name="salorno[]" value="'.$values.'" />'.'</td>';
-	              	}
-    	          }	
-    	        }
-
-           		
-           		echo '</tr>';
-            $numi = $numi + 1;
-			}
-		 ?>
-		 </tbody>
 		 </table>
 		</form>
 	   </fieldset>
